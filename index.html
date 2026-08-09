@@ -1295,9 +1295,11 @@
 .contents_div .hw26-foot-sub{
   font-size:var(--fs-lead); line-height:1.7; color:rgba(255,255,255,.78); margin-top:16px;
 }
-/* ▼ 태그 줄 간격만 벌린다 (행 간격 / 열 간격 두 값으로 분리) */
+/* ▼ 태그 간격 — 앞값이 행 간격(위아래 줄), 뒷값이 열 간격(좌우)
+   ▼ [수정] 행 간격 14 → 8px. 캡슐 높이가 20px 인데 14px 은 줄 사이가 떠 보였다.
+      열 간격과 같은 8px 로 맞춰 격자가 고르게 보이도록 한다 */
 .contents_div .hw26-tags{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:14px 8px; margin-top:28px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px 8px; margin-top:28px;
 }
 .contents_div .hw26-tag{
   display:inline-flex; align-items:center; height:var(--cap-h); padding:0 var(--cap-pd);
@@ -2128,7 +2130,7 @@
         <div class="hw26-step hw26-step--l2">
           <span class="hw26-step-fig"><span class="hw26-step-figbg" aria-hidden="true"></span><img src="img/위험.webp" alt="얼굴이 붉어지고 어지러워하는 모습" loading="lazy" decoding="async"></span>
           <span class="hw26-step-head"><span class="hw26-step-deg" aria-hidden="true">2</span><span class="hw26-step-lb hw26-step-lb--l2">위험</span></span>
-          <span class="hw26-step-txt">말이 어눌해짐, 걸음이 흔들림, 판단이 흐려짐</span>
+          <span class="hw26-step-txt">말이 어눌해짐, <br class="hw26-brm">걸음이 흔들림, <br class="hw26-brm">판단이 흐려짐</span>
         </div>
       </li>
       <li>
