@@ -1703,8 +1703,9 @@
 
 .contents_div .hw26-intro-h2-sh{ display:none; }
 
-/* 390px 이하 — 제목 인셋 고정. ▼ 아래 340px 예외보다 앞에 있어야 한다 */
-@media (max-width:390px){
+/* 440px 이하 — 제목 인셋 고정. ▼ 아래 340px 예외보다 앞에 있어야 한다
+   ▼ [수정] 390 → 440 (아이폰 15/16/17 계열 402·430·440px 포함) */
+@media (max-width:440px){
   .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:16.94%; }
 }
 
@@ -1712,10 +1713,12 @@
   .contents_div .hw26-h2.hw26-intro-h2{ padding-right:0; }
 }
 
-@media (max-width:390px){
+/* ▼ [수정] 390 → 440. 이 블록은 '모바일 전용' 조정 묶음인데 기준이 390px 이라
+   402px(아이폰 17)·430px(아이폰 15/16 Pro Max 계열)이 통째로 빠져 있었다 */
+@media (max-width:440px){
   .contents_div .hw26-brm{ display:inline; }
 
-  /* 해 아이콘 — 이 폭에서만 88.66px (--sun-y 는 자동 재계산) */
+  /* 해 아이콘 — 이 폭에서만 24.77cqw (--sun-y 는 자동 재계산) */
   .contents_div .hw26-intro{ --sun-w:24.77cqw; }
 
   .contents_div #hw26-sec3 .hw26-card .hw26-ol,
@@ -1770,8 +1773,9 @@
   .contents_div .hw26-cta--gap{ font-size:calc(var(--fs-cta) - 1px); }
 }
 
-/* 391~600px — 해·온도계를 섹션 안쪽으로 (잘림 방지) */
-@media (min-width:391px) and (max-width:600px){
+/* 441~600px — 해·온도계를 섹션 안쪽으로 (잘림 방지)
+   ▼ [수정] 391 → 441. 아이폰 폭(402·430·440px)은 위 440px 블록이 담당한다 */
+@media (min-width:441px) and (max-width:600px){
   /* ▼ 해 왼쪽 끝을 스테이지 왼쪽에 맞춘다(잘림 0)
      ▼ 크기는 min() 으로 상한 — 뒷값이 '제목 첫 글자 8px 앞'까지 허용되는 최대 폭이라
         폭이 좁아지면 해가 알아서 줄어 제목을 덮지 않는다 */
@@ -1779,7 +1783,7 @@
     --sun-x:0%;
     --sun-w:min(21.97cqw, 50cqw - 115.5px);
   }
-  /* ▼ 온도계 — 이 구간만 폭 축소 (600px 기준 99 → 89px). 390px 이하는 17.43% 그대로 */
+  /* ▼ 온도계 — 이 구간만 폭 축소 (600px 기준 99 → 89px). 440px 이하는 17.43% 그대로 */
   .contents_div .hw26-intro-thermo{ right:0%; width:15.67%; }
 }
 
@@ -1849,47 +1853,33 @@
     .contents_div .hw26-intro{ --sun-w:78.66px; --sun-x:-26px; --sun-dy:18px; }
     .contents_div .hw26-intro-thermo{ width:62.40px; height:81.23px; right:-26px; bottom:-33px; }
   }
-  @media (min-width:391px) and (max-width:600px){
+  /* ▼ [수정] 391 → 441 */
+  @media (min-width:441px) and (max-width:600px){
     .contents_div .hw26-intro{ --sun-x:14px; }
     .contents_div .hw26-intro-thermo{ right:14px; }
   }
-  @media (max-width:390px){
+  /* ▼ [수정] 390 → 440 */
+  @media (max-width:440px){
     .contents_div .hw26-intro{ --sun-w:88.66px; }
     .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:60.66px; }
   }
   @media (max-width:340px){
     .contents_div .hw26-h2.hw26-intro-h2{ padding-right:0; }
   }
-  /* ▼ [수정] 391~440px 도 390px 이하와 같은 값으로 */
-  @media (min-width:391px) and (max-width:440px){
-    .contents_div .hw26-intro{ --sun-w:88.66px; --sun-x:-26px; }
-    .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:60.66px; }
-  }
 }
 
 /* ================================================================
-   [수정 A] 인트로 해 크기 — 391~440px 구간
+   [수정 A] 인트로 해 크기 — 모바일 기준선 390px → 440px 로 통합
    ----------------------------------------------------------------
    기존: 391px 부터는 해를 스테이지 안쪽(--sun-x:0)으로 넣고
          --sun-w:min(21.97cqw, 50cqw - 115.5px) 로 상한을 걸었다.
          402px(아이폰 17)에서는 뒷값이 이겨 해가 약 69px 까지 줄었다.
          390px(아이폰 12)의 88.7px 대비 22% 작아 보이던 원인이다.
-   수정: 390px 이하와 같은 어법(왼쪽 살짝 걸치고 24.77cqw)을 440px 까지 연장한다.
-         402px 기준 해 ≒ 91.6px, 제목 첫 글자와는 약 13px 여유가 남는다.
-   ▼ 되돌리려면 이 블록만 통째로 지운다
+   수정: 별도 블록을 두지 않고, 위쪽 '모바일 전용' 미디어쿼리들의
+         기준선 자체를 390 → 440 / 391 → 441 로 올렸다.
+         (해·제목 인셋·온도계·줄바꿈·05섹션 분야 목록이 한꺼번에 따라온다)
+   ▼ 되돌리려면 위쪽 [수정] 표시가 붙은 440/441 을 390/391 로 되돌린다
    ================================================================ */
-@media (min-width:391px) and (max-width:440px){
-  .contents_div .hw26-intro{
-    --sun-x:-7.26%;
-    --sun-w:24.77cqw;
-  }
-  /* 제목 인셋도 390px 이하와 동일하게 (해와 첫 글자 사이 간격 유지) */
-  .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:16.94%; }
-
-  /* ▼ 온도계까지 아이폰 12 와 똑같이(오른쪽으로 살짝 걸치게) 맞추려면
-     아래 한 줄의 주석을 푼다. 지금은 현재 위치(안쪽)를 그대로 둔다 */
-  /* .contents_div .hw26-intro-thermo{ right:-7.26%; width:17.43%; } */
-}
 
 /* ================================================================
    [수정 B] 02 단계 카드(열대야주의보) ~ 아래 카드 간격
