@@ -1623,8 +1623,12 @@
     font-size:calc(var(--fs-info) - 1px);
   }
 
+  /* ▼ [수정] balance 는 줄 길이를 서로 맞추느라 모든 줄을 짧게 깎는다.
+     그래서 05 섹션 1·2·3 구획 본문이 일찍 접히고 오른쪽에 빈 폭이 크게 남았다.
+     pretty 는 줄을 끝까지 채우고 마지막 줄 외톨이 글자만 다듬는다.
+     ▼ 되돌리려면 pretty → balance */
   .contents_div #hw26-sec5 .hw26-card .hw26-p{
-    text-wrap:balance; padding-right:0;
+    text-wrap:pretty; padding-right:0;
   }
 
   .contents_div #hw26-sec2 .hw26-card{ margin-top:10px; margin-bottom:10px; }
@@ -1856,6 +1860,35 @@
   @media (max-width:340px){
     .contents_div .hw26-h2.hw26-intro-h2{ padding-right:0; }
   }
+  /* ▼ [수정] 391~440px 도 390px 이하와 같은 값으로 */
+  @media (min-width:391px) and (max-width:440px){
+    .contents_div .hw26-intro{ --sun-w:88.66px; --sun-x:-26px; }
+    .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:60.66px; }
+  }
+}
+
+/* ================================================================
+   [수정 A] 인트로 해 크기 — 391~440px 구간
+   ----------------------------------------------------------------
+   기존: 391px 부터는 해를 스테이지 안쪽(--sun-x:0)으로 넣고
+         --sun-w:min(21.97cqw, 50cqw - 115.5px) 로 상한을 걸었다.
+         402px(아이폰 17)에서는 뒷값이 이겨 해가 약 69px 까지 줄었다.
+         390px(아이폰 12)의 88.7px 대비 22% 작아 보이던 원인이다.
+   수정: 390px 이하와 같은 어법(왼쪽 살짝 걸치고 24.77cqw)을 440px 까지 연장한다.
+         402px 기준 해 ≒ 91.6px, 제목 첫 글자와는 약 13px 여유가 남는다.
+   ▼ 되돌리려면 이 블록만 통째로 지운다
+   ================================================================ */
+@media (min-width:391px) and (max-width:440px){
+  .contents_div .hw26-intro{
+    --sun-x:-7.26%;
+    --sun-w:24.77cqw;
+  }
+  /* 제목 인셋도 390px 이하와 동일하게 (해와 첫 글자 사이 간격 유지) */
+  .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:16.94%; }
+
+  /* ▼ 온도계까지 아이폰 12 와 똑같이(오른쪽으로 살짝 걸치게) 맞추려면
+     아래 한 줄의 주석을 푼다. 지금은 현재 위치(안쪽)를 그대로 둔다 */
+  /* .contents_div .hw26-intro-thermo{ right:-7.26%; width:17.43%; } */
 }
 
 </style>
