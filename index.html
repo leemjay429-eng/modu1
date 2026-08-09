@@ -1,0 +1,3152 @@
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'GmarketSansBold';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap}
+
+/* ===== reset (scoped) ===== */
+.contents_div .hw26-wrap :where(h1,h2,h3,h4,p,ul,ol,li,figure,figcaption,dl,dt,dd,table){ margin:0; padding:0; }
+.contents_div .hw26-wrap :where(ul,ol){ list-style:none; }
+.contents_div .hw26-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .hw26-wrap :where(button){ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+.contents_div .hw26-wrap :where(a){ color:inherit; text-decoration:none; }
+.contents_div .hw26-wrap, .contents_div .hw26-wrap *,
+.contents_div .hw26-wrap *::before, .contents_div .hw26-wrap *::after{ box-sizing:border-box; }
+
+/* ================================================================
+   TOKENS — BLUE + YELLOW + ORANGE
+   ================================================================ */
+.contents_div .hw26-wrap{
+  --fs-h2:30px;    --fs-foot:32px;
+  --fs-h3:20px;    --fs-kicker:13px;    --fs-num:14px;
+  --fs-body:16px;  --fs-lead:16px;  --fs-nav:16px;
+  --fs-tag:12.5px; --fs-micro:13px;
+  --fs-info:16px;  --fs-cta:16px; --fs-arrow:14px; --fs-cap:12px;
+  --fs-chk:11px;   --fs-lb:13px; --fs-lbw:700;
+
+  --band:78px; --pt:65px; --gut:clamp(16px, 6.25%, 50px); --kick:30px;
+  --cap-h:26px; --cap-pd:13px; --card-pd:32px 30px; --card-pt:32px; --card-px:30px;
+  --r-card:24px; --r-mid:18px; --r-sm:14px; --r-sec:48px;
+
+  /* blue */
+  --c-navy:#12336B;  --c-navy2:#0B2450;
+  --c-blue:#2F7BF0;  --c-blue2:#6BB2FF; --c-bluel:#EAF3FF;
+  /* yellow */
+  --c-yel:#FFD64A;   --c-yel2:#FFB01F;  --c-yell:#FFF6DA;
+  /* orange */
+  --c-org:#FF8A2B;   --c-org2:#FF5E1E;  --c-orgl:#FFEFE0;
+
+  /* ▼ 텍스트 컬러는 3개만 사용
+     타이틀(h2) = --c-blue / 소제목·강조 = --c-navy / 본문·보조 = --c-sub
+     (예외: 차트 수치 --c-org2, 컬러 배경 위 텍스트 #fff) */
+  --c-ink:#16233F;   --c-sub:#5D6C87;
+  --c-line:#E3ECF9;  --c-white:#FFFFFF;
+
+  --sh-1:0 1.4px 4.2px rgba(18,51,107,0.035);
+  --sh-2:0 7px 18.2px rgba(18,51,107,0.07), 0 1.4px 5.6px rgba(18,51,107,0.035);
+  --sh-3:0 11.2px 26.6px rgba(18,51,107,0.105);
+  --sh-btn:0 4.2px 9.2px rgba(47,123,240,0.17);
+  --sh-btn-o:0 4.2px 9.2px rgba(255,94,30,0.17);
+  /* 뱃지 공통 광택 — 단색 위에 아주 옅은 화이트만 얹어 은은하게 */
+  --sheen:linear-gradient(150deg, rgba(255,255,255,.26) 0%, rgba(255,255,255,0) 62%);
+  --glow-a:rgba(120,180,255,.34); --glow-b:rgba(96,156,238,.24);
+
+  /* legacy alias */
+  --c-hot:var(--c-org2); --c-hotd:#E2450A; --c-cool:var(--c-blue);
+  --c-cooll:var(--c-bluel); --c-warm:var(--c-yel2); --c-band:#F3F8FF;
+}
+
+/* ===== base ===== */
+.contents_div .hw26-wrap{
+  max-width:800px; margin:0 auto; overflow-x:hidden;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.6; letter-spacing:-0.02em;
+  color:var(--c-sub); background:#F4F9FF;
+  word-break:keep-all; overflow-wrap:break-word;
+  -webkit-text-size-adjust:100%;
+}
+.contents_div .hw26-wrap :where(h1,h2,h3){
+  font-family:'Paperozi','Pretendard',sans-serif; word-break:keep-all;
+}
+.contents_div .hw26-sec{
+  position:relative; width:100%; padding:var(--pt) var(--gut) var(--band); overflow:hidden;
+}
+/* ▼ 섹션 모서리 라운드
+   둥근 모서리 뒤로 이웃 섹션 색이 비쳐야 자연스럽다.
+   그래서 음수 마진으로 위 섹션에 올라타고, 그만큼 패딩으로 되돌려 놓는다.
+   --round      : 네 모서리 (아래 섹션이 --tuck 으로 받쳐줘야 함)
+   --round-top  : 위 두 모서리
+   --tuck       : 라운드 없이 위 섹션 밑으로 밀어 넣기 */
+.contents_div .hw26-sec--round,
+.contents_div .hw26-sec--round-top,
+.contents_div .hw26-sec--tuck{
+  margin-top:calc(var(--r-sec) * -1);
+}
+/* 위 섹션을 덮는 쪽(round/round-top)은 자기 윗변이 그대로 보이므로 --pt 그대로.
+   밑으로 깔리는 쪽(tuck)만 가려지는 만큼(--r-sec) 더해서 보이는 여백을 맞춤 */
+.contents_div .hw26-sec--tuck{ padding-top:calc(var(--pt) + var(--r-sec)); }
+.contents_div .hw26-sec--round{ border-radius:var(--r-sec); z-index:2; }
+.contents_div .hw26-sec--round-top{ border-radius:var(--r-sec) var(--r-sec) 0 0; z-index:1; }
+.contents_div .hw26-sec--tuck{ z-index:0; }
+/* 01 주황 섹션만 밑단을 줄인다 (차트 카드 아래 여백) — 전 브레이크포인트에서 --band 기준 -30px */
+.contents_div #hw26-sec1{ padding-top:calc(var(--pt) - 7px); padding-bottom:calc(var(--band) - 30px); }
+/* 02 섹션 밑단 여백 +15px */
+.contents_div #hw26-sec2{ padding-bottom:calc(var(--band) + 15px); }
+/* 01 섹션 헤드 간격은 02 섹션 기준을 그대로 사용 (개별 override 없음) */
+
+.contents_div .hw26-brw{ display:inline; }
+/* 모바일 전용 줄바꿈. 기본(=PC)에서는 죽여 두고 600px 이하에서만 살린다. */
+.contents_div .hw26-brm{ display:none; }
+.contents_div .hw26-sr{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* 떠 있는 3D 오브젝트 느낌의 배경 광원 */
+.contents_div .hw26-sec::after{
+  content:''; position:absolute; pointer-events:none; border-radius:50%;
+  filter:blur(2px); opacity:.5;
+}
+/* ▼ 배경 장식은 반드시 그 섹션 배경과 같은 계열로 (--glow-a / --glow-b)
+   파란 배경에 노란 요소 금지 */
+.contents_div .hw26-sec::after{
+  width:260px; height:260px; right:-110px; bottom:-90px;
+  background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.9), var(--glow-b) 55%, transparent 72%);
+}
+
+/* ================================================================
+   3D ICON SLOT
+   기본은 이모지 자리표시자. 3D 아이콘 이미지가 준비되면
+   <span class="hw26-ic">🌡️</span>  →  <img class="hw26-ic" src="img/온도계.webp" alt="">
+   로 태그만 바꾸면 크기·그림자가 그대로 적용됩니다.
+   ================================================================ */
+.contents_div .hw26-ic{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:var(--r-mid); flex:0 0 auto;
+  background:linear-gradient(160deg,#FFFFFF 0%,var(--c-bluel) 100%);
+  border:1px solid var(--c-line);
+  box-shadow:var(--sh-2), inset 0 1px 0 #fff;
+  font-size:28px; line-height:1; overflow:hidden;
+}
+.contents_div img.hw26-ic{ padding:8px; object-fit:contain; }
+.contents_div .hw26-ic--lg{ width:92px; height:92px; border-radius:28px; font-size:46px; }
+.contents_div .hw26-ic--sm{ width:44px; height:44px; border-radius:var(--r-sm); font-size:22px; }
+.contents_div .hw26-ic--warm{ background:linear-gradient(160deg,#FFFDF4 0%,var(--c-yell) 55%,var(--c-orgl) 100%); }
+.contents_div .hw26-ic--org{ background:linear-gradient(160deg,#FFFBF6 0%,var(--c-orgl) 100%); }
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.contents_div .hw26-hero{ padding:0; }
+.contents_div .hw26-hero-visual{ position:relative; line-height:0; background:#FF6E2C; overflow:hidden; }
+
+/* ▼ 히어로 슬라이드 — 레이어 순서
+   z-index 1 : .hw26-hero-track  슬라이드 4장 (가장 아래, 오른쪽→왼쪽으로 한 칸씩 이동)
+   z-index 2 : .hw26-fig--hero   주황 마스크 (아치형 창 3개가 뚫려 있어 그 사이로 슬라이드가 보임)
+   z-index 3 : .hw26-hero-copy   타이틀 (맨 위, 고정)
+   ── 아래 3개 값은 마스크 이미지(1600x1700)에서 실측한 창 좌표라 임의로 바꾸면 어긋납니다 */
+.contents_div .hw26-hero-track{
+  --slot:45.75%;   /* 창 하나 + 기둥 = 한 칸 이동 거리 (732/1600) */
+  --win:39.5%;     /* 창 너비 (632/1600) */
+  --x0:-15.375%;   /* 왼쪽 첫 창의 시작점 (-246/1600) */
+  position:absolute; left:0; top:47.647%; width:100%; height:43.059%;
+  z-index:1; margin:0; padding:0; list-style:none;
+  /* 되튕기는(overshoot) 곡선을 쓰면 도착점을 지나쳤다 돌아오면서
+     창 오른쪽이 잠깐 비어 뒤 배경이 보인다. 지나침 없이 빠르게 감속하는 곡선으로 */
+  animation:hw26-hero-slide 11.2s cubic-bezier(.16,1,.3,1) infinite;
+  will-change:transform;
+}
+.contents_div .hw26-hero-slide{
+  position:absolute; top:0; height:100%; width:var(--win);
+  left:calc(var(--x0) + var(--i) * var(--slot));
+}
+.contents_div .hw26-hero-slide img{
+  width:100%; height:100%; object-fit:cover; object-position:center top;
+}
+/* 한 칸씩 이동 → 멈춤 → 이동. 4칸을 지나면 처음과 같은 배열이라 이음새 없이 반복된다 */
+@keyframes hw26-hero-slide{
+  0%,  20%{ transform:translateX(0); }
+  25%, 45%{ transform:translateX(-45.75%); }
+  50%, 70%{ transform:translateX(-91.5%); }
+  75%, 95%{ transform:translateX(-137.25%); }
+  100%    { transform:translateX(-183%); }
+}
+@media (prefers-reduced-motion:reduce){
+  .contents_div .hw26-hero-track{ animation:none; }
+}
+/* ▼ 히어로 카피 — 이미지에 박혀 있던 문구를 실제 텍스트(h1)로 올림.
+   글자 크기 단위가 cqw(컨테이너 폭 기준)라 이미지와 항상 같은 비율로 커지고 작아진다.
+   위치·크기는 아래 변수 4개만 조절하면 됨 */
+.contents_div .hw26-hero-visual{ container-type:inline-size; }
+.contents_div .hw26-hero-copy{
+  --hero-band:47.6%;   /* 사진 카드가 시작되기 전, 문구가 놓이는 상단 영역 높이 */
+  --hero-fs:9.5cqw;    /* 타이틀 크기 (800px 기준 약 76px) */
+  --hero-kfs:4cqw;     /* 윗줄 문구 크기 (800px 기준 약 32px) */
+  --hero-gap:3.4cqw;   /* 윗줄 문구와 타이틀 사이 간격 */
+  position:absolute; left:0; right:0; top:0; height:var(--hero-band); z-index:3;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:0 var(--gut); text-align:center;
+}
+.contents_div .hw26-hero-kicker{
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:var(--hero-kfs); font-weight:500; line-height:1.4;
+  letter-spacing:-0.02em; color:#fff; margin-bottom:var(--hero-gap);
+}
+.contents_div .hw26-hero-title{
+  font-family:'Paperozi','Pretendard',sans-serif;
+  font-size:var(--hero-fs); font-weight:900; line-height:1.21;
+  letter-spacing:-0.03em; color:#fff;
+  text-shadow:0 0.25cqw 1.2cqw rgba(150,35,0,.14);
+}
+.contents_div .hw26-hero-title em{
+  font-style:italic;
+  /* 노란 글로우가 은은한 상태(1)와 진한 상태(2) 사이를 오간다 */
+  text-shadow:0 0 5px rgba(255,214,74,.30), 0 0 13px rgba(255,214,74,.16), 0 2px 10px rgba(150,35,0,.14);
+  animation:hw26-hero-em-glow 0.7s ease-in-out infinite alternate;
+}
+@keyframes hw26-hero-em-glow{
+  from{ text-shadow:0 0 5px rgba(255,214,74,.30), 0 0 13px rgba(255,214,74,.16), 0 2px 10px rgba(150,35,0,.14); }
+  to  { text-shadow:0 0 12px rgba(255,214,74,.85), 0 0 30px rgba(255,214,74,.55), 0 2px 10px rgba(150,35,0,.14); }
+}
+@media (prefers-reduced-motion:reduce){
+  .contents_div .hw26-hero-title em{ animation:none; }
+}
+/* 컨테이너 쿼리 미지원 브라우저 대비 (vw로 대체, 800px에서 상한) */
+@supports not (container-type:inline-size){
+  .contents_div .hw26-hero-copy{
+    --hero-fs:min(9.5vw,76px); --hero-kfs:min(4vw,32px); --hero-gap:min(3.4vw,27px);
+  }
+  .contents_div .hw26-hero-title{ text-shadow:0 2px 10px rgba(150,35,0,.14); }
+}
+
+/* ===== nav — 주황 바 / 항상 한 줄 ===== */
+.contents_div .hw26-nav{
+  position:relative; z-index:3; padding:15.5px var(--gut);
+  background:linear-gradient(135deg,#FFA33D 0%,#FF7A1F 45%,#FF5E1E 100%);
+  box-shadow:none;
+  /* 위·아래 연한 주황 실선 */
+  border-top:1px solid rgba(255,206,160,.55);
+  border-bottom:1px solid rgba(255,206,160,.55);
+}
+.contents_div .hw26-nav::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 100% at 50% -35%, rgba(255,255,255,.38), rgba(255,255,255,0) 62%);
+}
+/* 섹션 컨텐츠 폭(좌우 --gut)에 맞춰 5등분, 절대 줄바꿈 없음 */
+.contents_div .hw26-nav-list{
+  position:relative; z-index:1;
+  display:flex; flex-wrap:nowrap; gap:0; width:100%;
+}
+.contents_div .hw26-nav-list > li{ position:relative; flex:1 1 0; min-width:min-content; display:flex; }
+/* 항목 사이 세로 구분선 */
+.contents_div .hw26-nav-list > li + li::before{
+  content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
+  width:1px; height:22px; background:rgba(255,255,255,.72);
+}
+.contents_div .hw26-nav-btn{
+  position:relative; display:flex; width:100%;
+  align-items:center; justify-content:center;
+  min-height:44px; padding:0 10px; white-space:nowrap;
+  background:none; border:0; border-radius:0; box-shadow:none;
+  font-size:var(--fs-nav); font-weight:400; line-height:1.35;
+  letter-spacing:-0.03em; color:#fff;
+  transition:color .2s, font-weight .2s, transform .2s;
+}
+.contents_div .hw26-nav-btn::after{
+  content:''; position:absolute; left:50%; bottom:7px;
+  width:0; height:2px; border-radius:2px; background:#fff;
+  transform:translateX(-50%); transition:width .2s;
+}
+/* 현재 섹션 표시 — 주황 바 위 대비를 위해 파랑 대신 흰색 볼드 + 흰 밑줄로 통일 */
+.contents_div .hw26-nav-btn.is-current{
+  color:#fff; font-weight:700; background:none; box-shadow:none; transform:none;
+}
+/* 호버 — 흰 글씨 / 두께 900 / 언더라인 / 2px 위로 */
+.contents_div .hw26-nav-btn:hover,
+.contents_div .hw26-nav-btn:focus-visible{
+  color:#fff;
+  font-weight:900; background:none; box-shadow:none;
+  transform:translateY(-2px);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:5px;
+}
+.contents_div .hw26-nav-btn.is-current::after{ width:18px; }
+.contents_div .hw26-nav-sh{ display:none; }
+
+/* ===== intro ===== */
+/* ▼ --sun-w 해 아이콘 크기 / --sun-x 가로 위치(음수일수록 왼쪽) / --sun-dy 세로 미세조정(양수=아래)
+   ▼ --sun-y 는 자동 계산 — 해 높이의 80%가 카드 위로 나오고 20%만 카드에 가린다
+      (해 이미지 비율 680:693 → 높이 ≒ 폭 × 1.019, 0.8 × 1.019 = 0.815) */
+.contents_div .hw26-intro{
+  --sun-w:160px; --sun-x:-50px; --sun-dy:28px;
+  --sun-y:calc(var(--sun-w) * -0.815 + var(--sun-dy));
+  position:relative; overflow:hidden; text-align:center;
+  padding:75px var(--gut) calc(var(--band) * 1.1 + var(--r-sec) - 14px);
+  background:linear-gradient(180deg,#FFFEF4 0%,#FFF8DC 46%,#FFEFC0 100%);
+}
+/* 카드 스테이지 — 카드와 같은 폭. 해의 좌표 기준이 된다
+   해는 이 위로 솟아 h2 왼쪽 옆에 선다 */
+.contents_div .hw26-intro-stage{
+  position:relative; z-index:1; width:100%; max-width:600px;
+  margin:30px auto 0;
+}
+/* ▼ 선글라스 해 — 카드 왼쪽 상단 모서리에 걸친다 (카드 뒤 레이어)
+   후광·블러 없이 이미지 그대로. 부유 애니메이션만 유지 */
+.contents_div .hw26-intro-sun{
+  position:absolute; z-index:1; pointer-events:none;
+  left:var(--sun-x); top:var(--sun-y);
+  width:var(--sun-w); height:auto;
+  animation:hw26-float 4.6s ease-in-out infinite;
+}
+@keyframes hw26-float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-9px); }
+}
+/* 구름 카드 */
+.contents_div .hw26-intro-card{
+  position:relative; z-index:3; width:100%;
+  margin:0; padding:26px 32px 36px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#F8FBFF 58%,#EEF4FB 100%);
+  border:1px solid #EDF2F8; border-radius:20px;
+  box-shadow:0 15.4px 32.2px rgba(170,110,50,0.16), 0 1.4px 5.6px rgba(170,110,50,0.07);
+}
+/* ▼ 온도계 위치 — right 값이 클수록 오른쪽, bottom 값이 클수록 아래로
+   (그림자·기울기는 이미지에 포함되어 있어 CSS 효과 없음) */
+.contents_div .hw26-intro-thermo{
+  position:absolute; right:-50px; bottom:-60px; z-index:4;
+  width:98px; height:auto; pointer-events:none;
+  /* 부유 애니메이션 없이 고정 (해만 둥둥 움직인다) */
+}
+
+/* ▼ 인포 섹션 h2 — 키커 없이 카드 위, 정중앙.
+   다른 섹션 h2보다 5px 작게 (브레이크포인트마다 자동 추종)
+   ▼ 셀렉터에 .hw26-h2 를 함께 물린 이유: 이 요소는 class="hw26-h2 hw26-intro-h2" 인데
+   .contents_div .hw26-h2 규칙이 아래쪽(313행)에 있어 특정도가 같으면 그쪽이 이긴다.
+   실제로 예전엔 -2px 가 이 충돌 때문에 무시되고 있었다. */
+.contents_div .hw26-h2.hw26-intro-h2{
+  position:relative; top:7px;
+  width:100%; max-width:600px; margin:0 auto;
+  font-size:calc(var(--fs-h2) - 5px);
+}
+
+.contents_div .hw26-lead{
+  position:relative; z-index:1;
+  font-size:var(--fs-lead); line-height:1.45; color:var(--c-sub);
+  max-width:30em; margin-inline:auto;
+  text-wrap:balance; word-break:keep-all;
+}
+.contents_div .hw26-lead + .hw26-lead{ margin-top:14px; }
+.contents_div .hw26-lead strong{ color:var(--c-navy); font-weight:700; }
+
+/* ================================================================
+   SECTION HEAD
+   ================================================================ */
+.contents_div .hw26-head{ position:relative; z-index:1; text-align:center; margin-bottom:38px; }
+.contents_div .hw26-head .hw26-ic{ margin-bottom:20px; }
+
+/* ▼ 키커 — 심플 캡슐 / 보더·텍스트 컬러는 h2와 동일 / 배경·그림자 없음 */
+.contents_div .hw26-kicker{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  height:var(--kick); padding:0 14px; border-radius:999px;
+  border:1px solid currentColor;
+  font-family:'Pretendard',sans-serif; font-weight:600;
+  font-size:var(--fs-kicker); line-height:1; letter-spacing:0;
+  background:transparent;
+  color:var(--c-navy); box-shadow:none;
+  margin-bottom:16px;
+}
+.contents_div .hw26-kicker-no{
+  display:inline-flex; align-items:center; line-height:1;
+  margin-right:0; padding-right:0; border-right:0;
+  font-family:inherit; font-weight:600; letter-spacing:0.01em;
+  color:inherit;
+}
+
+.contents_div .hw26-h2{
+  font-size:var(--fs-h2); font-weight:800; line-height:1.35;
+  letter-spacing:-0.02em; color:var(--c-navy);
+}
+/* h2 끝에 붙는 이모지 */
+.contents_div .hw26-h2-em{
+  display:inline-block; margin-left:8px;
+  font-size:.82em; line-height:1; vertical-align:2px;
+}
+.contents_div .hw26-head .hw26-p{
+  max-width:640px; margin:18px auto 0; color:var(--c-sub);
+}
+
+.contents_div .hw26-p{ font-size:var(--fs-body); line-height:1.65; margin-top:20px; padding-inline:60px; }
+/* 02 섹션 카드 문단만 탭 뱃지에 맞춰 중앙 정렬 */
+.contents_div #hw26-sec2 .hw26-card > .hw26-p{ text-align:center; text-wrap:balance; padding-inline:60px; }
+/* 탭 뱃지 ~ 이미지 카드 사이는 조금 더 넉넉하게 (마진 상쇄되므로 큰 값으로) */
+.contents_div #hw26-sec2 .hw26-keys{ margin-top:38px; }
+.contents_div .hw26-p--sub{ color:var(--c-sub); }
+/* 특정 문단에만 하단 여백 */
+.contents_div .hw26-p--mb40{ margin-bottom:40px; }
+/* 특정 문단만 중앙 정렬 (balance 로 줄 길이도 고르게) */
+.contents_div .hw26-p--center{ text-align:center; text-wrap:balance; }
+.contents_div .hw26-strong{ font-weight:700; color:var(--c-navy); }
+
+/* 본문 요소를 배경 광원 위로 */
+.contents_div .hw26-sec > .hw26-p,
+.contents_div .hw26-sec > .hw26-steps,
+.contents_div .hw26-chart-head{ position:relative; z-index:1; }
+.contents_div .hw26-intro .hw26-ic{ margin-bottom:24px; }
+
+/* ================================================================
+   BANDS
+   ================================================================ */
+/* 밴드: 블루 계열 / 웜 계열 두 갈래로만 운용 */
+.contents_div .hw26-band--soft{
+  background:linear-gradient(180deg,#FDFDFD 0%,#F8F8F8 55%,#F1F1F2 100%);
+  --glow-a:rgba(210,213,218,.42); --glow-b:rgba(196,200,206,.34);
+}
+.contents_div .hw26-band--warm{
+  background:linear-gradient(180deg,#FFFAF3 0%,#FFEEDC 100%);
+  --glow-a:rgba(255,196,120,.36); --glow-b:rgba(255,164,74,.24);
+}
+.contents_div .hw26-band--cool{
+  background:linear-gradient(180deg,#DFECFE 0%,#EFF6FF 10%,#F8FBFF 100%);
+  --glow-a:rgba(120,180,255,.34); --glow-b:rgba(96,156,238,.24);
+}
+.contents_div .hw26-band--cool2{
+  background:linear-gradient(180deg,#F3F8FF 0%,#E6F1FE 100%);
+  --glow-a:rgba(120,180,255,.34); --glow-b:rgba(96,156,238,.24);
+}
+/* ================================================================
+   05 섹션 배경 — 여기만 고치면 05 섹션 전체 색이 바뀐다
+   ----------------------------------------------------------------
+   [방향] 315deg = '오른쪽 아래 → 왼쪽 위'.
+          따라서 0% = 우측 하단, 100% = 좌측 상단이다.
+          헤드(키커·h2·리드문)가 위에 있으므로 위가 어둡고 아래가 밝다.
+          숫자를 바꾸면: 0deg=아래→위, 90deg=왼→오른, 180deg=위→아래, 270deg=오른→왼.
+
+   [스톱 3개의 역할]
+     0%   #6FB2FB  수면. 가장 밝은 끝. 카드 아래·푸터와 만나는 자리다.
+     48%  #4088F3  본체. 섹션에서 면적을 가장 많이 차지하는 색이라 인상을 좌우한다.
+     100% #1E5FD0  심해. 헤드 글자가 앉는 자리. 여기만 흰 글자 대비를 책임진다.
+
+   [고칠 때 지켜야 할 선]
+     · 100% 스톱은 흰 글자 대비 4.5:1 이 하한이다. 지금 5.86:1 이라 여유가 있지만
+       #3A7BE0 보다 밝히면 리드문(흰색 90%)이 배경에 먹힌다.
+     · 스톱은 3개만 둔다. 중간 스톱을 촘촘히 박을수록 브라우저가 잇는 직선이
+       미세하게 꺾여 오히려 얼룩처럼 보인다. 48% 한 점만 직선보다 살짝 위에
+       얹어 가운데가 밋밋하지 않게 했다.
+     · 세 스톱의 색상(hue)은 210~220 안에서 붙여 둔다. 하나만 청록/보라 쪽으로
+       빠지면 중간이 탁해진다.
+
+   [자주 하게 될 조정]
+     · 더 밝고 가볍게 → 세 스톱을 통째로 한 단계씩 올린다 (#7ABAFC / #4E93F5 / #2A6BD8)
+     · 더 무겁게    → 100%만 내린다 (#1A54BC)
+     · 청량하게(물) → 0% 만 청록 쪽으로 (#5FC4F2)
+     · 차분하게     → 0% 를 낮춘다 (#5FA0EE)
+
+   [노이즈 레이어] 위에 깔린 url(...) 은 밴딩(띠 얼룩) 방지용이다.
+     회색 막이라 opacity 를 올릴수록 채도가 죽는다. 0.035 가 지금의 균형점.
+     띠가 보이면 0.05 까지, 색이 탁하면 0.02 까지.
+
+   [푸터와의 관계] 푸터는 짙은 판으로 끊어 세웠으므로 색을 맞출 필요가 없다.
+     05 섹션 아래끝(#6FB2FB)과 푸터 위끝 사이에 단이 생기는 것은 의도된 것이다.
+     단을 줄이려면 .hw26-foot 의 0% 를 올릴 것 (여기 0% 를 내리지 말 것 — 카드 아래가 탁해진다).
+   ================================================================ */
+.contents_div .hw26-band--cool3{
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(315deg,#76b6ff 0%,#5b9cff 48%,#4086ff 100%);
+  background-size:180px 180px, auto;
+  background-repeat:repeat, no-repeat;
+  --glow-a:rgba(255,255,255,.20); --glow-b:rgba(255,255,255,.12);
+  color:#fff;
+}
+/* 우측 하단 광원 제거 — 밝아진 하단과 겹쳐 얼룩처럼 보인다 */
+.contents_div #hw26-sec5::after{ content:none; }
+.contents_div .hw26-band--cool3 .hw26-h2{ color:#fff; }
+.contents_div .hw26-band--cool3 .hw26-kicker{ color:#fff; }
+.contents_div .hw26-band--cool3 .hw26-head .hw26-p,
+.contents_div .hw26-band--cool3 > .hw26-p{ color:rgba(255,255,255,.90); }
+
+/* 진한 주황 섹션 — 배경 위 텍스트는 흰색, 카드 안 텍스트는 기본색 유지 */
+.contents_div .hw26-band--hot{
+  background:linear-gradient(160deg,#FF9330 0%,#F8690F 52%,#f15011 100%);
+  --glow-a:rgba(255,205,150,.26); --glow-b:rgba(255,180,110,.22);
+  color:#fff;
+}
+.contents_div .hw26-band--hot .hw26-h2{ color:#fff; }
+.contents_div .hw26-band--hot .hw26-head .hw26-p,
+.contents_div .hw26-band--hot > .hw26-p{ color:rgba(255,255,255,.88); }
+/* 주황 섹션 — h2가 흰색이므로 키커도 흰색 보더/텍스트 */
+.contents_div .hw26-band--hot .hw26-kicker{ color:#fff; }
+/* 01 섹션은 배경 장식 광원 없음 */
+.contents_div #hw26-sec1::after{ display:none; }
+/* 01 섹션 — 아주 연한 그림자 */
+.contents_div #hw26-sec1{
+  box-shadow:0 10px 24px rgba(200,90,20,.10), 0 2px 6px rgba(200,90,20,.05);
+}
+/* 03 섹션도 배경 장식 광원 없음 (우하단 원형 제거) */
+.contents_div #hw26-sec3::after{ display:none; }
+/* 카드 밖(컬러 배경 위)에 바로 놓이는 텍스트가 생기면 여기에 흰색으로 지정.
+   흰 카드 안쪽 텍스트는 건드리지 않는다(어두운 컬러 유지) */
+
+/* 어두운 섹션이 필요할 때 이 클래스를 섹션에 추가 (글자 자동 흰색) */
+.contents_div .hw26-band--deep{
+  background:linear-gradient(160deg,#0B2450 0%,#12336B 55%,#1B4B96 100%);
+  --glow-a:rgba(107,178,255,.28); --glow-b:rgba(60,120,210,.24);
+  color:#fff;
+}
+.contents_div .hw26-band--deep .hw26-h2{ color:#fff; }
+.contents_div .hw26-band--deep .hw26-head .hw26-p{ color:rgba(255,255,255,.78); }
+.contents_div .hw26-band--warm .hw26-sec::after{ opacity:.35; }
+
+/* ================================================================
+   CARD
+   ================================================================ */
+.contents_div .hw26-card,
+.contents_div .hw26-chart-card{
+  position:relative; z-index:1;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBFDFF 100%);
+  border:1px solid var(--c-line);
+  border-radius:var(--r-card);
+  box-shadow:var(--sh-2);
+}
+.contents_div .hw26-card{ margin-top:20px; padding:var(--card-pd); }
+/* 02 섹션 카드 2개(체감온도 / 중대경보 세 가지)만 하단 여백 +10px, 카드 위아래 간격 +7px */
+.contents_div #hw26-sec2 .hw26-card{
+  margin-top:27px; margin-bottom:7px;
+  padding-bottom:calc(var(--card-pt) + 10px);
+}
+/* 03 섹션 카드 6개(01~06)만 하단 여백 -6px */
+.contents_div #hw26-sec3 .hw26-card{
+  padding-bottom:calc(var(--card-pt) - 6px);
+}
+.contents_div .hw26-chart-card{
+  margin-top:26px; padding:var(--card-pd);
+  padding-block:calc(var(--card-pt) - 6px);   /* 슬림화: 상하만 -6px */
+}
+
+/* 카드 제목 — 기본형 (넘버 뱃지 + 좌측 정렬) */
+.contents_div .hw26-h3-row{ display:flex; align-items:center; gap:12px; }
+.contents_div .hw26-h3{
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-h3); font-weight:800; line-height:1.45; color:var(--c-navy);
+}
+
+/* 02 섹션 카드 2개만 — 카드 윗변에 붙는 탭 뱃지 */
+.contents_div #hw26-sec2 .hw26-h3-row{
+  justify-content:center; gap:0;
+  margin-top:calc(var(--card-pt) * -1); margin-bottom:24px;
+}
+.contents_div #hw26-sec2 .hw26-h3{
+  display:inline-block; max-width:100%; text-align:center;
+  padding:8px 18px 9px;
+  border-radius:0 0 var(--r-mid) var(--r-mid);
+  background:var(--sheen), var(--c-org2); color:#fff;
+  font-family:'Pretendard',sans-serif; font-weight:800;
+  font-size:var(--fs-h3); line-height:1.4; letter-spacing:-0.02em;
+  box-shadow:0 2.5px 5px rgba(255,94,30,.24);
+}
+
+/* 03 섹션 카드 6개 — 탭 뱃지 대신 '틴티드 헤더 밴드'.
+   같은 섹션 위쪽 단계 카드가 이미 '카드 윗변에 붙는 연파랑 판' 어법이라 그것과 운을 맞췄다.
+   02(가운데 탭 알약) / 04·05(줄 안 사각 번호) 와도 형태가 겹치지 않는다. */
+.contents_div #hw26-sec3 .hw26-card .hw26-h3-row{
+  align-items:center; gap:11px;
+  margin:calc(var(--card-pt) * -1) calc(var(--card-px) * -1) 2px;
+  padding:13px var(--card-px) 12px;
+  background:linear-gradient(315deg,#6BB2FF 0%,#4A93F5 45%,#2F7BF0 100%);
+  border-bottom:0;
+  /* 카드가 overflow 를 자르지 않으므로 윗모서리는 스스로 처리 (테두리 1px 안쪽 곡률) */
+  border-radius:calc(var(--r-card) - 1px) calc(var(--r-card) - 1px) 0 0;
+}
+/* 번호 — 원형 뱃지를 벗기고 큰 숫자 그 자체로 */
+.contents_div #hw26-sec3 .hw26-card .hw26-hno{
+  width:auto; height:auto; border-radius:0;
+  background:none; box-shadow:none;
+  color:#fff;
+  font-size:calc(var(--fs-h3) + 5px); letter-spacing:-0.03em;
+}
+/* 번호와 제목 사이 슬래시 구분자 */
+.contents_div #hw26-sec3 .hw26-card .hw26-hno::after{
+  content:'/'; margin-left:11px;
+  font-family:'Pretendard',sans-serif; font-weight:400;
+  font-size:var(--fs-h3); color:rgba(255,255,255,.55);
+}
+.contents_div #hw26-sec3 .hw26-card .hw26-h3{ color:#fff; }
+/* 본문 번호 — 테두리·그림자·그라데이션을 걷고 납작한 연파랑 원으로 */
+.contents_div #hw26-sec3 .hw26-card .hw26-num{
+  border-radius:50%;
+  background:var(--c-bluel);
+  border:0; box-shadow:none;
+  color:var(--c-blue);
+}
+/* 불릿 — 동그란 점 대신 끝이 둥근 체크 아이콘 */
+.contents_div #hw26-sec3 .hw26-card .hw26-dash li::before{
+  width:15px; height:15px; border-radius:0;
+  margin-top:calc(0.82em - 7px);
+  background:var(--c-blue);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+}
+
+/* 05 섹션 카드 — 블루 그라디언트는 섹션 배경으로 올라갔고, 카드는 흰색으로 돌아왔다.
+   배경이 진해진 만큼 카드는 테두리 없이 그림자만으로 띄운다.
+   (블루 위에 밝은 테두리를 두르면 카드가 스티커처럼 오려 붙인 느낌이 난다) */
+.contents_div #hw26-sec5 .hw26-card{
+  background:#fff;
+  border:0;
+  box-shadow:0 14px 32px rgba(9,38,84,.22), 0 3px 10px rgba(9,38,84,.12);
+  color:var(--c-ink);
+}
+/* 카드 안 본문 — 페이지 기본 본문색 체계 */
+.contents_div #hw26-sec5 .hw26-card .hw26-p,
+.contents_div #hw26-sec5 .hw26-card .hw26-dash-txt{ color:var(--c-sub); }
+.contents_div #hw26-sec5 .hw26-card .hw26-strong{ color:var(--c-navy); }
+/* 남색 배경 위(섹션 머리말)의 강조는 네이비면 묻히므로 흰색으로 */
+.contents_div .hw26-band--cool3 .hw26-head .hw26-strong{ color:#fff; }
+/* 소제목 앞 구분바 제거 — 소제목 자체를 캡슐로 세운다 (아래 hw26-sub-name 참고) */
+.contents_div #hw26-sec5 .hw26-card .hw26-sub-name::before{ content:none; }
+/* 카드 안의 CTA — 밑줄 텍스트 + 화살표. 흰 배경이므로 블루로 */
+.contents_div #hw26-sec5 .hw26-card .hw26-cta{
+  margin:14px auto 0; min-height:0; padding:4px 2px;
+  gap:5px; border:0; border-radius:0;
+  background:none; box-shadow:none;
+  /* ▼ 브레이크포인트를 따르지 않고 15px 고정 */
+  color:var(--c-blue); font-size:15px; font-weight:700;
+  transition:color .2s, opacity .2s;
+}
+.contents_div #hw26-sec5 .hw26-card .hw26-cta-tx{
+  border-bottom:1px solid currentColor; padding-bottom:2px;
+}
+/* 문구 안 경로 구분자(안전지도 > 대피시설) — '>' 글자 대신 화살촉 아이콘.
+   크기·여백을 em 으로 잡아 글자 크기가 바뀌어도 비율이 유지되고,
+   글자보다 살짝 옅게 깔아 구분자가 문구를 이기지 않게 한다 */
+.contents_div .hw26-cta-sep{
+  display:inline-block; width:.58em; height:.58em;
+  margin:0 .2em; vertical-align:.02em;
+  opacity:.72;
+}
+.contents_div .hw26-cta-sep svg{ display:block; width:100%; height:100%; }
+.contents_div #hw26-sec5 .hw26-card .hw26-cta:hover,
+.contents_div #hw26-sec5 .hw26-card .hw26-cta:focus-visible{
+  transform:none; background:none; box-shadow:none; color:var(--c-navy);
+}
+.contents_div #hw26-sec5 .hw26-card .hw26-cta-arw{ width:13px; height:13px; opacity:1; }
+/* ================================================================
+   05 섹션 — 카드 7장을 '한 장의 카드 + 점선 구획'으로 통합
+   ----------------------------------------------------------------
+   둥근 사각형이 7번 반복되면 각 항목이 서로 경쟁해 시선이 흩어진다.
+   테두리를 하나로 합치고, 항목 사이는 점선 한 줄로만 나눈다.
+   분량이 짧은 항목(1·2 / 4·5)은 2열로 묶어 세로 길이를 줄이되,
+   열 사이도 같은 점선으로 나눠 '가로선 + 세로선' 한 가지 어법으로 통일한다.
+   ================================================================ */
+.contents_div #hw26-sec5 .hw26-onecard{
+  /* 좌우만 --card-px(30px) + 5px, 상하는 --card-pt 그대로.
+     토큰에 더하는 방식이라 모바일(18px→23px)에서도 같은 비율로 따라온다 */
+  padding:var(--card-pt) calc(var(--card-px) + 5px);
+  margin-top:26px;
+}
+/* 구획 하나 = 기존 카드 한 장
+   ▼ 위아래 값이 다른 이유: 글자는 자기 행간(반각)을 위아래로 달고 다닌다.
+   구획 위쪽은 점선 바로 밑에 제목이 오는데 제목 행간은 1.35 로 좁고(반각 3.7px),
+   아래쪽은 본문 행간 1.6 이라 마지막 줄 밑에 4.8px + 디센더가 더 깔린다.
+   패딩을 26/26 으로 같게 주면 아래가 4px쯤 넓어 보이므로 그만큼 미리 뺀다.
+   ▼ 여기에 다시 +8px — 바로가기가 없는 구획은 밑단이 글줄로 뚝 끊겨 답답해 보인다.
+   바로가기가 있는 구획은 아래 .hw26-cta 에서 음수 마진으로 그 8px 을 되돌린다
+   (:has() 없이도 '바로가기 없는 구획'만 골라내는 방법). */
+.contents_div #hw26-sec5 .hw26-blk{ padding-top:26px; padding-bottom:30px; }
+/* ▼ 구획선 — border:dashed 는 브라우저가 대시 길이를 정해서 1px 에서는
+   거의 실선으로 뭉개진다. 대시 6.5px / 간격 4px 을 직접 지정한 그라디언트 선을 쓴다.
+   (원래 대시 8 / 간격 7 → 7/5 → 6.5/4 로 두 단 조인 값이다.
+    ▼ 조절은 두 곳의 「0 6.5px … 6.5px 10.5px」
+      = 「대시 … 대시+간격」 만 고치면 된다)
+   이게 이 카드의 '최상위 구분'이고, 아래 소분류 점선(농수축산)과 굵기·농도·간격이
+   확실히 달라야 위계가 읽힌다. */
+.contents_div #hw26-sec5 .hw26-blk + .hw26-blk{
+  background-image:repeating-linear-gradient(to right,
+    rgba(47,123,240,.42) 0 6.5px, rgba(47,123,240,0) 6.5px 10.5px);
+  background-size:100% 1.5px; background-position:left top; background-repeat:no-repeat;
+}
+/* ▼ 2열 구획을 전부 1열로 풀었다. 칸을 나누던 세로 점선은 구획 사이의
+   가로 점선과 같은 선으로 바꾼다 — 이제 카드 안 모든 항목이 같은 폭,
+   같은 구분선을 쓰며 위에서 아래로 한 줄기로 읽힌다.
+   상하 패딩을 구획이 아니라 '열'이 갖는 구조는 그대로 둔다.
+   열마다 앞뒤로 같은 여백을 주려면 이쪽이 간단하다. */
+.contents_div #hw26-sec5 .hw26-blk--split{
+  display:grid; grid-template-columns:minmax(0,1fr); gap:0;
+  padding-block:0;
+}
+.contents_div #hw26-sec5 .hw26-blk--split > .hw26-blk-col{
+  display:flex; flex-direction:column;
+  padding-top:26px; padding-bottom:30px;
+}
+.contents_div #hw26-sec5 .hw26-blk--split > .hw26-blk-col + .hw26-blk-col{
+  background-image:repeating-linear-gradient(to right,
+    rgba(47,123,240,.42) 0 6.5px, rgba(47,123,240,0) 6.5px 10.5px);
+  background-size:100% 1.5px; background-position:left top; background-repeat:no-repeat;
+}
+/* 첫·마지막 구획은 카드 자체 패딩이 여백을 대신하므로 안쪽 패딩을 턴다.
+   1열이 되었으므로 첫 열의 윗면·끝 열의 밑면만 턴다 */
+.contents_div #hw26-sec5 .hw26-blk:first-child,
+.contents_div #hw26-sec5 .hw26-blk:first-child > .hw26-blk-col:first-child{ padding-top:0; }
+.contents_div #hw26-sec5 .hw26-blk:last-child,
+.contents_div #hw26-sec5 .hw26-blk:last-child > .hw26-blk-col:last-child{ padding-bottom:0; }
+/* 열 안의 바로가기 — 1열이 되면서 폭이 넓어졌으므로 가운데 정렬(margin-inline:auto)을
+   풀고 오른쪽 끝, 본문 오른쪽 경계선에 맞춰 세운다.
+   margin-bottom:-8px 는 구획 밑단에 얹어둔 +8px 을 되돌리는 값이다 —
+   바로가기 자체가 밑단을 채워주므로 이 구획엔 그 여백이 필요 없다 */
+.contents_div #hw26-sec5 .hw26-blk-col .hw26-cta{
+  margin-top:auto; margin-inline:0; margin-bottom:-8px; align-self:flex-end;
+  padding:16px 2px 0;
+}
+/* 제목 — 앞머리에 '번호 칩'을 세운다.
+   7개 항목이 순서를 갖는 대응책 목록이라 번호가 내용과 맞고,
+   같은 카드 6번 항목의 체크 불릿과 표식이 겹치지 않아 어휘가 분리된다.
+   칩은 옅은 블루로 채우고 숫자를 브랜드 블루로 뽑는다.
+   번호는 CSS 카운터로 매긴다 — 마크업에 숫자를 박지 않아야 항목이 늘거나
+   순서가 바뀌어도 자동으로 다시 매겨진다. */
+.contents_div #hw26-sec5 .hw26-card{ counter-reset:hw26-s5; }
+.contents_div #hw26-sec5 .hw26-card .hw26-h3{
+  /* 제목이 두 줄로 접혀도 칩은 첫 줄 옆에 남아야 한다 (center 면 두 줄 가운데로 내려간다) */
+  display:flex; align-items:flex-start; gap:11px;
+  color:var(--c-navy);
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-h3); font-weight:800;
+  line-height:1.35; letter-spacing:-0.015em;
+  word-break:keep-all;
+  counter-increment:hw26-s5;
+}
+.contents_div #hw26-sec5 .hw26-card .hw26-h3::before{
+  content:counter(hw26-s5); flex:0 0 auto;
+  /* --chip 은 '테두리를 포함한 바깥 크기'다. box-sizing 을 여기서 직접 못박아
+     상위 규칙이 닿든 안 닿든 칩의 실제 크기가 흔들리지 않게 한다. */
+  --chip:29px;
+  box-sizing:border-box;
+  width:var(--chip); height:var(--chip); border-radius:9px;
+  display:grid; place-items:center;
+  background:#E8F1FE;
+  color:#2F7BF0;
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:15px; font-weight:800; line-height:1;
+  letter-spacing:0; /* 제목의 -0.015em 이 한 글자 숫자를 왼쪽으로 밀지 않도록 해제 */
+  /* 숫자 보정 — GmarketSans 는 어센트가 디센트보다 커서, 행간을 1 로 줘도
+     글리프가 칩 중앙보다 1.4px 쯤 위에 앉는다. 그만큼 아래로 민다. */
+  padding-top:0.19em;
+  border:1px solid #C9DEFB;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  /* 세로 정렬 — 라인박스 중앙이 아니라 제목 글자의 잉크 중심에 맞춘다.
+     이 폰트는 라인박스 안에서 글자가 위쪽에 앉아(디센트 0.348em) 두 중심이 4.7px 어긋난다.
+     em 은 칩 자신의 글자 크기를 따르므로, 브레이크포인트마다 칩·제목이 같은 비율로
+     작아지면 이 값도 함께 줄어 정렬이 유지된다. */
+  margin-top:-0.4em;
+}
+/* 본문은 카드 패딩선에 맞춘다 (.hw26-p 의 60px 인셋 해제)
+   ▼ 다만 오른쪽만 10px 을 남긴다. 두 줄로 넘어가는 문단이 오른쪽 끝에 딱 붙어
+   줄바꿈 지점이 답답해 보이던 걸 푼다 (왼쪽은 제목·체크 불릿과 세로선을 맞춰야 하므로 0 유지) */
+.contents_div #hw26-sec5 .hw26-card .hw26-p{ padding-left:0; padding-right:10px; }
+/* 제목 다음 요소의 간격을 한 값으로 통일 (요소마다 다른 margin-top 무력화)
+   ▼ 숫자를 구획 패딩(26px)과 똑같이 주면 안 된다. 제목 밑에는 제목 행간의 반각이,
+   본문 위에는 본문 행간의 반각이 각각 깔려서 실제로는 26px + 10px 로 벌어진다.
+   눈에 보이는 여백을 위(점선→제목)와 같게 맞추려면 그 10px 을 미리 빼야 한다.
+   → 본문류는 18px, 테두리가 있어 행간이 없는 판(.hw26-box/.hw26-sub)은 23px. */
+.contents_div #hw26-sec5 .hw26-card .hw26-h3 + *{ margin-top:18px; }
+.contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-box,
+.contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-sub{ margin-top:23px; }
+/* 안쪽 정보 블록 — 흰 카드 위에서 흰 블록은 보이지 않으므로 옅은 블루 틴트로.
+   그림자 대신 얇은 테두리만 써서 카드 안에 '파여 있는' 면으로 읽히게 한다
+   (그림자를 주면 카드 위에 또 하나의 카드가 떠 있는 모양이 된다). */
+.contents_div #hw26-sec5 .hw26-box{
+  padding:16px 17px; border-radius:var(--r-sm);
+  background:#F2F7FE;
+  border:1px solid #DEEAFB;
+  box-shadow:none;
+}
+/* 흰 블록 안쪽 텍스트 — 페이지 기본 본문색 체계로 복귀 */
+.contents_div #hw26-sec5 .hw26-card .hw26-box .hw26-box-txt{ color:var(--c-ink); }
+/* 구획 밑단 패딩(22px)은 글줄 밑에 깔리는 행간을 미리 뺀 값이다.
+   구획이 판으로 끝나면 그 행간이 없으므로 4px 을 돌려준다 */
+.contents_div #hw26-sec5 .hw26-blk > .hw26-box:last-child{ margin-bottom:4px; }
+/* 분야명 — 흰 카드 위이므로 블루 채움 + 흰 글씨. 같은 카드의 '지원대상' 라벨(.hw26-lb)과 같은 어법.
+   width:fit-content 로 글자 폭만큼만 감싸고, margin-inline:auto 로 칸 가운데에 세운다.
+   (inline-flex 였다면 auto 마진이 0 으로 계산돼 중앙정렬이 먹지 않는다)
+   ▼ 다만 '농업'(2자)과 '염전 노동자 보호'(8자)의 폭 차이가 2.5배라 캡슐이 제각각으로 보인다.
+   가장 긴 라벨이 들어가고도 남는 120px 을 min-width 로 깔아 네 개를 같은 폭으로 세운다.
+   좌우 패딩보다 위아래 패딩을 상대적으로 크게 잡아
+   가로로 늘어진 알약이 아니라 도톰한 캡슐로 보이게 한다.
+   (nowrap 으로 두 줄 접힘을 막는다) */
+.contents_div #hw26-sec5 .hw26-card .hw26-sub-name{
+  display:flex; align-items:center; justify-content:center;
+  width:fit-content; min-width:120px; white-space:nowrap;
+  margin-inline:auto; margin-top:3px;
+  padding:6px 8px; border-radius:999px;
+  background:var(--sheen), var(--c-blue); color:#fff;
+  box-shadow:0 2px 5px rgba(47,123,240,.30);
+  /* ▼ 캡슐 글자만 프리텐다드로. 상위 .hw26-sub-name 이 물려주던 GmarketSansBold 는
+     굵기 하나뿐인 서체라 폰트만 바꾸면 400 으로 뚝 떨어진다. 700 을 같이 잡아
+     지금 보이는 굵기를 그대로 유지한다 */
+  font-family:'Pretendard',sans-serif; font-weight:700;
+  font-size:calc(var(--fs-info) - 2px); line-height:1.5;
+}
+.contents_div #hw26-sec5 .hw26-card .hw26-sub-txt{ color:var(--c-sub); }
+/* 앞의 세 캡슐(농업·축산·수산)만 4px 더 좁게 — 라벨이 두 글자라 같은 폭에서도
+   여백이 더 남아 보인다. '염전 노동자 보호'는 글자 폭 때문에 120px 이 하한이라 그대로 둔다.
+   ▼ 글자만 0.5px 크게. line-height 에서 그 0.5px 이 만드는 행간 증가(0.75px)를 되빼
+   캡슐 높이는 나머지 하나와 똑같이 유지한다 (배지 크기는 그대로, 글자만 커진다) */
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+3) .hw26-sub-name{
+  min-width:116px;
+  font-size:calc(var(--fs-info) - 1.5px);
+  line-height:calc(1.5em - 0.75px);
+}
+.contents_div #hw26-sec5 .hw26-card .hw26-box .hw26-strong,
+.contents_div #hw26-sec5 .hw26-card .hw26-sub .hw26-strong{ color:var(--c-navy); }
+/* 분야 4개 — 흰 블록 대신 가운데 십자 점선으로 나눈 2행 2열.
+   gap 을 0 으로 두고 각 칸의 안쪽 padding 으로 선과의 거리를 벌린다.
+   gap 이 있으면 왼칸의 오른선과 오른칸의 왼선이 따로 그어져 이중선이 된다.
+   십자는 '왼쪽 칸의 오른선 + 윗줄 칸의 아랫선' 한 벌로만 그린다. */
+/* ▼ 네 칸을 다시 한 겹의 판(카드)으로 묶는다. 같은 카드 3번 항목의 정보 블록
+   (.hw26-box)과 같은 어법 — 옅은 블루 틴트 + 얇은 테두리, 그림자는 주지 않는다.
+   판 안쪽 여백은 판이 갖고, 칸은 십자 점선과의 거리만 담당한다
+   (그래서 아래 바깥 네 변의 padding 은 계속 0 으로 턴다). */
+.contents_div #hw26-sec5 .hw26-sub{
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0;
+  padding:16px 17px 20px; border-radius:var(--r-sm);
+  background:#F2F7FE;
+  border:1px solid #DEEAFB;
+}
+.contents_div #hw26-sec5 .hw26-sub li{ padding:16px 18px; }
+.contents_div #hw26-sec5 .hw26-sub li + li{ margin-top:0; }
+/* ▼ 이 십자는 '7번 구획 안의 소분류'다. 구획을 나누는 최상위 점선과 같은 굵기·농도면
+   농업/축산/수산이 다른 여섯 항목과 같은 층으로 읽힌다. 한 단계 아래로 낮춘다:
+   대시 → 도트, 1.5px → 1px, 농도 .62 → .26 */
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(odd){
+  border-right:1px dotted rgba(47,123,240,.32);
+}
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+2){
+  border-bottom:1px dotted rgba(47,123,240,.32);
+}
+/* 바깥 네 변은 판(.hw26-sub) 자체의 안쪽 여백과 겹치므로 padding 을 털어 이중 여백을 막는다 */
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(odd){ padding-left:0; }
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(even){ padding-right:0; }
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+2){ padding-top:0; }
+.contents_div #hw26-sec5 .hw26-sub li:nth-child(n+3){ padding-bottom:0; }
+/* 불릿 — 03 섹션과 같은 체크 아이콘 (흰 배경이므로 브랜드 블루로) */
+.contents_div #hw26-sec5 .hw26-card .hw26-dash li::before{
+  width:15px; height:15px; border-radius:0;
+  margin-top:calc(0.82em - 7px);
+  background:var(--c-blue);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+}
+/* 캡슐이 앞 구분바를 대신하므로 본문의 22px 인셋을 해제한다.
+   캡슐 아래 여백은 7px + 10px.
+   캡슐이 칸 가운데 서 있으므로 본문도 가운데로 맞춰 축을 하나로 만들고,
+   좌우로 14px 씩 물려 글줄이 칸 벽(점선·판 테두리)에 닿지 않게 한다 */
+.contents_div #hw26-sec5 .hw26-sub-txt{
+  margin-top:17px; padding-left:0;
+  padding-inline:14px; text-align:center;
+}
+/* 섹션 리드 이미지 */
+.contents_div .hw26-fig--lead{ margin-top:2px; }
+
+.contents_div .hw26-hno{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:30px; height:30px; border-radius:11px;
+  background:var(--sheen), var(--c-blue);
+  color:#fff; box-shadow:0 4.2px 8.4px rgba(47,123,240,0.3);
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-num); line-height:1;
+}
+.contents_div .hw26-hno--cool{
+  background:var(--sheen), var(--c-org);
+  box-shadow:0 4.2px 8.4px rgba(255,94,30,0.3);
+}
+.contents_div .hw26-chk{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:22px; height:22px; border-radius:50%;
+  background:var(--sheen), var(--c-blue);
+  color:#fff; font-size:var(--fs-chk); font-weight:700; line-height:1;
+  box-shadow:0 2.8px 5.6px rgba(47,123,240,0.28);
+}
+.contents_div .hw26-chk--cool{ background:var(--sheen), var(--c-org); box-shadow:0 2.8px 5.6px rgba(255,138,43,0.3); }
+
+/* ===== figure ===== */
+.contents_div .hw26-fig{
+  position:relative; width:100%; overflow:hidden;
+  background:#E9F1FB; border-radius:var(--r-card);
+  border:1px solid var(--c-line); box-shadow:var(--sh-2);
+}
+.contents_div .hw26-fig::before{ content:''; display:block; padding-top:62.5%; }
+.contents_div .hw26-fig img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+}
+.contents_div .hw26-fig--hero{ border:0; border-radius:0; box-shadow:none; background:none; z-index:2; }
+.contents_div .hw26-fig--hero::before{ display:none; }
+.contents_div .hw26-fig--hero img{ position:static; height:auto; }
+.contents_div .hw26-cap{ font-size:var(--fs-cap); line-height:1.35; color:var(--c-sub); margin-top:8px; }
+
+/* ================================================================
+   CHART
+   ================================================================ */
+/* 차트 카드 헤더 — 제목 + 기간 뱃지 */
+.contents_div .hw26-chart-head{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:10px 14px; margin-bottom:16px; padding-bottom:14px;
+  border-bottom:1px solid var(--c-line);
+}
+.contents_div .hw26-chart-title{
+  display:flex; align-items:center;
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-h3); line-height:1.45; color:var(--c-navy);
+}
+/* 제목 앞 위치 아이콘 */
+.contents_div .hw26-chart-ic{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  width:22px; height:22px; margin-right:7px; color:#FF5E1E;
+}
+.contents_div .hw26-chart-ic svg{ width:100%; height:100%; display:block; fill:currentColor; }
+.contents_div .hw26-chart-date{
+  display:inline-flex; align-items:center; height:var(--cap-h);
+  padding:0 var(--cap-pd); border-radius:999px;
+  background:#F2F5FA; color:var(--c-sub);
+  font-size:var(--fs-cap); font-weight:700; letter-spacing:0; white-space:nowrap;
+}
+.contents_div .hw26-chart li + li{ margin-top:10px; }
+.contents_div .hw26-chart-row{
+  display:flex; align-items:center; gap:12px; font-size:var(--fs-info); line-height:1.5;
+}
+.contents_div .hw26-chart-name{ flex:0 0 auto; width:64px; font-weight:700; color:var(--c-navy); }
+.contents_div .hw26-chart-val{
+  flex:0 0 auto; margin-left:auto;
+  font-family:'GmarketSansBold','Pretendard',sans-serif; color:var(--c-org2);
+}
+.contents_div .hw26-chart-track{
+  flex:1 1 auto; height:18px; border-radius:999px;
+  background:#F1F3F7; overflow:hidden;
+}
+.contents_div .hw26-chart-bar{
+  display:block; height:100%; border-radius:999px;
+  background:var(--sheen), #FF5E1E;
+  transition:width 1.15s cubic-bezier(.22,.86,.28,1);
+  will-change:width;
+}
+.contents_div .hw26-chart-val{ font-variant-numeric:tabular-nums; }
+/* 순위가 낮아질수록 같은 주황 계열에서 톤만 옅어지게 */
+.contents_div .hw26-chart li:nth-child(1) .hw26-chart-bar{ background:var(--sheen), #FF5E1E; }
+.contents_div .hw26-chart li:nth-child(2) .hw26-chart-bar{ background:var(--sheen), #FF8A2B; }
+.contents_div .hw26-chart li:nth-child(3) .hw26-chart-bar{ background:var(--sheen), #FFAC5C; }
+.contents_div .hw26-chart li:nth-child(4) .hw26-chart-bar{ background:var(--sheen), #FFC994;
+}
+
+/* ================================================================
+   STEP
+   ================================================================ */
+/* 단계 리스트 — 2열 카드 / 상단 컬러 레일 + 컬러 라벨 + 설명 */
+.contents_div .hw26-steps{
+  margin-top:26px; display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+}
+/* 03 섹션은 3단계라 한 줄에 나란히 (2열이면 3번째가 홀로 남음) */
+.contents_div #hw26-sec3 .hw26-steps{ grid-template-columns:repeat(3,1fr); }
+/* 03 단계 카드 — 상단 풀블리드 이미지 + 전체 중앙정렬 */
+/* 카드는 --fig-cut 만큼 짧아지고, 캐릭터 머리만 카드 위로 삐져나온다.
+   → 클리핑 담당을 카드에서 .hw26-step-figbg 로 옮겼다.
+     figbg : 연파랑 판 + 블러 원을 가둔다 (overflow:hidden, 상단 라운드 직접 처리)
+     card  : overflow:visible 이어야 머리가 밖으로 나올 수 있다 */
+.contents_div #hw26-sec3 .hw26-step{
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; padding-top:0; overflow:visible;
+}
+.contents_div #hw26-sec3 .hw26-step-fig{
+  --fig-cut:20px;
+  position:relative; display:block; width:calc(100% + 48px);
+  margin:calc(var(--fig-cut) * -1) -24px 16px;
+  aspect-ratio:5/4;
+}
+/* 연파랑 판 — 카드 상단선에서 시작 (이미지보다 --fig-cut 만큼 짧다) */
+.contents_div #hw26-sec3 .hw26-step-figbg{
+  position:absolute; z-index:0; left:0; right:0; top:var(--fig-cut); bottom:0;
+  background:var(--c-bluel); overflow:hidden;
+  border-radius:calc(var(--r-mid) - 1px) calc(var(--r-mid) - 1px) 0 0;
+}
+/* 캐릭터 뒤 블러 원 — 단계별 컬러 (초기 노랑 → 위험 주황 → 응급 붉은 주황) */
+.contents_div #hw26-sec3 .hw26-step--l1{ --glow:255,198,66; }
+.contents_div #hw26-sec3 .hw26-step--l2{ --glow:255,142,38; }
+.contents_div #hw26-sec3 .hw26-step--l3{ --glow:236,56,34; }
+.contents_div #hw26-sec3 .hw26-step-figbg::before{
+  content:''; position:absolute;
+  left:50%; top:calc(52% + 30px); transform:translate(-50%,-50%);
+  width:88%; aspect-ratio:1/1; border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(var(--glow,255,198,66),.80) 0%,
+    rgba(var(--glow,255,198,66),.62) 52%,
+    rgba(var(--glow,255,198,66),0) 74%);
+  filter:blur(24px);
+}
+.contents_div #hw26-sec3 .hw26-step-fig img{
+  position:relative; z-index:1;
+  display:block; width:100%; height:100%;
+  object-fit:cover; object-position:50% 42%;
+}
+/* 번호 + 라벨을 한 줄로 묶어 가운데 정렬 */
+.contents_div #hw26-sec3 .hw26-step-head{
+  display:flex; align-items:center; justify-content:center;
+  gap:9px; margin-bottom:8px;
+}
+.contents_div #hw26-sec3 .hw26-step-deg{ min-width:0; padding:0; }
+.contents_div #hw26-sec3 .hw26-step-lb{ margin-bottom:0; }
+/* 라벨 줄과 설명 사이 연한 구분선.
+   카드가 align-items:center 라 자식이 콘텐츠 폭이 된다 → stretch 로 폭을 채워야 선이 제대로 그어진다. */
+.contents_div #hw26-sec3 .hw26-step-txt{
+  align-self:stretch; text-align:center;
+  border-top:1px solid var(--c-line); padding-top:18px;
+}
+.contents_div .hw26-steps > li{ display:flex; }
+.contents_div .hw26-steps li + li{ margin-top:0; }
+.contents_div .hw26-step{
+  flex:1 1 auto; display:grid; grid-template-columns:auto 1fr;
+  column-gap:18px; align-items:center; align-content:center;
+  padding:22px 24px; border-radius:var(--r-mid);
+  background:linear-gradient(180deg,#FFFFFF 0%,#FBFDFF 100%);
+  border:1px solid var(--c-line); box-shadow:var(--sh-1);
+}
+/* 왼쪽 지표 — 기준 온도(02) / 단계 순서(03) */
+.contents_div .hw26-step-deg{
+  grid-row:1 / span 2; align-self:center;
+  display:flex; align-items:center; justify-content:center;
+  min-width:62px; padding:0 4px;
+  font-family:'Pretendard',sans-serif; font-weight:800;
+  font-size:30px; line-height:1; letter-spacing:-0.04em; color:var(--lv-t);
+}
+/* 02 폭염특보 기준 온도만 — 크기 +2px, 굵기 900 */
+.contents_div #hw26-sec2 .hw26-step-deg{ font-size:32px; font-weight:900; }
+.contents_div .hw26-step-lb{
+  display:block; height:auto; margin:0 0 5px; padding:0; border-radius:0;
+  background:none; box-shadow:none; white-space:nowrap;
+  font-size:var(--fs-info); font-weight:800; line-height:1.3;
+  letter-spacing:-0.02em; color:var(--c-navy);
+}
+/* 단계별 컬러 — 레일(--lv) / 라벨 텍스트(--lv-t). 카드에 지정해야 상단 레일까지 상속됨 */
+.contents_div .hw26-step--l1{ --lv:#FFB020; --lv-t:#FFAE1F; border-color:#D3E3FB; }
+.contents_div .hw26-step--l2{ --lv:#FF8A2B; --lv-t:#FF7A14; border-color:#D3E3FB; }
+.contents_div .hw26-step--l3{ --lv:#FF5E1E; --lv-t:#FF4A10; border-color:#D3E3FB; }
+/* 열대야 = 밤 → 카드 자체를 다크모드로 */
+.contents_div .hw26-step--l4{
+  --lv:#FFE884; --lv-t:#FFE884;
+  background:
+    radial-gradient(115% 85% at 84% 6%, rgba(255,232,132,.22) 0%, rgba(255,232,132,0) 55%),
+    linear-gradient(160deg,#4165AC 0%,#2C4A86 48%,#223C6E 100%);
+  border:1px solid rgba(255,255,255,.55);
+}
+.contents_div .hw26-step--l4 .hw26-step-lb{ color:#fff; }
+/* ▼ 02 두 카드 — 글로우는 기본값 고정, 대신 보더가 형광 블루로 켜졌다 꺼진다.
+   steps(1,end) 라서 중간 색 없이 딱딱 바뀐다 (--bd-on 값만 바꾸면 색 조절) */
+.contents_div #hw26-sec2 .hw26-step--l3{ --bd-on:#2FE0FF; }
+/* 열대야는 카드가 남색이라 같은 색을 쓰면 가라앉는다.
+   어두운 바닥 위에서 빛나 보이도록 흰빛에 가까운 연한 시안으로 */
+.contents_div #hw26-sec2 .hw26-step--l4{ --bd-on:#B4F2FF; }
+
+/* 폭염중대경보 — 1px 보더 + 카드 밖으로 번지는 블루 아웃글로우 */
+.contents_div #hw26-sec2 .hw26-step--l3{
+  box-shadow:0 0 10px rgba(47,123,240,.22), 0 0 22px rgba(47,123,240,.11), var(--sh-1);
+  animation:hw26-bd-l3 1.5s steps(1,end) infinite;
+}
+@keyframes hw26-bd-l3{
+  0%  { border-color:#D3E3FB; }        /* 꺼짐 — 원래 연한 블루 */
+  50% { border-color:var(--bd-on); }   /* 켜짐 — 형광 블루 */
+}
+/* 열대야주의보 — 흰 1px 보더 + 카드 뒤로 번지는 블루 글로우 */
+.contents_div #hw26-sec2 .hw26-step--l4{
+  box-shadow:0 0 10px rgba(77,163,255,.52), 0 0 22px rgba(77,163,255,.30), var(--sh-1);
+  animation:hw26-bd-l4 1.5s steps(1,end) infinite;
+}
+@keyframes hw26-bd-l4{
+  0%  { border-color:rgba(255,255,255,.55); }  /* 꺼짐 — 원래 반투명 흰색 */
+  50% { border-color:var(--bd-on); }           /* 켜짐 — 형광 블루 */
+}
+@media (prefers-reduced-motion:reduce){
+  .contents_div #hw26-sec2 .hw26-step--l3,
+  .contents_div #hw26-sec2 .hw26-step--l4{ animation:none; }
+}
+/* 라벨 우측 이모지 */
+.contents_div .hw26-step-lb-em{
+  display:inline-block; margin-left:6px;
+  font-size:.92em; line-height:1; vertical-align:-1px;
+}
+.contents_div .hw26-step--l4 .hw26-step-txt{ color:rgba(255,255,255,.74); }
+.contents_div .hw26-step-txt{
+  display:block; padding:0; font-size:calc(var(--fs-info) - 1px);
+  line-height:1.55; color:var(--c-sub);
+}
+
+/* ================================================================
+   LIST
+   ================================================================ */
+.contents_div .hw26-ol{ margin-top:23px; }
+.contents_div .hw26-ol li{
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:var(--fs-body); line-height:1.65;
+}
+/* ▼ 행간 -2px — 카드 세로가 불필요하게 길어지는 걸 막는다 */
+.contents_div .hw26-ol li + li{ margin-top:8px; }
+.contents_div .hw26-num{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  /* ▼ 22 → 20px 로 축소 */
+  width:20px; height:20px; border-radius:7px;
+  /* 첫 줄 높이(1.65em)의 정중앙에 오도록 보정 (원 크기에 맞춰 같이 조정) */
+  margin-top:calc((1.65em - 20px) / 2);
+  background:linear-gradient(150deg,#FFFFFF,var(--c-bluel));
+  border:1px solid var(--c-line); color:var(--c-navy);
+  box-shadow:var(--sh-1);
+  font-family:'Pretendard',sans-serif; font-weight:700;
+  /* ▼ 본문 텍스트보다 1px 작게 */
+  font-size:calc(var(--fs-body) - 1px); line-height:1;
+}
+.contents_div .hw26-num--cool{
+  background:linear-gradient(150deg,#FFFDF5,var(--c-yell)); border-color:#FCE9B6; color:var(--c-navy);
+}
+.contents_div .hw26-ol-txt{ font-size:var(--fs-body); line-height:1.65; }
+.contents_div .hw26-ol-key{ font-weight:700; color:var(--c-navy); }
+
+.contents_div .hw26-dash{ margin-top:16px; }
+.contents_div .hw26-dash li{ display:flex; align-items:flex-start; gap:10px; }
+/* ▼ 행간 -2px */
+.contents_div .hw26-dash li + li{ margin-top:7px; }
+.contents_div .hw26-dash li::before{
+  content:''; flex:0 0 auto; width:7px; height:7px; border-radius:50%;
+  margin-top:calc(0.82em - 3px);
+  background:linear-gradient(150deg,var(--c-blue2),var(--c-blue));
+}
+.contents_div .hw26-dash-txt{ font-size:var(--fs-body); line-height:1.65; }
+
+/* ── 03·05 섹션 카드(넘버링 리스트 / 체크 아이콘 리스트) 미세조정 ──
+   1) 항목 사이 행간 -2px — 카드가 세로로 늘어지는 걸 줄인다
+   2) 넘버 뱃지 20 → 18px (-2px), 첫 줄 높이 정중앙에 맞춰 텍스트와 가로 정렬 */
+.contents_div #hw26-sec3 .hw26-ol li + li,
+.contents_div #hw26-sec5 .hw26-ol li + li{ margin-top:6px; }
+.contents_div #hw26-sec3 .hw26-dash li + li,
+.contents_div #hw26-sec5 .hw26-dash li + li{ margin-top:5px; }
+.contents_div #hw26-sec3 .hw26-ol .hw26-num,
+.contents_div #hw26-sec5 .hw26-ol .hw26-num{
+  width:18px; height:18px;
+  margin-top:calc((1.65em - 18px) / 2);
+  font-size:calc(var(--fs-body) - 2px);
+}
+
+/* ================================================================
+   KEY POINT (중단 / 이동 / 확인)
+   ================================================================ */
+/* 3열 배치 — 각 칸: 3D 아이콘 / 키워드 / 설명 */
+.contents_div .hw26-keys{
+  margin-top:22px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.contents_div .hw26-keys > li{ display:flex; }
+.contents_div .hw26-key{
+  flex:1 1 auto;
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px;
+  padding:0 16px 22px; border-radius:var(--r-mid); overflow:hidden;
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--c-bluel) 100%);
+  border:1px solid var(--c-line); box-shadow:var(--sh-1);
+}
+/* 이미지 위 스탬프 문구 (반투명으로 그림이 비치게) */
+.contents_div .hw26-key-fig{
+  position:relative; display:block;
+  width:calc(100% + 32px); max-width:none; margin:0 -16px 2px;
+}
+.contents_div .hw26-key .hw26-key-fig .hw26-ic{ width:100%; max-width:none; margin:0; }
+.contents_div .hw26-key-stamp{
+  position:absolute; left:0; right:0; top:calc(50% + 15px);
+  font-family:'Pretendard',sans-serif; font-weight:900;
+  font-size:43px; line-height:1; letter-spacing:-0.03em; text-align:center;
+  color:#E01705; opacity:1; transform:rotate(-7deg); letter-spacing:0.02em;
+  /* 빨간 글자가 사진 위에 얹혀 어두운 부분에서 묻힌다.
+     글자 뒤로 흰 글로우를 두 겹(가까이 진하게 / 넓게 옅게) 깔아 배경과 떼어 놓고,
+     원래의 붉은 그림자는 아래에 남겨 입체감을 유지한다 */
+  text-shadow:
+    0 0 7px rgba(255,255,255,.75),
+    0 0 16px rgba(255,255,255,.5),
+    0 0 28px rgba(255,255,255,.3),
+    0 2px 8px rgba(120,0,0,.25);
+}
+
+/* 3D 이미지 — 카드 좌우·상단에 여백 없이 꽉 차게 */
+.contents_div .hw26-key .hw26-ic{
+  width:calc(100% + 32px); max-width:none; margin:0 -16px 2px;
+  height:auto; aspect-ratio:1/1;
+  border-radius:0; padding:0; font-size:38px;
+  background:var(--c-bluel); border:0; box-shadow:none;
+}
+.contents_div .hw26-key img.hw26-ic{ padding:0; object-fit:cover; }
+.contents_div .hw26-key-word{
+  position:relative; z-index:1; margin-top:-30px;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:8px 30px; border-radius:999px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FCFDFE 52%,#EEF1F5 100%);
+  border:1px solid rgba(160,170,185,.22); color:var(--c-blue);
+  font-family:'Pretendard',sans-serif; font-weight:800;
+  font-size:var(--fs-info); line-height:1.2; letter-spacing:-0.02em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    inset 0 -3px 6px rgba(140,150,165,.21),
+    0 2px 5px rgba(60,80,110,.07);
+}
+.contents_div .hw26-key-txt{
+  font-size:var(--fs-info); line-height:1.5; color:var(--c-sub); text-wrap:balance;
+}
+
+/* ================================================================
+   SPOT (04 장소별 대응)
+   ================================================================ */
+/* 03 이 '파란 밴드 + 번호/제목' 이라면 04 는 '주황 밴드 + 장소명/발생비중'.
+   같은 어법을 섹션 색으로 갈아입혀 한 가족처럼 읽히게 했다.
+   다섯 장을 3+2 그리드로 눕혀 세로 스크롤을 줄였다. */
+/* 04 섹션 헤드 — 다른 섹션은 가운데 정렬이지만,
+   여기만 우상단에 리드 이미지가 붙으므로 텍스트를 왼쪽으로 눕혔다. */
+.contents_div #hw26-sec4 .hw26-head{
+  display:flex; align-items:center; gap:26px;
+  text-align:left; margin-bottom:38px;
+}
+/* 키커·h2·리드문 모두 가운데로
+   (키커가 inline-flex라 margin:auto가 듣지 않아 부모 text-align으로 민다) */
+/* 우측 이미지만큼 텍스트 축이 왼쪽으로 밀리므로, 그만큼 되밀어 섹션 중앙에 가깝게 세운다 */
+.contents_div #hw26-sec4 .hw26-head-txt{ flex:1 1 auto; min-width:0; padding-left:74px; text-align:center; }
+.contents_div #hw26-sec4 .hw26-head-txt .hw26-p{ text-align:center; }
+.contents_div #hw26-sec4 .hw26-head .hw26-p{ margin-left:0; margin-right:0; max-width:none; }
+/* 04 리드 오브젝트 — 배경을 딴 3D 온도계.
+   뒤에 웜 후광을 깔고 드롭섀도 + 느린 부유로 떠 있게 했다. */
+.contents_div .hw26-head-fig{
+  position:relative; flex:0 0 auto; width:98px; aspect-ratio:855/1327;
+  border:0; border-radius:0; box-shadow:none; background:none;
+}
+/* 뒤로 깔리는 후광 — 인트로의 해 후광과 같은 결 */
+.contents_div .hw26-head-fig::before{
+  content:''; position:absolute; z-index:0;
+  left:50%; top:52%; transform:translate(-50%,-50%);
+  width:118%; height:76%; border-radius:50%;
+  background:radial-gradient(circle at 50% 45%,
+    rgba(255,196,108,.50) 0%, rgba(255,170,70,.24) 48%, rgba(255,170,70,0) 74%);
+  filter:blur(14px);
+}
+.contents_div .hw26-head-fig img{
+  position:relative; z-index:1;
+  width:100%; height:100%; object-fit:contain;
+  filter:drop-shadow(0 13px 16px rgba(175,80,20,.24));
+  animation:hw26-thermo-float 5.2s ease-in-out infinite;
+}
+@keyframes hw26-thermo-float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-7px); }
+}
+
+.contents_div .hw26-spots{
+  position:relative; z-index:1;
+  margin-top:4px; display:grid; grid-template-columns:repeat(6,1fr); gap:12px;
+}
+.contents_div .hw26-spots > li{ display:flex; grid-column:span 2; }
+.contents_div .hw26-spots > li:nth-child(4),
+.contents_div .hw26-spots > li:nth-child(5){ grid-column:span 3; }
+.contents_div .hw26-spot{
+  flex:1 1 auto; display:flex; flex-direction:column; overflow:hidden;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFFCF8 100%);
+  border:1px solid #F6E4D0; border-radius:var(--r-card);
+  box-shadow:var(--sh-2);
+}
+/* 헤더 밴드 */
+.contents_div .hw26-spot-head{
+  position:relative; z-index:1;
+  padding:13px 18px 15px;
+  /* 135deg(좌상→우하) 를 좌우로 뒤집어 225deg(우상→좌하). 각도만 반전이라 색 순서는 그대로 */
+  background:linear-gradient(225deg,#FFA33D 0%,#FF7A1F 45%,#FF5E1E 100%);
+}
+.contents_div .hw26-spot-head::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 100% at 50% -35%, rgba(255,255,255,.36), rgba(255,255,255,0) 62%);
+}
+/* 비중 막대가 있는 앞 3개 카드만 헤드 밑단을 줄인다.
+   제목 한 줄인 4·5번 카드는 지금 높이가 맞으므로 공용 padding 은 건드리지 않는다. */
+.contents_div .hw26-spots > li:nth-child(-n+3) .hw26-spot-head{ padding-bottom:11px; }
+.contents_div .hw26-spot-name{
+  position:relative; z-index:1;
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-h3); font-weight:800; line-height:1.35; color:#fff;
+}
+/* 제목 옆 이모지 — flex 아이템이 아니라 제목과 같은 인라인 흐름에 태워
+   글자와 같은 베이스라인에 앉힌다(flex + align-items:center 는 line-height 가
+   다른 두 요소를 어긋나게 세운다). 컬러 이모지는 폰트가 제각각이라
+   전용 스택을 지정하고, 주황 배경 위에서 튀지 않게 살짝 눌러 둔다. */
+.contents_div .hw26-spot-emo{
+  display:inline; margin-left:5px;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+  font-size:inherit; line-height:inherit; vertical-align:baseline;
+  opacity:.92;
+}
+/* 발생 비중 — '막대 / 온열질환 / 숫자' 한 줄. 막대는 남는 폭을 모두 먹고,
+   채움 길이는 여기 표시한 세 곳의 합(54.5%)을 트랙 100으로 놓은 각자의 몫이다.
+   세 막대를 이으면 트랙 하나가 되므로, 임의 배율 없이 서로 그대로 비교된다.
+   (숫자 26.2% 는 전체 발생 대비 값이라 막대 길이와 기준이 다르다) */
+.contents_div .hw26-spot-pct{
+  position:relative; z-index:1;
+  display:flex; align-items:center; gap:7px; margin-top:4px;
+  font-family:'Pretendard',sans-serif; font-weight:400;
+  font-size:calc(var(--fs-lb) - 1px); line-height:1; letter-spacing:0;
+  color:rgba(255,255,255,.92);
+}
+/* '온열질환'과 숫자는 한 덩어리로 읽히도록 사이 간격만 좁힌다 */
+.contents_div .hw26-spot-pct-lb{ flex:0 0 auto; margin-right:-3px; }
+.contents_div .hw26-spot-bar{
+  flex:1 1 auto; min-width:24px; height:5px;
+  border-radius:999px; overflow:hidden;
+  background:rgba(255,255,255,.32);
+  box-shadow:inset 0 1px 1.5px rgba(180,70,10,.18);
+}
+.contents_div .hw26-spot-bar-fill{
+  display:block; width:0; height:100%; border-radius:inherit;
+  background:linear-gradient(90deg,rgba(255,255,255,.82),#fff);
+  transition:width 1.1s cubic-bezier(.22,.8,.28,1);
+}
+.contents_div .hw26-spot-pct b{ flex:0 0 auto; font-weight:400; font-variant-numeric:tabular-nums; }
+.contents_div .hw26-spot-body{
+  flex:1 1 auto; display:flex; flex-direction:column;
+  padding:17px 18px 19px;
+}
+.contents_div .hw26-spot-txt{
+  font-size:var(--fs-info); line-height:1.6; color:var(--c-sub);
+}
+.contents_div .hw26-spot-txt + .hw26-spot-txt{ margin-top:8px; }
+/* 근거 조항 등 부연 — 본문보다 한 단 작게 */
+.contents_div .hw26-spot-sub{
+  margin-top:8px; font-size:var(--fs-cap); line-height:1.45;
+  color:var(--c-sub); opacity:.85;
+}
+/* 스팟 카드 안의 CTA — 채운 버튼 대신 밑줄 텍스트 + 화살표 조합 */
+/* 본문 길이와 무관하게 카드 바닥에서 같은 높이에 서도록 auto 마진으로 밀어 내린다.
+   (본문이 길어 여백이 0 이 되는 경우를 대비해 padding-top 으로 최소 간격을 남긴다) */
+.contents_div .hw26-spot .hw26-cta{
+  margin:auto auto 0; min-height:0; padding:14px 2px 4px;
+  gap:5px; border-radius:0;
+  background:none; box-shadow:none;
+  color:#FF5E1E; font-size:calc(var(--fs-cta) - 1px); font-weight:700;
+  transition:color .2s;
+}
+.contents_div .hw26-spot .hw26-cta-tx{
+  border-bottom:1px solid currentColor; padding-bottom:2px;
+}
+.contents_div .hw26-spot .hw26-cta:hover,
+.contents_div .hw26-spot .hw26-cta:focus-visible{
+  transform:none; box-shadow:none; color:#E04A0C;
+}
+.contents_div .hw26-spot .hw26-cta-arw{ width:13px; height:13px; opacity:1; }
+
+/* ===== note / box / sub ===== */
+.contents_div .hw26-note{
+  display:flex; align-items:flex-start; gap:11px;
+  margin-top:16px; padding:15px 17px; border-radius:var(--r-sm);
+  background:linear-gradient(135deg,var(--c-bluel),#F6FAFF);
+  border:1px solid var(--c-line);
+}
+.contents_div .hw26-note-txt{ font-size:var(--fs-info); line-height:1.5; }
+.contents_div .hw26-note-sub{ display:block; font-size:var(--fs-cap); color:var(--c-sub); margin-top:4px; }
+
+.contents_div .hw26-box{ margin-top:16px; }
+.contents_div .hw26-box li{ display:flex; align-items:flex-start; gap:12px; }
+.contents_div .hw26-box li + li{ margin-top:11px; }
+.contents_div .hw26-lb{
+  flex:0 0 auto; box-sizing:border-box;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:0 var(--cap-pd); height:var(--cap-h); border-radius:999px;
+  background:var(--sheen), var(--c-blue); color:#fff;
+  /* ▼ 캡슐 안 글자를 1px 줄이고 굵기는 500 으로 낮춘다. 배지 높이(--cap-h)와
+     좌우 패딩(--cap-pd)은 그대로라 캡슐 크기는 변하지 않고 글자만 얌전해진다.
+     --fs-lb / --fs-lbw 토큰은 04 섹션 수치 라벨도 함께 쓰므로 여기만 따로 잡는다 */
+  font-size:calc(var(--fs-info) - 2.5px); font-weight:500; line-height:1; white-space:nowrap;
+  box-shadow:var(--sh-1);
+  margin-top:calc((var(--fs-info) * 1.5 - var(--cap-h)) / 2);
+}
+.contents_div .hw26-box-txt{ font-size:var(--fs-info); line-height:1.5; }
+
+.contents_div .hw26-sub{ margin-top:18px; }
+.contents_div .hw26-sub li + li{ margin-top:16px; }
+.contents_div .hw26-sub-name{
+  display:flex; align-items:center; gap:8px;
+  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-size:var(--fs-info); line-height:1.5; color:var(--c-navy);
+}
+.contents_div .hw26-sub-name::before{
+  content:''; flex:0 0 auto; width:14px; height:3px; border-radius:3px;
+  background:linear-gradient(90deg,var(--c-blue2),var(--c-blue));
+}
+.contents_div .hw26-sub-txt{ font-size:var(--fs-info); line-height:1.5; margin-top:6px; padding-left:22px; color:var(--c-sub); }
+
+/* ================================================================
+   CTA
+   ================================================================ */
+.contents_div .hw26-cta{
+  position:relative; z-index:1;
+  display:flex; align-items:center; justify-content:center; gap:9px;
+  width:fit-content; max-width:100%;
+  min-height:52px; margin:20px auto 0; padding:0 30px; border-radius:18px;
+  background:linear-gradient(135deg,#3D434A 0%,#262A2F 100%);
+  color:#fff; box-shadow:0 4.2px 9.2px rgba(24,28,33,0.20);
+  font-size:var(--fs-cta); font-weight:700; line-height:1.45;
+  transition:transform .2s, box-shadow .2s, filter .2s;
+}
+.contents_div .hw26-cta:hover,
+.contents_div .hw26-cta:focus-visible{ transform:translateY(-2px); box-shadow:0 5.9px 10.9px rgba(24,28,33,0.24); }
+/* 위아래 여백을 더 준 CTA */
+.contents_div .hw26-cta--gap{ margin-top:44px; margin-bottom:24px; }
+.contents_div .hw26-cta-arw{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:15px; height:15px; flex:0 0 auto;
+  opacity:.85; transition:transform .2s, opacity .2s;
+}
+.contents_div .hw26-cta-arw svg{ display:block; width:100%; height:100%; }
+.contents_div .hw26-cta:hover .hw26-cta-arw,
+.contents_div .hw26-cta:focus-visible .hw26-cta-arw{ transform:translateX(3px); opacity:1; }
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+/* ▼ 푸터 — 페이지의 바닥. 05 섹션과 이어붙이지 않고 짙은 판으로 끊어 세운다.
+   [방향] 180deg = 위 → 아래. 짧고 넓은 면에서는 대각선을 쓰면 한쪽 모서리만 뜨는
+     사선 얼룩으로 읽힌다. 가로로 긴 띠는 세로 방향이 가장 자연스럽다.
+   [스톱] 두 값의 차를 아주 좁게 잡았다. 색이 변하는 게 보이면 안 되고,
+     평면이 아니라는 것만 느껴지면 된다. 단색으로 두고 싶으면 두 값을 같게.
+     더 어둡게 → 두 값을 함께 내린다 (#0A2450 / #05162F)
+     덜 어둡게 → 함께 올린다 (#143A7C / #0C2A5C)
+   [05 섹션과의 경계] 05 섹션 아래끝은 밝은 파랑이라 여기서 뚜렷한 단이 생긴다.
+     의도된 단이다. 부드럽게 잇고 싶으면 0% 를 #2A63B8 정도까지 올릴 것.
+   [노이즈] 어두운 면에서는 회색 노이즈가 더 도드라진다. 0.03 으로 낮춰 둔다. */
+.contents_div .hw26-foot{
+  position:relative; overflow:hidden;
+  padding:var(--band) var(--gut);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#0F3068 0%,#081F44 100%);
+  background-size:180px 180px, auto;
+  background-repeat:repeat, no-repeat;
+  color:#fff; text-align:center;
+}
+.contents_div .hw26-foot > *{ position:relative; z-index:1; }
+.contents_div .hw26-foot-title{
+  font-family:'Paperozi','Pretendard',sans-serif;
+  font-size:var(--fs-foot); font-weight:800; line-height:1.4;
+  letter-spacing:-0.02em; word-break:keep-all; color:#fff;
+}
+.contents_div .hw26-foot-title em{ font-style:normal; color:var(--c-yel); }
+.contents_div .hw26-foot-sub{
+  font-size:var(--fs-lead); line-height:1.7; color:rgba(255,255,255,.78); margin-top:16px;
+}
+/* ▼ 태그가 두 줄로 접히므로 줄 사이만 벌린다(8 → 11 → 14px).
+   gap 을 한 값으로 두면 좌우 간격까지 같이 벌어지니 '행 간격 / 열 간격' 두 값으로 나눠 적는다 */
+.contents_div .hw26-tags{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:14px 8px; margin-top:28px;
+}
+.contents_div .hw26-tag{
+  display:inline-flex; align-items:center; height:var(--cap-h); padding:0 var(--cap-pd);
+  border-radius:999px; border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.09);
+  font-size:var(--fs-tag); line-height:1.35; color:rgba(255,255,255,.92);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .contents_div .hw26-wrap *{ transition:none !important; animation:none !important; }
+  .contents_div .hw26-chart-bar{ transition:none; }
+}
+
+/* ================= RESPONSIVE ================= */
+/* 태블릿 구간. 래퍼가 max-width:800px 이라 뷰포트 800px 이상은 콘텐츠 폭이 늘 800px,
+   즉 800px 이 곧 웹 기본 디자인 폭이다. 경계를 800 에 두면 800 자신이 이 블록에
+   들어가 폭이 같은데도 레이아웃만 바뀐다. 그래서 관용값 768 아래로 내렸다.
+   → 768~799px 은 웹 레이아웃으로 렌더링된다(내비 전체 라벨, 04 장소별 3열).
+   .98 은 브라우저 확대 시 767.5 같은 소수 폭이 어느 쪽에도 안 걸리는 틈을 막는다. */
+@media (max-width:767.98px){
+  .contents_div .hw26-wrap{ --fs-h2:27px; --fs-foot:29px; --band:62px; --card-pd:28px 24px; --card-pt:28px; --card-px:24px; }
+  /* 좁아지면 내비 라벨을 축약형으로 (줄바꿈 대신) */
+  .contents_div .hw26-nav-fu{ display:none; }
+  .contents_div .hw26-nav-sh{ display:inline; }
+  .contents_div .hw26-nav-btn{ padding:0 8px; }
+  .contents_div .hw26-nav-list{ gap:0; }
+  /* 리드문(.hw26-p)의 강제 줄바꿈을 끈다 — 태블릿 폭부터 자동 줄바꿈에 맡긴다.
+     h2 는 짧아서 브레이크 한 번이면 두 줄로 딱 떨어지지만,
+     리드문은 문장이 길어 강제 브레이크 뒤에도 각 조각이 다시 접힌다.
+     04 리드문이 '…실외에서 / 발생합니다. / …대응 수칙을 / 확인하세요.'
+     처럼 네 줄로 쪼개지던 이유다.
+     마크업의 <br class="hw26-brw"> 는 그대로 두고 여기서만 죽이므로
+     웹(768px 이상)에서는 원래대로 한 번 끊긴다.
+     h2 쪽 .hw26-brw 는 건드리지 않는다 — 어절이 갈라지는 걸 막는 장치다. */
+  .contents_div .hw26-p .hw26-brw{ display:none; }
+  /* 03 단계 카드는 '초기 → 위험 → 응급' 순서를 한눈에 비교해야 하므로
+     어느 폭에서든 한 줄 3열을 유지한다.
+     (원본은 이 구간만 2열 + 마지막 항목 전체 폭으로 풀어 2줄이 됐다)
+     대신 열 폭이 167~225px 로 좁아지므로 카드 여백과 설명 글자를 한 단 조인다.
+     600px 이하에서는 아래 [0-9] 블록이 더 조인 값으로 다시 덮는다. */
+  .contents_div #hw26-sec3 .hw26-steps{ grid-template-columns:repeat(3,1fr); }
+  .contents_div #hw26-sec3 .hw26-steps > li:last-child{ grid-column:auto; }
+  .contents_div #hw26-sec3 .hw26-step{ padding:0 14px 18px; }
+  .contents_div #hw26-sec3 .hw26-step-fig{
+    width:calc(100% + 28px); margin:calc(var(--fig-cut) * -1) -14px 12px;
+  }
+  .contents_div #hw26-sec3 .hw26-step-txt{ font-size:calc(var(--fs-info) - 2px); }
+  .contents_div .hw26-head-fig{ width:88px; }
+  .contents_div #hw26-sec4 .hw26-head-txt{ padding-left:56px; }
+  .contents_div .hw26-spots > li,
+  .contents_div .hw26-spots > li:nth-child(4){ grid-column:span 3; }
+  .contents_div .hw26-spots > li:nth-child(5){ grid-column:span 6; }
+}
+
+@media (max-width:600px){
+  .contents_div .hw26-wrap{
+  --fs-h2:22px;   --fs-foot:22px;
+  --fs-h3:17px;   --fs-kicker:11px;   --fs-num:11px;
+  --fs-body:14px; --fs-lead:14px;   --fs-nav:11.5px;
+  --fs-tag:11px;  --fs-micro:10px;
+  --fs-info:14px; --fs-cta:14px; --fs-arrow:12px; --fs-cap:10.5px;
+  --fs-chk:10px;  --fs-lb:11px; --fs-lbw:700;
+  --band:48px; --pt:34px; --kick:24px;
+  --cap-h:20px; --cap-pd:9px; --card-pd:22px 18px; --card-pt:22px; --card-px:18px;
+  --r-card:18px; --r-mid:14px; --r-sm:11px; --r-sec:30px;
+  }
+  .contents_div .hw26-wrap{ line-height:1.6; }
+  .contents_div .hw26-brw{ display:none; }
+  .contents_div #hw26-sec2 .hw26-card > .hw26-p{ padding-inline:0; }
+  .contents_div .hw26-head{ margin-bottom:26px; }
+  .contents_div .hw26-head .hw26-ic{ margin-bottom:14px; }
+  .contents_div .hw26-ic{ width:44px; height:44px; font-size:22px; border-radius:14px; }
+  .contents_div .hw26-ic--lg{ width:66px; height:66px; font-size:32px; border-radius:20px; }
+  .contents_div .hw26-ic--sm{ width:36px; height:36px; font-size:18px; border-radius:11px; }
+  .contents_div .hw26-kicker{ padding:0 12px; border-radius:999px; margin-bottom:12px; }
+  .contents_div .hw26-h2{ line-height:1.4; }
+  .contents_div .hw26-p{ line-height:1.62; margin-top:14px; padding-inline:0; }
+  .contents_div .hw26-p--mb40{ margin-bottom:28px; }
+  /* ▼ 모바일: 해 크기·걸침 위치 */
+  .contents_div .hw26-intro{ --sun-w:101px; --sun-x:-23px; }
+  .contents_div .hw26-intro-stage{ width:100%; }
+  .contents_div .hw26-intro-card{ padding:18px 20px 24px; border-radius:20px; }
+  /* ▼ 모바일: 온도계 위치·크기 */
+  .contents_div .hw26-intro-thermo{ width:81.09px; height:105.57px; right:-26px; bottom:-48px; }
+  .contents_div .hw26-nav{ padding:14px var(--gut); }
+  .contents_div .hw26-nav-btn{ min-height:40px; padding:0 4px; }
+  .contents_div .hw26-nav-list{ gap:0; }
+  .contents_div .hw26-fig::before{ padding-top:75%; }
+  .contents_div .hw26-steps{ grid-template-columns:1fr; gap:10px; }
+  /* (03 섹션을 1열로 푸는 규칙이 여기 있었으나 아래 [0-9] 에서 다시 3열로
+     되돌리고 있어 죽은 코드였다. 이제 어느 폭에서든 3열이라 지운다) */
+  .contents_div #hw26-sec3 .hw26-step-fig{ width:calc(100% + 34px); margin:calc(var(--fig-cut) * -1) -17px 12px; }
+  .contents_div .hw26-step{ padding:16px 17px; column-gap:14px; }
+  .contents_div .hw26-step-deg{ min-width:48px; font-size:23px; }
+  .contents_div #hw26-sec2 .hw26-step-deg{ font-size:25px; }
+  .contents_div .hw26-step-lb{ margin-bottom:4px; }
+  .contents_div .hw26-h3{ line-height:1.5; }
+  .contents_div .hw26-h3-row{ gap:9px; }
+  .contents_div .hw26-chk{ width:19px; height:19px; }
+  .contents_div .hw26-hno{ width:24px; height:24px; border-radius:9px; }
+  .contents_div .hw26-kicker{ gap:5px; }
+  .contents_div .hw26-num{ width:19px; height:19px; border-radius:7px; margin-top:calc((1.62em - 19px) / 2); font-size:11px; }
+  /* ▼ 03·05 섹션: 넘버 뱃지 -2px + 첫 줄 중앙 정렬 */
+  .contents_div #hw26-sec3 .hw26-ol .hw26-num,
+  .contents_div #hw26-sec5 .hw26-ol .hw26-num{
+    width:17px; height:17px; margin-top:calc((1.62em - 17px) / 2); font-size:10px;
+  }
+  .contents_div .hw26-ol li{ line-height:1.62; gap:9px; }
+  .contents_div .hw26-ol-txt, .contents_div .hw26-dash-txt{ line-height:1.62; }
+  .contents_div .hw26-key{ padding:0 12px 15px; gap:9px; }
+  .contents_div .hw26-key-word{ margin-top:-25px; padding:6px 20px; }
+  .contents_div .hw26-key .hw26-ic{ width:calc(100% + 24px); max-width:none; margin:0 -12px 2px; font-size:26px; }
+  .contents_div .hw26-key-fig{ width:calc(100% + 24px); margin:0 -12px 2px; }
+  .contents_div .hw26-key .hw26-key-fig .hw26-ic{ width:100%; margin:0; }
+  .contents_div .hw26-key-stamp{ font-size:30px; }
+  .contents_div .hw26-keys{ gap:8px; }
+  .contents_div #hw26-sec4 .hw26-head{ gap:14px; margin-bottom:26px; }
+  .contents_div .hw26-head-fig{ width:66px; }
+  .contents_div #hw26-sec4 .hw26-head-txt{ padding-left:0; }
+  .contents_div .hw26-spots{ gap:10px; }
+  .contents_div .hw26-spots > li,
+  .contents_div .hw26-spots > li:nth-child(4),
+  .contents_div .hw26-spots > li:nth-child(5){ grid-column:span 6; }
+  .contents_div .hw26-spot-head{ padding:11px 15px 13px; }
+  .contents_div .hw26-spots > li:nth-child(-n+3) .hw26-spot-head{ padding-bottom:9px; }
+  .contents_div .hw26-spot-body{ padding:14px 15px 16px; }
+  /* 모바일도 같은 계산 — 구획 패딩 20px 기준, 행간 반각을 뺀 값 */
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3 + *{ margin-top:12px; }
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-box,
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-sub{ margin-top:17px; }
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3{ gap:9px; }
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3::before{
+    --chip:25px; border-radius:8px; font-size:13px;
+  }
+  .contents_div #hw26-sec5 .hw26-onecard{ margin-top:20px; }
+  .contents_div #hw26-sec5 .hw26-blk{ padding-top:20px; padding-bottom:24px; }
+  /* 구획은 이미 1열이므로 여기서는 패딩만 줄인다 (밑단은 +8px 포함) */
+  .contents_div #hw26-sec5 .hw26-blk--split > .hw26-blk-col{
+    padding-top:20px; padding-bottom:24px;
+  }
+  .contents_div #hw26-sec5 .hw26-box{ padding:13px 14px; }
+  /* 좁은 화면에서 2열은 한 줄에 서너 글자밖에 못 담으므로 1열로 되돌린다.
+     1열에서는 십자가 성립하지 않으므로 세로선을 지우고 항목 사이 가로 점선만 남긴다.
+     (마지막 항목 아래에는 선이 남지 않도록 li + li 의 윗선으로 그린다) */
+  .contents_div #hw26-sec5 .hw26-sub{
+    grid-template-columns:1fr; gap:0;
+    padding:13px 14px;
+  }
+  .contents_div #hw26-sec5 .hw26-sub li{ padding:14px 0; }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(odd),
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+2){
+    border-right:0; border-bottom:0;
+  }
+  .contents_div #hw26-sec5 .hw26-sub li:first-child{ padding-top:0; }
+  .contents_div #hw26-sec5 .hw26-sub li:last-child{ padding-bottom:0; }
+  .contents_div #hw26-sec5 .hw26-sub li + li{
+    border-top:1px dotted rgba(47,123,240,.32);
+  }
+  .contents_div .hw26-box li{ gap:9px; }
+  .contents_div .hw26-cta{ min-height:46px; padding:0 20px; margin:16px auto 0; border-radius:16px; }
+  .contents_div .hw26-cta--gap{ margin-top:32px; margin-bottom:16px; }
+  .contents_div .hw26-cta-arw{ width:13px; height:13px; }
+  .contents_div .hw26-sec::after{ width:150px; height:150px; }
+}
+
+@media (max-width:380px){
+  .contents_div .hw26-wrap{
+  --fs-h2:20px; --fs-foot:19px; --fs-h3:16px;
+  --fs-body:13.5px; --fs-lead:13.5px; --fs-nav:11.5px;
+  --fs-tag:10.5px; --fs-info:13.5px; --fs-cta:13.5px;
+  --band:40px; --card-pd:19px 15px; --card-pt:19px; --card-px:15px;
+  --fs-nav:10.5px;
+  }
+  .contents_div .hw26-intro{ --sun-w:86px; --sun-x:-19px; }
+  .contents_div .hw26-chart-name{ width:52px; }
+  .contents_div .hw26-chart-track{ height:15px; }
+  .contents_div .hw26-keys{ grid-template-columns:1fr; }
+  .contents_div .hw26-key{ flex-direction:row; text-align:left; gap:12px; align-items:center; }
+  .contents_div .hw26-key{ padding:12px; }
+  .contents_div .hw26-key .hw26-ic{ width:64px; flex:0 0 64px; margin:0; border-radius:12px; }
+  .contents_div .hw26-key-word{ margin-top:0; }
+  .contents_div .hw26-nav-btn{ padding:0 4px; }
+}
+
+/* ================================================================
+   MOBILE ALIGNMENT FIX — 2026.08 추가
+   ----------------------------------------------------------------
+   웹(800px) 기준으로 잡은 레이아웃이 좁은 폭에서 축이 어긋나던 곳만 보정한다.
+   위쪽 기존 규칙은 한 줄도 건드리지 않았다.
+   되돌리고 싶으면 이 주석부터 스타일 블록 끝까지 통째로 지우면 원상복구된다.
+   ================================================================ */
+@media (max-width:600px){
+
+  /* ── [0] 섹션 좌우 패딩 16px 고정 ────────────────────────────
+     원래는 --gut:clamp(16px, 6.25%, 50px) 이라 폭에 비례해
+     600px→37.5px, 430px→26.9px, 375px→23.4px 로 계속 달라졌다.
+     모바일에서는 좌우 여백을 16px 로 고정한다.
+     --gut 은 섹션·내비·인트로·히어로 카피·푸터가 모두 함께 쓰므로
+     여기 한 줄만 바꾸면 그 다섯 곳의 좌우 축이 한꺼번에 맞는다. */
+  .contents_div .hw26-wrap{ --gut:16px; }
+
+  /* ── [0-2] 내비 — 글자가 작아 안 읽히던 문제 + 높이 축소 ───────
+     [라벨] 800px 이하는 원본 설계대로 축약 라벨을 쓴다.
+     전체 라벨을 한 줄에 넣는 건 불가능하다 — 다섯 칸에 전체 라벨을 세우려면
+     13px 기준 414px 이 필요한데 모바일은 320~430px 이고,
+     320px 에 억지로 맞추면 글자가 8px 까지 내려간다.
+     [글자] clamp(10.5px, 2.9vw, 11.5px).
+     상한 11.5px 는 원본 모바일 크기와 같다. 크게 키워 봤지만 다섯 칸짜리
+     띠에서는 글자가 칸을 꽉 채워 둔해 보인다 — 여백이 남아야 정돈돼 보인다.
+     원본과 다른 점은 380px 이하에서 10.5px 로 뚝 떨어지던 걸
+     폭 추종으로 바꿔 중간 구간(360~390px)이 어정쩡하게 작아지지 않는다는 것.
+     ▼ 더 작게 → 2.9vw 와 상한을 함께 내린다
+     ▼ 더 크게 → 함께 올린다 (320px 여유가 가장 먼저 바닥난다)
+     ※ 버튼 좌우 패딩은 0 이다. 글자가 가운데 정렬이라 패딩을 남겨 두면
+        그만큼 글자가 쓸 수 있는 폭만 줄 뿐 화면에서 보이는 간격은 같다.
+        패딩으로 두지 말고 글자 크기로 돌려주는 편이 낫다.
+     [높이] 상하 패딩 14px → 4.5px, 버튼 터치영역 40px 유지 → 70px 에서 51px.
+     40px + 보더 2px = 42px 이 바닥이라, 여기서 더 줄이려면 터치영역을 깎아야 한다. */
+  .contents_div .hw26-wrap{ --fs-nav:clamp(10.5px, 2.9vw, 11.5px); }
+  .contents_div .hw26-nav{ padding:4.5px 0; }
+  .contents_div .hw26-nav-btn{
+    min-height:40px; padding:0; white-space:nowrap;
+  }
+
+  /* ── [0-3] h2 줄바꿈 / h3 크기 ────────────────────────────────
+     [h2] 원본은 600px 이하에서 .hw26-brw 를 죽여 자동 줄바꿈에 맡겼다.
+     그런데 자동으로 끊기면 어절 중간에서 갈라진다 —
+     '…경보가 새로 / 생겼습니다', '…신호를 보내고 / 있습니다',
+     '…폭염 장난이 / 아닙니다' 처럼 붙어 읽혀야 할 말이 쪼개졌다.
+     마크업에 이미 박혀 있는 <br class="hw26-brw"> 위치가
+     그대로 자연스러운 지점이므로 모바일에서도 살린다.
+     320~600px 전 구간에서 두 줄로 떨어지는 것을 확인했다.
+     [h3] --fs-h3 -2px (17→15px, 380px 이하는 16→14px).
+     이 토큰은 카드 제목뿐 아니라 04 장소명, 차트 제목,
+     02 탭 뱃지, 03 카드 번호(+5px)까지 함께 쓴다. */
+  .contents_div .hw26-brw{ display:inline; }
+  .contents_div .hw26-wrap{ --fs-h3:15px; }
+
+  /* ── [0-4] 섹션 헤드 리드문 — 좌우 여백 +5px ─────────────────
+     원본은 .hw26-p 에 padding-inline:60px 를 주다가 600px 이하에서 0 으로 푼다.
+     그래서 리드문이 섹션 좌우 끝까지 닿아 답답해 보였다. 30px 물린다.
+     390px 이하는 이 값이 과해 글줄이 너무 좁아지므로 아래 390 블록에서 20px 로 내린다.
+     (헤드 안의 리드문만. 카드 안 문단은 카드 자체 패딩이 있어 건드리지 않는다) */
+  .contents_div .hw26-head .hw26-p{ padding-inline:30px; }
+
+  /* ── [0-5] 01 차트 — 막대 두께 / 기간 뱃지 위치 ────────────────
+     [막대] 18px(380px 이하 15px)는 모바일 카드 안에서 지나치게 굵어
+     막대가 데이터가 아니라 덩어리로 읽혔다. 10px 로 낮추고 행 간격도 함께 좁힌다.
+     [기간 뱃지] 헤드가 flex-wrap:wrap + space-between 이라 폭이 모자라면
+     뱃지가 아랫줄로 떨어져 헤드가 두 줄이 됐다.
+     nowrap 으로 고정하고 뱃지 자체를 작게 줄여 제목 오른쪽에 붙인다. */
+  .contents_div .hw26-chart-track{ height:10px; }
+  /* 막대를 10px 로 얇게 만든 만큼 행 사이도 좁혀야 리듬이 맞는다.
+     10 → 5px (차트 전체 높이 111 → 96px) */
+  .contents_div .hw26-chart li + li{ margin-top:5px; }
+  .contents_div .hw26-chart-head{ flex-wrap:nowrap; gap:8px; }
+  .contents_div .hw26-chart-date{
+    flex:0 0 auto; font-size:10px; height:18px; padding-inline:7px;
+  }
+  .contents_div .hw26-chart-date .hw26-chart-date-fu{ display:none; }
+  .contents_div .hw26-chart-date .hw26-chart-date-sh{ display:inline; }
+
+  /* ── [0-6] 01 섹션 하단 여백 +10px ───────────────────────────
+     원본은 01 섹션만 밑단을 --band 에서 30px 깎아 둔다(차트 카드 아래 여백).
+     데스크톱(--band 62)에서는 32px 이 남지만 모바일에서는 --band 가
+     48/40px 로 줄어드는데 -30px 은 그대로라 밑단이 18px, 375px 이하는
+     10px 까지 얇아졌다. 모바일에서는 --band 를 따르지 않고 18px 로 고정한다.
+     (--band 기준 계산을 쓰면 380px 경계에서 8px 단차가 생긴다) */
+  .contents_div #hw26-sec1{ padding-bottom:18px; }
+
+  /* ── [0-7] 02 섹션 카드 — 탭 뱃지 아래 간격 통일 ────────────────
+     두 카드의 헤더 아래 간격이 서로 달랐다.
+       1번(체감온도) : 뱃지 mb 24 vs 문단 mt 14 → 마진 상쇄로 24px
+       2번(세 가지)  : 뱃지 mb 24 vs .hw26-keys mt 38 → 38px
+     원본이 .hw26-keys 에만 margin-top:38px 을 따로 얹어 둔 탓이다.
+     같은 어법의 카드 두 장이라 간격도 같아야 한다. 22px 로 맞춘다.
+     [밑단] 카드 밑단은 --card-pt + 10px 이었다. 글자 기준으로 위아래를
+     각각 2px 씩 좁히려고 뱃지 아래 24 → 22px, 밑단 +10 → +8px 로 낮춘다. */
+  .contents_div #hw26-sec2 .hw26-h3-row{ margin-bottom:22px; }
+  .contents_div #hw26-sec2 .hw26-keys{ margin-top:22px; }
+  .contents_div #hw26-sec2 .hw26-card{ padding-bottom:calc(var(--card-pt) + 8px); }
+
+  /* ── [0-8] 본문 문단(.hw26-p) 위아래 여백 -2px ─────────────────
+     문단 여백이 한 곳에서 정해지지 않고 놓인 자리마다 다른 규칙이 잡는다
+     (기본 14px / 헤드 리드문 18px / 05 카드 제목 다음 12px).
+     각각에서 2px 씩 뺀다. 셀렉터에 .hw26-wrap 을 물려 원래 규칙보다
+     특정도를 한 단 올렸다 — 그래야 세 자리 모두 확실히 덮인다.
+     아래쪽은 원래 마진이 0 이라 -2px 로 당긴다. 문단이 카드 마지막
+     요소인 경우가 많아 카드 밑단이 그만큼 좁아진다. */
+  .contents_div .hw26-wrap .hw26-p{ margin-top:12px; margin-bottom:-2px; }
+  .contents_div .hw26-wrap .hw26-head .hw26-p{ margin-top:16px; }
+  .contents_div .hw26-wrap #hw26-sec5 .hw26-card .hw26-h3 + .hw26-p{ margin-top:10px; }
+  /* 하단 여백이 따로 지정된 문단은 그 값에서 2px 을 뺀다 (28 → 26px) */
+  .contents_div .hw26-wrap .hw26-p--mb40{ margin-bottom:26px; }
+
+  /* ── [0-9] 03 섹션 단계 카드 — 모바일에서도 1행 3열 ──────────────
+     원본은 600px 이하에서 1열(3행)로 풀어 세로로 길게 쌓았다.
+     세 단계는 '초기 → 위험 → 응급' 순서를 한눈에 비교해야 하는 내용이라
+     가로로 나란히 두는 편이 낫다. 3열로 되돌리되,
+     칸 폭이 90~127px 로 좁아지므로 여백·글자를 그 폭에 맞춰 다시 잡는다.
+     (이 값들을 그대로 두고 3열만 켜면 글자가 칸을 넘친다) */
+  /* [이미지 상단 여백 +10px] 카드 위로 삐져나온 머리(--fig-cut:20px)는 그대로 두고,
+     삐져나온 이미지 꼭대기 기준으로 위 여백만 10px 늘린다.
+     ※ 위 형제 .hw26-head 의 margin-bottom:26px 과 마진 상쇄가 일어나므로
+       실제 간격 = max(26px, 이 값) 이다. 26 + 10 = 36px 로 잡아야 10px 이 늘어난다.
+       (10px 로 두면 26px 이 이겨서 아무 변화가 없다) */
+  .contents_div #hw26-sec3 .hw26-steps{
+    grid-template-columns:repeat(3,1fr); gap:8px; margin-top:36px;
+  }
+  .contents_div #hw26-sec3 .hw26-steps > li:last-child{ grid-column:auto; }
+  .contents_div #hw26-sec3 .hw26-step{ padding:0 8px 14px; }
+  .contents_div #hw26-sec3 .hw26-step-fig{
+    width:calc(100% + 16px); margin:calc(var(--fig-cut) * -1) -8px 10px;
+  }
+  .contents_div #hw26-sec3 .hw26-step-head{ gap:5px; margin-bottom:6px; }
+  .contents_div #hw26-sec3 .hw26-step-deg{ font-size:17px; min-width:0; }
+  .contents_div #hw26-sec3 .hw26-step-lb{ font-size:12px; }
+  .contents_div #hw26-sec3 .hw26-step-txt{
+    font-size:11px; line-height:1.45; padding-top:10px;
+  }
+
+  /* ── [1] 인트로 — 해가 제목 첫 글자를 덮던 문제 ───────────────
+     제목은 섹션 정중앙에 서는데 해는 왼쪽 끝 고정이라, 폭이 좁아질수록
+     제목 왼쪽 글자가 해 밑으로 들어갔다(430·390·360·320 모두 '특별' 가림).
+     해가 차지하는 폭만큼 제목 좌우에 '같은' 여백을 줘서
+     가운데 축은 그대로 둔 채 글자만 해를 비켜 가게 한다.
+     → 대신 제목이 두 줄로 접힌다. balance 로 두 줄 길이를 고르게 맞춘다.
+     한 줄로 되돌리고 싶으면 padding-inline 을 지우면 되지만 겹침이 돌아온다. */
+  .contents_div .hw26-intro{
+    /* 해 — 92px 에서 -5% 후 다시 -10% (누적 -14.5%) */
+    --sun-w:78.66px; --sun-x:-26px;
+    /* 해 세로 미세조정 — 원본 28px 에서 10px 위로 (28 → 18px).
+       --sun-dy 는 양수일수록 아래로 내려가므로 값을 줄이면 올라간다.
+       --sun-y 가 이 값을 참조해 자동 재계산되고,
+       웹(601px 이상)은 원본 28px 그대로라 영향이 없다 */
+    --sun-dy:18px;
+    /* 섹션 윗여백 -45px (75 → 30px) */
+    padding-top:30px;
+  }
+  /* ▼ 인셋은 좌우 대칭. 축약 문구는 짧아서 대칭으로 깎아도 한 줄에 들어가고,
+     그래야 제목 축이 섹션 정중앙에 선다 (340px 이하는 아래에서 예외 처리). */
+  .contents_div .hw26-h2.hw26-intro-h2{
+    padding-inline:calc(var(--sun-x) + var(--sun-w) + 8px);
+    text-wrap:nowrap;
+    /* 원본은 var(--fs-h2) - 5px. 모바일에서만 +2px 키운다 */
+    font-size:calc(var(--fs-h2) - 3px);
+    /* 원본은 top:7px. 모바일에서만 5px 더 내린다.
+       position:relative 라 흐름은 그대로고 보이는 위치만 내려간다
+       → 그만큼 아래 카드와의 간격이 줄어든다 */
+    top:12px;
+  }
+  .contents_div .hw26-h2.hw26-intro-h2 .hw26-intro-h2-fu{ display:none; }
+  .contents_div .hw26-h2.hw26-intro-h2 .hw26-intro-h2-sh{ display:inline; }
+
+  /* 온도계 — 원본 모바일값 81.09x105.57 에서 -10% → -5% → -10% (누적 -23.05%)
+     15px 위로 (bottom:-48px → -33px). bottom 이 음수라 카드 아래로 내려가 있고,
+     값을 키울수록 위로 올라온다 */
+  .contents_div .hw26-intro-thermo{ width:62.40px; height:81.23px; bottom:-33px; }
+
+  /* ── [2] 04 섹션 헤드 — 축이 왼쪽으로 40px 밀리던 문제 ─────────
+     헤드가 '텍스트 + 우측 온도계' 가로 배치인데, 600px 이하에서
+     텍스트의 좌측 인셋(padding-left:74px)만 0으로 풀어 놨다.
+     그래서 텍스트 축이 온도계 폭의 절반(=40px)만큼 왼쪽으로 밀려
+     키커·h2·리드문 전부가 섹션 중앙에서 벗어나 있었다.
+     좁은 폭에서는 인셋을 되살릴 여유가 없으므로 세로로 세운다.
+     ▼ 온도계 자리는 h2 아래(리드문 위).
+     온도계는 .hw26-head 의 자식이고 키커·h2·리드문은 .hw26-head-txt 안이라
+     그대로는 사이에 끼울 수 없다. head-txt 를 display:contents 로 없애
+     셋을 헤드의 직접 자식으로 끌어올린 뒤 order 로 순서를 잡는다.
+     (display:contents 는 상자만 사라지고 상속은 남아 text-align:center 는 그대로다)
+     align-items 는 base 의 center 를 stretch 로 되돌린다 —
+     center 로 두면 h2·리드문이 글자 폭만큼만 좁아져 줄바꿈이 망가진다.
+     대신 온도계만 margin-inline:auto 로 가운데 세운다. */
+  .contents_div #hw26-sec4 .hw26-head{
+    flex-direction:column; align-items:stretch; gap:0; text-align:center;
+  }
+  .contents_div #hw26-sec4 .hw26-head-txt{ display:contents; }
+  /* 키커는 원래 inline-flex 알약이라 글자 폭만큼만 나와야 하는데,
+     헤드의 직접 자식(flex 아이템)이 되면서 stretch 에 딸려 폭이 늘어난다.
+     이 하나만 가운데 정렬로 빼 준다. */
+  .contents_div #hw26-sec4 .hw26-head .hw26-kicker{ align-self:center; }
+  .contents_div #hw26-sec4 .hw26-head-fig{
+    order:3; width:74px; margin:12px auto 0;
+  }
+  .contents_div #hw26-sec4 .hw26-head .hw26-p{ order:4; }
+
+  /* ── [3] 02 섹션 탭 뱃지 — 카드 윗변을 거의 다 덮던 문제 ────────
+     '폭염중대경보에서 기억해야 할 세 가지'가 카드 폭의 90%까지 늘어나
+     3줄로 접히면서, 가운데 붙는 탭 알약이 아니라 헤더 밴드처럼 보였다.
+     폭에 상한을 두고 글자를 1px 낮춰 두 줄로 앉힌다. */
+  .contents_div #hw26-sec2 .hw26-h3{
+    max-width:calc(100% - 16px);
+    padding:7px 15px 8px;
+    font-size:calc(var(--fs-h3) - 1px);
+    line-height:1.36; text-wrap:balance;
+  }
+
+  /* ── [5] 05 섹션 카드 안 바로가기 — 화살표가 본문에서 떨어지던 문제 ──
+     CTA 가 flex 라 텍스트가 두 줄로 접히면 텍스트 상자가 남는 폭을 다 먹고,
+     화살표는 그 오른쪽 끝(=칸 맨 오른쪽)에 홀로 떨어져 섰다.
+     ('내 주변 무더위 쉼터 찾기 (안전지도 > 대피시설)' 에서 실제로 발생)
+     좁은 폭에서는 왼쪽 정렬 + 아래끝 맞춤으로 바꾼다.
+     한 줄이면 화살표가 글자 바로 뒤에, 두 줄이면 마지막 줄 오른쪽 끝에 선다.
+     (글자 흐름에 태우는 방법은 화살표만 혼자 다음 줄로 떨어지는 경우가 생긴다) */
+  .contents_div #hw26-sec5 .hw26-card .hw26-cta{
+    justify-content:flex-start; align-items:flex-end; text-align:left;
+  }
+  .contents_div #hw26-sec5 .hw26-blk-col .hw26-cta{
+    align-self:stretch; margin-inline:0;
+  }
+  .contents_div #hw26-sec5 .hw26-card .hw26-cta-arw{ margin-bottom:3px; }
+  /* 밑줄을 border-bottom 에서 text-decoration 으로 바꾼다.
+     border 는 상자 아래 한 줄이라 두 줄로 접히면 두 번째 줄 빈 공간까지 죽 그어졌다.
+     text-decoration 은 줄마다 글자 폭만큼만 그어진다. */
+  .contents_div #hw26-sec5 .hw26-card .hw26-cta-tx{
+    border-bottom:0; padding-bottom:0;
+    text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px;
+  }
+
+  /* ── [6] 버튼형 CTA — 두 줄로 접힐 때 화살표만 오른쪽 끝에 남던 문제 ──
+     '전남광주통합특별시 폭염 대책 카드뉴스 보기' 처럼 문구가 길어
+     두 줄이 되면 화살표가 문구에서 떨어졌다. 같은 방식으로 글자 흐름에 태운다. */
+  .contents_div .hw26-cta--gap{
+    display:block; min-height:0; padding:13px 22px; text-align:center;
+  }
+  .contents_div .hw26-cta--gap .hw26-cta-arw{
+    display:inline-block; vertical-align:-2px; margin-left:8px;
+  }
+
+  /* ── [14] 검은 버튼형 CTA — 위아래 여백 통일 ─────────────────────
+     검은 알약 버튼은 파일 안에 세 개(03·04·05 섹션 끝)뿐이고
+     전부 .hw26-cta--gap 이다. 05 카드 안이나 04 스팟 안의 .hw26-cta 는
+     배경을 벗긴 글자 링크라 여기 걸리지 않는다.
+     모바일 기본값은 위 32 / 아래 16px 이었다. 20 / 27px 로 바꾼다.
+     좌우 auto(가운데 정렬)는 .hw26-cta 쪽 값을 그대로 쓴다. */
+  .contents_div .hw26-cta--gap{ margin-top:20px; margin-bottom:27px; }
+
+  /* ── [15] 검은 버튼형 CTA — 글자를 버튼 정중앙에 ──────────────────
+     [가로] 화살표가 글자 뒤에 인라인으로 붙어 있어서 text-align:center 는
+     '글자+화살표' 덩어리를 가운데 놓는다. 그래서 글자만 보면 화살표
+     몫(8+13=21px)의 절반인 약 10px 만큼 왼쪽으로 치우쳤다.
+     화살표를 아예 흐름에서 빼 오른쪽에 절대배치한다 — 줄 폭 계산에
+     끼지 않으니 글자가 패딩 사이 정중앙에 서고, 문구가 길어져도
+     화살표만 다음 줄로 떨어지는 일이 없다.
+     (음수 마진으로 폭만 지우는 방법도 써 봤지만, 줄바꿈 판단에는
+      마진이 반영되지 않아 화살표가 혼자 아랫줄로 내려갔다)
+     오른쪽 패딩 32px 안쪽(right:14px)에 세워 두 줄로 접힌 문구와도
+     겹치지 않는다. 버튼 폭은 원래(글자+65px)보다 1px 좁다.
+     [세로] padding 13/13 이면 글자 획이 버튼 정중앙에 온다.
+     여기서 1px 더 내려 14/12 로 둔다.
+     ▼ 더 내리려면 두 값의 합을 26 으로 유지한 채 옮긴다 */
+  .contents_div .hw26-cta--gap{ padding:14px 32px 12px; }
+  .contents_div .hw26-cta--gap .hw26-cta-arw{
+    position:absolute; right:14px; top:50%;
+    margin:0; transform:translateY(-50%);
+  }
+  .contents_div .hw26-cta--gap:hover .hw26-cta-arw,
+  .contents_div .hw26-cta--gap:focus-visible .hw26-cta-arw{
+    transform:translate(3px,-50%);
+  }
+
+  /* ── [16] 05 섹션 카드 — 구획 위아래 여백 ────────────────────────
+     [원인] 2열로 묶인 구획(.hw26-blk--split)에 패딩이 두 겹으로 들어갔다.
+     기본 CSS 는 .hw26-blk 에 상하 패딩을 주고 바로 뒤에서
+     .hw26-blk--split 만 padding-block:0 으로 털어 낸다 — 안쪽 열이
+     자기 패딩을 갖는 구조라 겉의 구획은 0 이어야 한다.
+     그런데 모바일 블록의 .hw26-blk{padding-top:20;padding-bottom:24}
+     가 그 두 줄보다 뒤에 오면서, 특정도가 같아 나중 규칙이 이겼다.
+     결과적으로 split 은 20/24 를 되찾고 안쪽 열도 20/24 를 그대로 써
+     '야외작업/폐지수집' 구획만 위 40px, 아래 48px 이 됐다.
+     다른 구획(20/24)의 두 배라 그 자리만 뻥 뚫려 보였다.
+     [수정] 모바일에서도 split 의 패딩을 다시 턴다. 순서상 뒤에 둬야
+     같은 특정도 싸움에서 이긴다.
+     (첫·마지막 구획을 0 으로 만드는 :first-child/:last-child 규칙은
+      특정도가 한 단 높아 그대로 살아 있다)
+     [여백] 위 20 / 아래 24 도 같은 값으로 맞춘다. 아래 24 는 원래
+     '밑단이 글줄로 뚝 끊기지 않게' 얹어 둔 +8px 을 품은 값이었다.
+     모바일은 제목 행간(1.5)과 본문 행간(1.62)이 거의 같아
+     숫자를 같게 두면 눈으로도 같게 보인다. 20/20 으로 통일한다.
+     바로가기가 있는 열은 그 +8px 을 음수 마진으로 되돌리고 있었으므로
+     이제 되돌릴 것이 없다 — margin-bottom 을 0 으로 푼다. */
+  .contents_div #hw26-sec5 .hw26-blk{ padding-block:20px; }
+  .contents_div #hw26-sec5 .hw26-blk--split{ padding-block:0; }
+  .contents_div #hw26-sec5 .hw26-blk--split > .hw26-blk-col{ padding-block:20px; }
+  .contents_div #hw26-sec5 .hw26-blk-col .hw26-cta{ margin-bottom:0; }
+
+  /* ── [17] 05 섹션 카드 안 밑줄 바로가기 — 본문과 같은 크기로 ──────
+     이 링크만 '브레이크포인트를 따르지 않고 15px 고정'으로 박혀 있어
+     모바일에서 본문(--fs-body 14px)보다 1px 커 혼자 튀었다.
+     토큰을 물려 본문을 따라가게 한다. */
+  .contents_div #hw26-sec5 .hw26-card .hw26-cta{ font-size:var(--fs-body); }
+
+  /* ── [18] 무더위쉼터 바로가기 — 괄호 안 경로 표기 감추기 ──────────
+     '(안전지도 > 대피시설)'은 링크가 열리는 사이트의 메뉴 경로 안내다.
+     모바일 폭에서는 이 문구 때문에 링크가 두 줄로 접힌다.
+     마크업에서 괄호 부분을 .hw26-cta-path 로 감싸 두고 여기서 숨긴다.
+     텍스트 노드는 CSS 로 고를 수 없어 감싸는 span 이 필요했다.
+     (같은 파일의 인트로 제목·차트 뱃지가 쓰는 웹/모바일 문구 교체와 같은 방식) */
+  .contents_div .hw26-cta-path{ display:none; }
+
+  /* ── [23] 05 섹션 분야 4개(농업·축산·수산·염전) — 2행 2열 ─────────
+     모바일에서는 1열로 풀려 있었다('좁은 화면에서 2열은 한 줄에
+     서너 글자밖에 못 담는다'는 판단). 2행 2열로 되돌린다.
+     [선] 1열용으로 바꿔 둔 '항목 사이 가로선'을 지우고, 웹과 같은
+     십자 한 벌(왼칸의 오른선 + 윗줄의 아랫선)로 되돌린다.
+     [여백] 칸이 절반 폭이 되므로 글줄이 설 자리를 최대한 돌려준다 —
+     판 안쪽 14 → 12px, 칸 좌우 0 → 9px(십자와의 거리), 본문 좌우 인셋 해제.
+     바깥 네 변의 padding 은 판 자체 여백과 겹치므로 계속 턴다. */
+  .contents_div #hw26-sec5 .hw26-sub{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    padding:12px 12px 14px;
+  }
+  .contents_div #hw26-sec5 .hw26-sub li{ padding:14px 9px; }
+  .contents_div #hw26-sec5 .hw26-sub li + li{ border-top:0; }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(odd){
+    border-right:1px dotted rgba(47,123,240,.32); padding-left:0;
+  }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(even){ padding-right:0; }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+2){
+    border-bottom:1px dotted rgba(47,123,240,.32); padding-top:0;
+  }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(n+3){ padding-bottom:0; }
+  .contents_div #hw26-sec5 .hw26-sub-txt{
+    padding-inline:0; margin-top:12px;
+    /* 칸이 반 폭이라 글줄이 짧다. 본문보다 1px 낮춰 줄바꿈을 덜 타게 한다 */
+    font-size:calc(var(--fs-info) - 1px);
+  }
+
+  /* ── [25] 05 섹션 카드 본문 — 줄 끝에서 말이 갈라지던 문제 ────────
+     '1만여 곳의 / 무더위쉼터가', '마련되어 / 있어요.' 처럼 붙어 읽혀야 할
+     말이 줄 끝에서 잘리고, 마지막 줄에 '있어요.' 한 마디만 남았다.
+     원인은 줄마다 남는 자리가 제각각인 것이다 — 브라우저는 그냥
+     들어가는 데까지 채우고 넘기므로 마지막 줄이 짧게 남는다.
+     text-wrap:balance 는 문단 전체를 보고 줄 길이를 고르게 나눠
+     한 마디만 남는 줄을 없앤다(이 파일이 이미 리드문·02 카드에서 쓰는 방식).
+     여기에 오른쪽 인셋 10px 을 모바일에서만 푼다 — 좁은 화면에서 그
+     10px 이 한 어절을 다음 줄로 밀어내는 경우가 많다.
+     (모르는 브라우저는 이 두 줄을 무시할 뿐 지금과 같게 보인다) */
+  .contents_div #hw26-sec5 .hw26-card .hw26-p{
+    text-wrap:balance; padding-right:0;
+  }
+
+  /* ── [26] 02 섹션 카드 — 위아래 바깥 여백 10px ────────────────────
+     이 카드만 위 27px / 아래 7px 로 짝이 안 맞게 잡혀 있었다.
+     둘 다 10px 로 맞춘다. 카드가 두 장 이어질 때는 아래 10 과 위 10 이
+     마진 상쇄로 묶여 사이 간격도 10px 이 된다.
+     (카드 안쪽 여백과 주황 탭 뱃지 위치는 건드리지 않는다) */
+  .contents_div #hw26-sec2 .hw26-card{ margin-top:10px; margin-bottom:10px; }
+
+  /* ── [27] 03 섹션 카드 — 카드 사이 간격 10px ─────────────────────
+     이 카드들은 아래 마진 없이 위 마진(공용 20px)만으로 간격을 만든다.
+     그 값을 10px 로 줄이면 카드 사이가 그대로 10px 이 된다.
+     첫 카드 위는 앞 문단의 아래 마진(26px)이 더 커서 그쪽이 이긴다
+     — 섹션 리드문과 첫 카드 사이는 지금 간격 그대로다. */
+  .contents_div #hw26-sec3 .hw26-card{ margin-top:10px; }
+
+  /* ── [24] 05 섹션 분야 캡슐 — 모바일에서 85% 크기 ────────────────
+     웹은 네 캡슐의 폭을 min-width 로 거의 같게 묶어 두었다 —
+     염전 120px / 앞 세 개 116px, 글자도 12px / 12.5px 로 반 픽셀 차이다.
+     두 글자 라벨이 같은 폭에서 더 헐거워 보이는 걸 되빼는 장치라
+     모바일에서도 이 관계를 그대로 유지한 채 비율만 줄인다.
+     하한과 글자와 좌우 패딩에 같은 --sn-k 를 곱하므로 캡슐 모양과
+     네 개의 폭 관계가 함께 따라온다. ▼ 조절은 이 숫자만 고친다.
+     → 염전 120 → 102 - 4 = 98px / 앞 세 개 116 → 98.6 - 8 = 90.6px,
+       글자 12 → 10.2 / 12.5 → 10.6px
+     (▼ 뒤에 붙은 -4px / -8px 는 비율과 무관한 미세조정이다.
+      비율을 다시 만지면 이 두 값도 같이 확인해야 한다)
+     칸 안쪽 폭이 375px 화면에서 127px 이므로 여유 29px 이 남는다
+     (320px 화면까지 한 줄로 들어간다). */
+  .contents_div #hw26-sec5 .hw26-card .hw26-sub-name{
+    --sn-k:.85;
+    min-width:calc(120px * var(--sn-k) - 4px);
+    padding:calc(6px * var(--sn-k)) calc(8px * var(--sn-k));
+    font-size:calc((var(--fs-info) - 2px) * var(--sn-k));
+  }
+  .contents_div #hw26-sec5 .hw26-sub li:nth-child(-n+3) .hw26-sub-name{
+    min-width:calc(116px * var(--sn-k) - 8px);
+    font-size:calc((var(--fs-info) - 1.5px) * var(--sn-k));
+  }
+
+  /* ── [22] 04 섹션 스팟 카드 안 바로가기 — 위 여백 12px ────────────
+     이 링크는 본문과의 간격을 margin 이 아니라 자기 padding-top(14px)
+     으로 잡고 있다. 카드 바닥에 붙여 세우려고 margin-top:auto 를 쓰기
+     때문에 margin 으로는 간격을 만들 수 없어서다.
+     그래서 여기서도 padding-top 을 줄인다. 14 → 12px.
+     좌우·아래 값(2px / 4px)은 그대로 둔다. */
+  .contents_div .hw26-spot .hw26-cta{ padding-top:12px; }
+
+  /* ── [21] 04 섹션 스팟 헤더 — 제목 / 막대·수치 한 줄로 ────────────
+     제목 밑에 막대가 따로 한 줄을 차지해 주황 헤더가 두 줄 높이였다.
+     헤더를 flex 한 줄로 바꿔 제목은 왼쪽에 두고, 막대·수치 묶음이
+     남는 폭을 먹게 한다. 막대는 그 묶음 안에서 이미 flex:1 이라
+     '온열질환 26.2%' 앞의 빈 자리를 그대로 채운다.
+     제목과 수치 묶음은 아래를 기준으로 세운다(align-items:flex-end) —
+     제목 글상자의 밑변과 막대·수치 묶음의 밑변이 같은 선에 놓인다.
+     [막대 길이] 남는 폭을 막대가 먹게 두면 제목이 짧은 카드('길 위')만
+     막대가 길어져 셋이 제각각이 된다. 그래서 반대로 뒤집었다 —
+     막대·수치 묶음이 헤더 폭의 일정 비율을 고정으로 갖고, 제목이 남는 폭을 먹는다.
+     '온열질환'과 숫자는 폭이 고정이므로 셋의 막대 길이가 항상 같아진다.
+     기준은 셋 중 가장 짧던 막대(제목이 가장 긴 카드) = 헤더 폭의 61% 였고,
+     거기서 막대만 90% 로 줄인 값이 57.7% 다.
+     (묶음에서 10% 를 빼면 폭이 고정인 글자 몫까지 깎여 막대가 더 많이 줄어든다.
+      그래서 막대에서 줄일 11.4px 만 묶음 폭에서 뺐다: 211 → 199.6 / 346)
+     px 로 못 박지 않은 건 화면 폭이 320~430px 로 달라지기 때문이다 —
+     비율로 잡아야 어느 폭에서든 셋이 같고 좁은 화면에서 넘치지 않는다.
+     ▼ 막대를 늘리려면 57.7% 를 올린다 (제목 자리가 그만큼 줄어든다)
+     [밑단] 막대가 한 줄을 먹던 시절 밑단을 9px 로 줄여 뒀는데,
+     이제 제목 한 줄짜리 4·5번 카드와 같은 구조이므로 같은 13px 로 되돌린다. */
+  .contents_div .hw26-spot-head{
+    display:flex; align-items:flex-end; gap:12px;
+  }
+  .contents_div .hw26-spots > li:nth-child(-n+3) .hw26-spot-head{ padding-bottom:13px; }
+  .contents_div .hw26-spot-name{ flex:1 1 auto; min-width:0; }
+  .contents_div .hw26-spot-pct{ flex:0 0 57.7%; min-width:0; margin-top:0; }
+
+  /* ── [20] '지원대상' 라벨 캡슐 — 모바일에서만 85% 크기 ────────────
+     캡슐 크기는 높이(--cap-h 20px) / 좌우 패딩(--cap-pd 9px) /
+     글자(--fs-info - 2.5px = 11.5px) 세 값이 함께 만든다.
+     세 값에 같은 비율을 곱해야 캡슐 모양이 안 찌그러지므로
+     비율을 --lb-k 하나로 빼 두었다. ▼ 크기 조절은 이 숫자만 고치면 된다.
+     margin-top 은 '본문 첫 줄 높이의 정중앙'에 캡슐을 세우는 보정값이라
+     줄어든 높이를 반영해 같이 다시 계산한다.
+     두 토큰은 04 섹션 태그도 함께 쓰므로 토큰이 아닌 여기서만 곱한다.
+     (라벨 폭을 자간으로 맞추는 스크립트는 리사이즈마다 다시 도니
+      글자 크기가 바뀌어도 네 개의 폭은 그대로 균등하게 맞는다) */
+  .contents_div .hw26-lb{
+    --lb-k:.85;
+    height:calc(var(--cap-h) * var(--lb-k));
+    padding-inline:calc(var(--cap-pd) * var(--lb-k));
+    font-size:calc((var(--fs-info) - 2.5px) * var(--lb-k));
+    margin-top:calc((var(--fs-info) * 1.5 - var(--cap-h) * var(--lb-k)) / 2 + 2px);
+  }
+  /* ↑ 뒤의 +2px 는 캡슐 글자와 오른쪽 본문의 '글자 밑선'을 맞추는 값이다.
+     캡슐만 상자 기준으로 가운데 세우면(=+2px 없음) 두 글자의 한가운데는
+     맞지만, 캡슐 글자가 9.8px / 본문이 14px 로 크기가 달라 밑선은
+     캡슐 쪽이 2px 위에 남는다. 나란히 놓인 글자는 밑선이 어긋날 때
+     눈에 먼저 걸리므로 밑선을 기준으로 잡았다.
+     ▼ 상자 기준 정가운데로 되돌리려면 '+ 2px' 만 지운다 */
+
+  /* ── [19] 05 섹션 카드 안 밑줄 바로가기 — 가운데 정렬 ─────────────
+     모바일 규칙이 justify-content:flex-start + text-align:left 로
+     왼쪽에 붙여 두었다(1열이 되며 폭이 넓어진 것에 맞춘 값).
+     [함정] 같은 자리에 align-self:stretch + margin-inline:0 도 걸려 있다.
+     그런데 .hw26-cta 는 width:fit-content 라 폭이 이미 정해져 있어
+     stretch 가 먹지 않고 열 왼쪽에 붙는다. 그 상태에서는 상자 안을
+     아무리 가운데로 모아도(justify-content) 화면에서는 그대로 왼쪽이다.
+     그래서 상자 자체를 가운데로 보내는 margin-inline:auto 가 필요하다.
+     안쪽 정렬도 같이 가운데로 둔다 — 문구가 길어 상자가 열 폭을
+     꽉 채우거나 두 줄로 접히는 경우를 위한 값이다. */
+  .contents_div #hw26-sec5 .hw26-blk-col .hw26-cta{ margin-inline:auto; }
+  .contents_div #hw26-sec5 .hw26-card .hw26-cta{
+    justify-content:center; text-align:center;
+  }
+
+  /* ── [7]+[8] 03 섹션 h3 카드 — 흰 본문 위아래 여백 통일 ───────────
+     윗단은 목록 margin-top(파란 밴드 margin-bottom:2px 과 마진 상쇄되어
+     큰 쪽인 목록 값이 그대로 나온다), 밑단은 카드 padding-bottom 이 잡는다.
+     원래는 목록 종류별로 값이 갈려 있었다(번호 19 / 체크 12).
+     카드 하나만 보면 위아래가 맞지만 같은 섹션 안에서 카드마다 7px 씩
+     달라 목록이 들쭉날쭉해 보였다. 세 값을 19px 하나로 묶는다.
+     밑단을 :has() 로 갈라 주던 규칙도 필요 없어졌다 —
+     03 섹션 카드는 6개 모두 목록이 들어 있어 그냥 카드에 걸면 된다.
+     (구형 브라우저에서 :has() 를 몰라 밑단만 튀던 문제도 함께 사라진다) */
+  .contents_div #hw26-sec3 .hw26-card .hw26-ol,
+  .contents_div #hw26-sec3 .hw26-card .hw26-dash{ margin-top:19px; }
+  .contents_div #hw26-sec3 .hw26-card{ padding-bottom:19px; }
+
+  /* ── [13] 03·05 섹션 넘버 뱃지 — 텍스트 첫 줄과 세로가 안 맞던 문제 ──
+     보정값이 margin-top:calc((1.62em - 17px) / 2) 로 적혀 있었다.
+     margin 의 em 은 그 요소 자신의 font-size 를 따르는데,
+     뱃지 글자는 10px 이라 1.62em = 16.2px 으로 계산됐다.
+     의도했던 기준은 본문 첫 줄 높이(1.62 x 14px = 22.68px)다.
+     그래서 실제 보정이 -0.4px 이 되어 뱃지가 3px 정도 위로 떴다.
+     em 대신 본문 글자 크기(--fs-body)를 직접 곱해 기준을 고정한다.
+     → (22.68 - 17) / 2 = 2.84px.
+     원래 규칙이 03·05 를 한 줄에 묶어 둔 탓에 두 섹션이 같은 증상이었다. */
+  .contents_div #hw26-sec3 .hw26-ol .hw26-num,
+  .contents_div #hw26-sec5 .hw26-ol .hw26-num{
+    margin-top:calc((1.62 * var(--fs-body) - 17px) / 2);
+  }
+
+  /* ── [21] 컬러 태그 밴드(03 파랑 / 04 주황) — 높이 -2px & 서로 통일 ──
+     대상은 '카드 윗변을 통째로 덮는 컬러 밴드' 두 곳뿐이다.
+     03 파랑 .hw26-h3-row (번호 / 제목)
+     04 주황 .hw26-spot-head (장소명 + 비중 막대)
+     02 탭 알약, 05 아이콘 제목 등 다른 제목 어법은 건드리지 않는다.
+
+     [기준] 파란 밴드가 기준. 원래 높이는
+       위 13 + 제목 한 줄(1.45 x --fs-h3) + 아래 12 = 제목줄 + 25px.
+     여기서 2px 을 뺀 값을 --tag-h 로 두고 두 밴드가 함께 쓴다.
+     px 로 못 박지 않은 건 --fs-h3 가 15px(≤600) / 14px(≤380) 로
+     달라지기 때문 — 글자가 줄면 밴드도 같이 줄어야 한다.
+
+     [파랑] 패딩 13/12 → 12/11 (합 25 → 23). 자연 높이가 곧 --tag-h 다.
+     [주황] 글자 line-height 가 1.35 라 자연 높이가 파랑보다 낮다.
+       패딩은 그대로 두고 min-height 로 --tag-h 까지 끌어올려 맞춘다.
+       (align-items:flex-end 라 남는 몫은 윗쪽에 붙는다) */
+  .contents_div .hw26-wrap{ --tag-h:calc(1.45 * var(--fs-h3) + 23px); }
+  .contents_div #hw26-sec3 .hw26-card .hw26-h3-row{
+    min-height:var(--tag-h); padding-top:12px; padding-bottom:11px;
+  }
+  .contents_div .hw26-spot-head{ min-height:var(--tag-h); }
+}
+
+/* ── [9] 웹(601px 이상) 03 섹션 h3 카드 — 흰 본문 위아래 여백 -2px ──
+   윗단은 목록 margin-top(번호 23 / 체크 16), 밑단은 카드 padding-bottom
+   (--card-pt - 6px = 26px)이 잡는다. 세 값에서 각각 2px 씩 뺀다.
+   [7]·[8]은 600px 이하 전용이라 여기와 겹치지 않는다.
+   목록 셀렉터를 #hw26-sec3 로 물려 05 섹션 목록은 건드리지 않는다. */
+@media (min-width:601px){
+  .contents_div #hw26-sec3 .hw26-card .hw26-ol{ margin-top:21px; }
+  .contents_div #hw26-sec3 .hw26-card .hw26-dash{ margin-top:14px; }
+  .contents_div #hw26-sec3 .hw26-card{ padding-bottom:calc(var(--card-pt) - 8px); }
+}
+
+/* ── [12] 웹(601px 이상) 인트로 리드문 — 행간 1.45 → 1.5 ─────────
+   .hw26-lead 는 인트로 카드 안 문단 한 곳에만 쓰인다.
+   모바일은 원래 값(1.45) 그대로 두고 웹에서만 올린다. */
+@media (min-width:601px){
+  .contents_div .hw26-lead{ line-height:1.5; }
+}
+
+/* ── [11] 차트 기간 뱃지 — 웹 전체 표기 / 모바일 축약 표기 */
+.contents_div .hw26-chart-date-sh{ display:none; }
+
+/* ── [10] 인트로 제목 — 웹 전체 문구 / 모바일 축약 문구 ─────────
+   '특별시민을 위한 여름 안전 가이드'는 모바일 폭에서 한 줄에 못 들어간다.
+   모바일에서만 '특별시민 여름 안전가이드'로 갈아끼운다. */
+.contents_div .hw26-intro-h2-sh{ display:none; }
+
+/* 390px 이하 — 인트로 제목 좌우 인셋 고정
+   제목 인셋은 원래 calc(--sun-x + --sun-w + 8px) 라 해 크기를 따라간다.
+   아래에서 해를 78.66 → 88.66px 로 키웠으므로 그대로 두면 인셋이
+   좌우 10px 씩 더 파여, nowrap 인 축약 제목이 글줄 폭을 넘어
+   다시 해 밑으로 밀려 들어간다. 해가 커지기 전 값(60.66px)으로 묶는다.
+   ▼ 이 블록은 반드시 아래 340px 예외보다 앞에 있어야 한다
+      (340px 은 오른쪽 인셋만 푸는 규칙이라 뒤에 와야 살아남는다) */
+@media (max-width:390px){
+  .contents_div .hw26-h2.hw26-intro-h2{ padding-inline:60.66px; }
+}
+
+/* 340px 이하는 좌우 대칭 인셋으로는 글줄 폭이 모자라 축약 문구도 두 줄로 접힌다.
+   오른쪽 인셋만 풀어 폭을 돌려준다 — 대신 이 폭에서만 제목 축이 오른쪽으로 밀린다. */
+@media (max-width:340px){
+  .contents_div .hw26-h2.hw26-intro-h2{ padding-right:0; }
+}
+
+/* 390px 이하 — 모바일 전용 줄바꿈(.hw26-brm)
+   03 응급 단계 설명은 3열이라 칸 폭이 가장 좁다. 이 폭부터
+   '의식 저하, / 체온 급상승, / 땀이 멎음' 세 줄로 끊어 읽힌다.
+   기존 380px 단계와 따로 잡은 건 390px(아이폰 12~15 기본 폭)까지
+   포함시키기 위해서다. 391px 이상에서는 자동 줄바꿈에 맡긴다. */
+@media (max-width:390px){
+  .contents_div .hw26-brm{ display:inline; }
+
+  /* 해 아이콘 — 78.66 → 88.66px (+10px).
+     이 블록이 위 600px 블록보다 뒤에 있어 이 폭에서만 덮어쓴다.
+     --sun-y 는 --sun-w 를 참조해 자동 재계산되므로 카드에 걸치는
+     비율(위 80% / 아래 20%)은 커져도 그대로 유지된다.
+     ※ 제목 좌우 인셋도 --sun-w 를 참조하므로 위쪽 390px 블록에서
+        60.66px 로 따로 고정해 뒀다 */
+  .contents_div .hw26-intro{ --sun-w:88.66px; }
+
+  /* 03 h3 카드 흰 본문 — 위 14px / 아래 15px
+     위는 목록 margin-top, 아래는 카드 padding-bottom 이 잡는다.
+     번호·체크 목록 구분 없이 같은 값이다 — 위 [7]+[8] 과 같은 원칙. */
+  .contents_div #hw26-sec3 .hw26-card .hw26-ol,
+  .contents_div #hw26-sec3 .hw26-card .hw26-dash{ margin-top:14px; }
+  .contents_div #hw26-sec3 .hw26-card{ padding-bottom:15px; }
+
+  /* 헤드 리드문 좌우 여백 30 → 20px.
+     390px 이하에서 30px 을 유지하면 글줄이 240px대로 줄어 어절이 잘게 쪼개진다. */
+  .contents_div .hw26-head .hw26-p{ padding-inline:20px; }
+
+  /* 04 온도계 — 위아래 여백
+     헤드가 flex 라 형제끼리 마진 상쇄가 없다. 그래서 값이 그대로 더해진다.
+     위: 22 → 17px
+     아래: 8 → 3px. 밑 간격은 리드문 margin-top:16px 과 더해져 19px 이 된다. */
+  .contents_div #hw26-sec4 .hw26-head-fig{ margin-top:17px; margin-bottom:3px; }
+
+  /* 검은 알약 CTA — 글자 크기 1px 축소.
+     이 폭에서 '전남광주통합특별시 폭염 대책 카드뉴스 보기' 가 두 줄로 접히던 걸 줄인다.
+     --fs-cta 를 건드리면 04 스팟 안의 글자 링크까지 따라 줄어들므로
+     검은 버튼(.hw26-cta--gap)에만 건다. 패딩은 그대로라 버튼 높이는 유지된다. */
+  .contents_div .hw26-cta--gap{ font-size:calc(var(--fs-cta) - 1px); }
+}
+
+/* 391~600px — 해·온도계를 좌우 바깥에서 40px 안쪽으로 당긴다
+   이 구간에서 --gut 은 16px 인데 해는 left:-26px, 온도계는 right:-26px 라
+   둘 다 섹션 밖으로 10px 씩 나가 있었다. .hw26-intro 가 overflow:hidden 이라
+   나간 만큼 잘려서 해와 온도계 옆구리가 직선으로 뭉텅 썰려 보였다.
+   각각 -26px → +14px (40px 안쪽)으로 옮겨 잘림을 없앤다.
+   ▼ 하한을 391px 로 둔 이유: 390px 이하는 해를 88.66px 로 키워 둔 구간이라
+      해를 여기서 더 안쪽으로 당기면 가운데 정렬된 제목 첫 글자에 닿는다.
+      그래서 그 구간은 기존 위치를 그대로 둔다. */
+@media (min-width:391px) and (max-width:600px){
+  /* 해 — left 기준. --sun-y(세로)와 --sun-w(크기)는 건드리지 않는다 */
+  .contents_div .hw26-intro{ --sun-x:14px; }
+  /* 온도계 — right 기준. 값이 클수록 왼쪽(안쪽)으로 들어온다.
+     bottom 은 그대로라 위아래 위치는 변하지 않는다 */
+  .contents_div .hw26-intro-thermo{ right:14px; }
+}
+
+/* 380px 이하는 원본이 h3 를 한 단 더 낮춰 뒀다(17→16). 그 단차를 유지한 채 -2px */
+@media (max-width:380px){
+  .contents_div .hw26-wrap{ --fs-h3:14px; }
+}
+/* 330px 이하에서는 h3 를 따라 커진 02 탭 뱃지가 3줄로 접혀 헤더 밴드처럼 부푼다.
+   뱃지만 한 단 더 낮춰(-1px → -2px) 두 줄을 지킨다. */
+@media (max-width:330px){
+  .contents_div #hw26-sec2 .hw26-h3{ font-size:calc(var(--fs-h3) - 2px); }
+}
+
+/* 340px 이하는 위 값으로도 제목+뱃지가 빠듯하다. 제목 크기는 건드리지 않고
+   간격·아이콘·뱃지만 한 단 조여 320px 까지 한 줄을 지킨다(여유 13px). */
+@media (max-width:340px){
+  .contents_div .hw26-chart-head{ gap:6px; }
+  .contents_div .hw26-chart-ic{ width:19px; height:19px; margin-right:5px; }
+  .contents_div .hw26-chart-date{ font-size:9.5px; padding-inline:6px; }
+}
+
+/* ── [9] 01 섹션 차트 — 막대와 오른쪽 숫자가 너무 붙어 보이던 문제 ──
+   행은 [이름 64px 고정] gap12 [막대 flex:1] gap12 [숫자] 구조라
+   좌우 간격이 둘 다 12px 로 같다. 그런데 이름 칸이 고정폭이라
+   '실외'처럼 짧은 이름은 글자 끝에서 막대까지 실제로 44.6px 이 벌어진다.
+   그래서 왼쪽은 헐렁하고 오른쪽은 답답한 비대칭으로 읽혔다.
+   gap 자체를 키우면 이름 칸까지 밀려 글자 위치가 바뀌므로,
+   막대에만 오른쪽 마진을 줘서 막대 길이를 줄인다.
+   → 이름·숫자 위치는 그대로, 막대~숫자 간격만 12 + 23 = 35px.
+   ▼ 간격 조절은 이 23px 하나만 고치면 된다 (최종 간격 = 12 + 이 값) */
+.contents_div .hw26-chart-track{ margin-right:23px; }
+
+/* ── [7] 04 섹션 카드 제목 옆 이모지 — 주황 배경에 묻히던 문제 ────
+   컬러 이모지가 주황 밴드 위에 얹혀 윤곽이 배경에 먹혔다.
+   글자 뒤로 흰 글로우를 두 겹(가까이 진하게 / 넓게 옅게) 깔아 배경과 떼어 놓는다.
+   같은 파일의 .hw26-key-stamp(STOP) 가 이미 쓰는 방식이라 어법이 겹치지 않는다.
+   목표는 '흰 테가 보이는 것'이 아니라 '이모지가 배경에서 떨어져 보이는 것'이다.
+   그래서 번짐을 아주 좁게(2px) 잡아 글자 가장자리만 따라 붙게 하고,
+   농도도 절반 정도(.6/.3)로 낮췄다. 흰 구름은 눈에 띄지 않으면서
+   이모지 윤곽선만 주황 배경에서 분리된다.
+   ▼ 더 또렷하게 → 두 값의 알파를 올린다 (.6/.3 → .8/.45)
+   ▼ 더 지우고 싶으면 → 알파를 내린다 (.45/.2 면 거의 원본)
+   ※ 넓게 퍼뜨리면(10px 이상) 흰 구름이 티 나고 이모지 윤곽까지 흐려진다
+   원래 눌러 두었던 opacity:.92 도 1 로 되돌린다 — 흐리게 만들 이유가 없다. */
+.contents_div .hw26-spot-emo{
+  opacity:1;
+  text-shadow:
+    0 0 2px rgba(255,255,255,.6),
+    0 0 6px rgba(255,255,255,.3);
+}
+
+/* ── [4] 02 섹션 키 카드(중단·이동·확인) ────────────────────────
+   두 가지가 겹쳐 있었다.
+   (가) 380px 이하 가로형에서 첫 카드만 이미지가 컸다.
+        첫 카드만 <span class="hw26-key-fig"> 로 감싸져 있는데(STOP 스탬프 때문)
+        가로형 규칙이 .hw26-ic 에만 걸려 있어 fig 가 예전 세로형 값
+        (width:100%+24px, 좌우 음수 마진)을 그대로 쓰고 있었다.
+        → 이미지 폭 96.7px vs 64px, 라벨·본문 시작선까지 카드마다 어긋남.
+   (나) 380~600px 3열에서는 글줄 폭이 70~80px 밖에 안 나와
+        본문이 5줄로 쪼개졌다(430px 에서도 동일).
+   전환 폭을 480px 로 올리고, 가로형을 grid 로 다시 짠다.
+   이미지는 왼쪽 한 칸에 두 줄을 걸치고, 오른쪽에 라벨·본문이 같은 왼쪽 축으로 선다. */
+@media (max-width:480px){
+  .contents_div .hw26-keys{ grid-template-columns:1fr; gap:10px; }
+  .contents_div .hw26-key{
+    display:grid;
+    grid-template-columns:108px minmax(0,1fr);
+    grid-template-areas:"img word" "img txt";
+    align-items:center; align-content:center;
+    column-gap:14px; row-gap:7px;
+    /* 왼쪽·위아래 패딩을 0 으로. 이미지가 카드 모서리까지 닿아야 하므로
+       여백은 오른쪽 글줄 칸에만 남긴다 */
+    padding:13px 15px 13px 0; text-align:left;
+  }
+  /* 이미지 — fig 로 감싼 카드와 아닌 카드를 하나의 규칙으로 묶는다.
+     ▼ 정사각형 고정을 풀고 카드 높이를 꽉 채운다.
+     align-self:stretch 로 두 행에 걸쳐 늘어나고,
+     위아래 -13px 마진으로 카드의 세로 패딩까지 넘어가 밑변·윗변에 닿는다.
+     카드가 overflow:hidden 이라 왼쪽 모서리는 카드 라운드대로 잘린다.
+     ▼ 폭을 키울수록 오른쪽 글줄 칸이 좁아져 카드마다 본문 줄 수가 달라진다.
+       100px 까지는 375px 화면에서 세 카드 모두 두 줄로 균일하고,
+       108px 부터는 2/3/2 로 갈린다(카드 높이도 제각각이 된다).
+       지금은 이미지를 크게 보여주는 쪽을 택해 108px 로 둔다. */
+  .contents_div .hw26-key > .hw26-ic,
+  .contents_div .hw26-key > .hw26-key-fig{
+    grid-area:img; align-self:stretch;
+    display:block; position:relative;
+    width:108px; max-width:none; height:auto;
+    margin:-13px 0; aspect-ratio:auto; border-radius:0; overflow:hidden;
+    /* 이미지와 글줄 칸을 가르는 세로선.
+       처음엔 카드 테두리색(--c-line #E3ECF9)을 썼는데 카드 배경
+       (#FFF → --c-bluel #EAF3FF)과 거의 같은 값이라 선이 보이지 않았다.
+       브랜드 블루를 40% 로 깔아 대비를 준다.
+       ▼ 더 진하게 → .40 을 올린다 / 더 옅게 → 내린다
+       ※ 두께를 2px 로 키우는 것보다 1px 에 농도를 올리는 쪽이 선명하다 */
+    border-right:1px solid rgba(47,123,240,.40);
+  }
+  .contents_div .hw26-key > img.hw26-ic{ object-fit:cover; }
+  .contents_div .hw26-key .hw26-key-fig .hw26-ic{
+    width:100%; height:100%; margin:0; border-radius:0; aspect-ratio:auto;
+    object-fit:cover;
+  }
+  /* 스탬프도 78px 이미지에 맞춰 축소 */
+  .contents_div .hw26-key-stamp{ font-size:25px; top:calc(50% + 6px); }
+  .contents_div .hw26-key-word{
+    grid-area:word; justify-self:start; margin-top:0; padding:5px 15px;
+  }
+  .contents_div .hw26-key-txt{
+    grid-area:txt; text-align:left; text-wrap:pretty;
+  }
+}
+
+</style>
+
+<div class="hw26-wrap">
+  <!-- ============ HERO ============ -->
+  <section class="hw26-hero">
+    <div class="hw26-hero-visual">
+      <!-- 슬라이드 레이어 (가장 아래) — 4장을 두 벌 이어 붙여 끊김 없이 순환 -->
+      <ul class="hw26-hero-track" aria-hidden="true">
+          <li class="hw26-hero-slide" style="--i:0"><img src="img/슬라이드0.webp" alt=""></li>
+          <li class="hw26-hero-slide" style="--i:1"><img src="img/슬라이드1.webp" alt=""></li>
+          <li class="hw26-hero-slide" style="--i:2"><img src="img/슬라이드2.webp" alt=""></li>
+          <li class="hw26-hero-slide" style="--i:3"><img src="img/슬라이드3.webp" alt=""></li>
+          <li class="hw26-hero-slide" style="--i:4"><img src="img/슬라이드0.webp" alt="" loading="lazy"></li>
+          <li class="hw26-hero-slide" style="--i:5"><img src="img/슬라이드1.webp" alt="" loading="lazy"></li>
+          <li class="hw26-hero-slide" style="--i:6"><img src="img/슬라이드2.webp" alt="" loading="lazy"></li>
+          <li class="hw26-hero-slide" style="--i:7"><img src="img/슬라이드3.webp" alt="" loading="lazy"></li>
+      </ul>
+
+      <!-- 주황 마스크 레이어 (창 3개가 뚫려 있음) -->
+      <div class="hw26-fig hw26-fig--hero">
+        <img src="img/히어로배경.webp" alt="" aria-hidden="true" width="1600" height="1700" decoding="async">
+      </div>
+
+      <div class="hw26-hero-copy">
+        <p class="hw26-hero-kicker">특별시민 안전가이드 &lt;여름&gt; 편</p>
+        <h1 class="hw26-hero-title">더위는 이기는 게<br>아니라 <em>피해야 해요</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NAV (히어로 이미지 바로 아래) ============ -->
+  <nav class="hw26-nav" aria-label="상세페이지 섹션 바로가기">
+    <ul class="hw26-nav-list">
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec1"><span class="hw26-nav-fu">온열질환 주의</span><span class="hw26-nav-sh">온열질환</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec2"><span class="hw26-nav-fu">폭염특보 개편</span><span class="hw26-nav-sh">폭염특보</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec3"><span class="hw26-nav-fu">여름 생활수칙</span><span class="hw26-nav-sh">생활수칙</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec4"><span class="hw26-nav-fu">장소별 대응</span><span class="hw26-nav-sh">장소별</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec5"><span class="hw26-nav-fu">광주특별시 대응</span><span class="hw26-nav-sh">특별시 대응</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- ============ INTRO ============ -->
+  <div class="hw26-intro">
+    <h2 class="hw26-h2 hw26-intro-h2"><span class="hw26-intro-h2-fu">특별시민을 위한 여름 안전 가이드</span><span class="hw26-intro-h2-sh">특별시민 여름 안전가이드</span></h2>
+    <div class="hw26-intro-stage">
+      <div class="hw26-intro-card">
+        <p class="hw26-lead">매년 역대급 더위라지만 <strong>올해는 진짜 역대급입니다.</strong> 해와 바람 중 나그네의 옷을 벗긴 건 뜨거운 해였다는 걸 기억하세요. <strong>더위는 피하는 게 최선이니까요.</strong> 특별시민을 위한 특별한 여름 안전 가이드를 준비했어요.</p>
+        <img class="hw26-intro-thermo" src="img/온도계.webp" alt="" aria-hidden="true" decoding="async">
+      </div>
+      <img class="hw26-intro-sun" src="img/태양.webp" alt="">
+    </div>
+  </div>
+
+  <!-- ============ SEC 1 ============ -->
+  <section class="hw26-sec hw26-band--hot hw26-sec--round" id="hw26-sec1">
+    <div class="hw26-head">
+      <p class="hw26-kicker"><span class="hw26-kicker-no">01</span>온열질환 주의</p>
+      <h2 class="hw26-h2">온열질환자가 발생하고 있어요<span class="hw26-h2-em" aria-hidden="true">🚑</span></h2>
+      <p class="hw26-p hw26-p--head">막연하게 ‘여름이라 덥다’고 하기엔 그 기세가 심상치 않습니다. 야외 온열질환자 발생 추이도 심상치 않아요. ‘여름인데 밖이 더운 건 당연하지’라고 생각할 수도 있지만, 이렇게까지 덥다면 더더욱 실외에선 조심해야 해요.</p>
+    </div>
+
+    <div class="hw26-chart-card">
+      <div class="hw26-chart-head">
+        <p class="hw26-chart-title"><span class="hw26-chart-ic" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c-3.94 0-7.14 3.13-7.14 7 0 5.19 6.4 12.62 6.67 12.93a.62.62 0 0 0 .94 0c.27-.31 6.67-7.74 6.67-12.93 0-3.87-3.2-7-7.14-7Zm0 9.62a2.62 2.62 0 1 1 0-5.24 2.62 2.62 0 0 1 0 5.24Z"/></svg></span>2026 온열질환 발생 장소</p>
+        <p class="hw26-chart-date"><span class="hw26-chart-date-fu">2026.05.15 ~ 07.26</span><span class="hw26-chart-date-sh">26.5.15 ~ 7.26</span></p>
+      </div>
+      <ul class="hw26-chart">
+      <li>
+        <div class="hw26-chart-row">
+          <span class="hw26-chart-name">실외</span>
+          <span class="hw26-chart-track"><span class="hw26-chart-bar" style="width:100%"></span></span>
+          <span class="hw26-chart-val">81.8%</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-chart-row">
+          <span class="hw26-chart-name">작업장</span>
+          <span class="hw26-chart-track"><span class="hw26-chart-bar" style="width:32%"></span></span>
+          <span class="hw26-chart-val">26.2%</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-chart-row">
+          <span class="hw26-chart-name">논밭</span>
+          <span class="hw26-chart-track"><span class="hw26-chart-bar" style="width:19.4%"></span></span>
+          <span class="hw26-chart-val">15.9%</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-chart-row">
+          <span class="hw26-chart-name">길가</span>
+          <span class="hw26-chart-track"><span class="hw26-chart-bar" style="width:15.2%"></span></span>
+          <span class="hw26-chart-val">12.4%</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SEC 2 ============ -->
+  <section class="hw26-sec hw26-band--soft hw26-sec--tuck" id="hw26-sec2">
+    <div class="hw26-head">
+      <p class="hw26-kicker"><span class="hw26-kicker-no">02</span>폭염특보 개편</p>
+      <h2 class="hw26-h2">그래서 올해는 이런 경보가 <br class="hw26-brw">새로 생겼습니다<span class="hw26-h2-em" aria-hidden="true">🚨</span></h2>
+      <p class="hw26-p hw26-p--head">무려 18년 만의 개편이에요. 주의보와 경보 두 단계였던 폭염특보에 최상위 단계인 ‘폭염중대경보’가 추가되었습니다. 또 밤 기온을 기준으로 하는 ‘열대야주의보’도 신설되었어요.</p>
+    </div>
+
+    <ul class="hw26-steps">
+      <li>
+        <div class="hw26-step hw26-step--l1">
+          <span class="hw26-step-deg" aria-hidden="true">33°</span>
+          <span class="hw26-step-lb hw26-step-lb--l1">폭염주의보</span>
+          <span class="hw26-step-txt">일 최고 체감온도 33도 이상이 2일 이상 지속될 것으로 예상될 때</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-step hw26-step--l2">
+          <span class="hw26-step-deg" aria-hidden="true">35°</span>
+          <span class="hw26-step-lb hw26-step-lb--l2">폭염경보</span>
+          <span class="hw26-step-txt">일 최고 체감온도 35도 이상이 2일 이상 지속될 것으로 예상될 때</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-step hw26-step--l3">
+          <span class="hw26-step-deg" aria-hidden="true">38°</span>
+          <span class="hw26-step-lb hw26-step-lb--l3">폭염중대경보</span>
+          <span class="hw26-step-txt">체감온도 35도 이상 관측 지역 중, 체감온도 38도 이상이 하루 이상 지속될 것으로 예상될 때</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-step hw26-step--l4">
+          <span class="hw26-step-deg" aria-hidden="true">25°</span>
+          <span class="hw26-step-lb hw26-step-lb--l4">열대야주의보<span class="hw26-step-lb-em" aria-hidden="true">🌙</span></span>
+          <span class="hw26-step-txt">밤 최저기온 25도 이상이 예상될 때</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <h3 class="hw26-h3">기온보다 중요한 건 ‘체감온도’</h3>
+      </div>
+      <p class="hw26-p">폭염특보는 기온이 아니라 <span class="hw26-strong">체감온도로 발효합니다.</span> 체감온도는 기온과 바람, 일사량을 반영하는데요. 기온이 높지 않아도 <span class="hw26-strong">습한 날이면 체감온도는 더 높아져요.</span> 온도계 숫자보다 특보를 믿어야 하는 이유가 여기 있어요. ‘기온이 33도네, 이 정도면 괜찮지’가 아니라 <span class="hw26-strong">33도에도 체감온도는 훨씬 높을 수 있어요.</span></p>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <h3 class="hw26-h3">폭염중대경보에서 기억해야 할 세 가지</h3>
+      </div>
+      <ul class="hw26-keys">
+        <li>
+          <div class="hw26-key">
+            <span class="hw26-key-fig"><img class="hw26-ic" src="img/중단.webp" alt="야외작업을 멈추는 모습" decoding="async"><span class="hw26-key-stamp" aria-hidden="true">STOP</span></span><span class="hw26-key-word">중단</span>
+            <span class="hw26-key-txt">야외활동과 야외작업을 최대한 중단하거나 미룹니다</span>
+          </div>
+        </li>
+        <li>
+          <div class="hw26-key">
+            <img class="hw26-ic" src="img/이동.webp" alt="그늘에서 물을 마시는 모습" decoding="async"><span class="hw26-key-word">이동</span>
+            <span class="hw26-key-txt">그늘, 무더위쉼터, 냉방시설로 옮기고 물을 마십니다</span>
+          </div>
+        </li>
+        <li>
+          <div class="hw26-key">
+            <img class="hw26-ic" src="img/확인.webp" alt="어르신께 안부 전화를 거는 모습" decoding="async"><span class="hw26-key-word">확인</span>
+            <span class="hw26-key-txt">가족과 이웃 특히 어르신의 안부를 확인합니다</span>
+          </div>
+        </li>
+      </ul>
+      <p class="hw26-p">모든 폭염 가이드가 공통적으로 말하는 건 중단, 이동, 확인 이 세 가지예요. 기억하세요. <span class="hw26-strong">더위는 이기는 게 아니라 더위를 피해서 중단하고, 이동하고, 확인해야 한다는 걸.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ SEC 3 ============ -->
+  <section class="hw26-sec hw26-band--cool hw26-sec--round-top" id="hw26-sec3">
+    <div class="hw26-head">
+      <p class="hw26-kicker"><span class="hw26-kicker-no">03</span>더위가 피해 갈 여름 생활 가이드</p>
+      <h2 class="hw26-h2">폭염에 지친 우리 몸은 <br class="hw26-brw">신호를 보내고 있습니다<span class="hw26-h2-em" aria-hidden="true">💧</span></h2>
+    </div>
+
+    <ul class="hw26-steps">
+      <li>
+        <div class="hw26-step hw26-step--l1">
+          <span class="hw26-step-fig"><span class="hw26-step-figbg" aria-hidden="true"></span><img src="img/초기.webp" alt="더위에 지쳐 이마의 땀을 닦는 모습" loading="lazy" decoding="async"></span>
+          <span class="hw26-step-head"><span class="hw26-step-deg" aria-hidden="true">1</span><span class="hw26-step-lb hw26-step-lb--l1">초기</span></span>
+          <span class="hw26-step-txt">어지럼증, 두통, 메스꺼움, 근육경련, 평소보다 많은 땀</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-step hw26-step--l2">
+          <span class="hw26-step-fig"><span class="hw26-step-figbg" aria-hidden="true"></span><img src="img/위험.webp" alt="얼굴이 붉어지고 어지러워하는 모습" loading="lazy" decoding="async"></span>
+          <span class="hw26-step-head"><span class="hw26-step-deg" aria-hidden="true">2</span><span class="hw26-step-lb hw26-step-lb--l2">위험</span></span>
+          <span class="hw26-step-txt">말이 어눌해짐, 걸음이 흔들림, 판단이 흐려짐</span>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-step hw26-step--l3">
+          <span class="hw26-step-fig"><span class="hw26-step-figbg" aria-hidden="true"></span><img src="img/응급.webp" alt="의식이 흐려져 축 처진 모습" loading="lazy" decoding="async"></span>
+          <span class="hw26-step-head"><span class="hw26-step-deg" aria-hidden="true">3</span><span class="hw26-step-lb hw26-step-lb--l3">응급</span></span>
+          <span class="hw26-step-txt">의식 저하, <br class="hw26-brm">체온 급상승, <br class="hw26-brw">땀이 멎음</span>
+        </div>
+      </li>
+    </ul>
+
+    <p class="hw26-p hw26-p--mb40 hw26-p--center">몸에 이상이 느껴진다면 위급상황이 오기 전에 조치해야 합니다. <span class="hw26-strong">무엇보다 땀이 멎는 게 가장 위험해요.</span> 시원해진 게 아니라 몸의 체온 조절이 무너졌다는 신호거든요.</p>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">01</span>
+        <h3 class="hw26-h3">쓰러진 사람을 발견했다면</h3>
+      </div>
+      <ol class="hw26-ol">
+        <li><span class="hw26-num">1</span><span class="hw26-ol-txt">시원한 곳으로 옮기고 옷을 느슨하게 풀어줍니다</span></li>
+        <li><span class="hw26-num">2</span><span class="hw26-ol-txt">물수건이나 물로 몸을 적시고 부채질을 합니다</span></li>
+        <li><span class="hw26-num">3</span><span class="hw26-ol-txt">의식이 없다면 물을 먹이지 마세요. 기도가 막힐 수도 있어요</span></li>
+        <li><span class="hw26-num">4</span><span class="hw26-ol-txt">반응이 없거나 체온이 높다면 즉시 119에 신고하세요</span></li>
+      </ol>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">02</span>
+        <h3 class="hw26-h3">물은 얼마나 마셔야 할까</h3>
+      </div>
+      <ol class="hw26-ol">
+        <li><span class="hw26-num hw26-num--cool">1</span><span class="hw26-ol-txt">갈증을 느끼기 전에 마셔야 해요</span></li>
+        <li><span class="hw26-num hw26-num--cool">2</span><span class="hw26-ol-txt">20~30분에 한 컵 정도 마시는 게 좋아요</span></li>
+        <li><span class="hw26-num hw26-num--cool">3</span><span class="hw26-ol-txt">한 번에 많이 마시기보다 자주 나눠서 마셔요</span></li>
+        <li><span class="hw26-num hw26-num--cool">4</span><span class="hw26-ol-txt">술·카페인은 오히려 탈수를 부를 수 있어요</span></li>
+      </ol>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">03</span>
+        <h3 class="hw26-h3">이런 분들은 더 조심하세요</h3>
+      </div>
+      <ol class="hw26-ol">
+        <li><span class="hw26-num">1</span><span class="hw26-ol-txt"><span class="hw26-ol-key">어르신:</span> 더위나 갈증을 느끼는 데 무딜 수 있어요</span></li>
+        <li><span class="hw26-num">2</span><span class="hw26-ol-txt"><span class="hw26-ol-key">어린이:</span> 체온이 빨리 오르며 스스로 위험을 알기 힘들어요</span></li>
+        <li><span class="hw26-num">3</span><span class="hw26-ol-txt"><span class="hw26-ol-key">만성질환자:</span> 심혈관·당뇨 등 기저질환이 있다면 더 조심해요</span></li>
+        <li><span class="hw26-num">4</span><span class="hw26-ol-txt"><span class="hw26-ol-key">야외 근로자:</span> 온열질환자가 가장 많이 발생해요</span></li>
+      </ol>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">04</span>
+        <h3 class="hw26-h3">냉방기기 사용은 이렇게</h3>
+      </div>
+      <ul class="hw26-dash">
+        <li><span class="hw26-dash-txt">에어컨과 선풍기를 함께 써 냉방 효율을 올려요</span></li>
+        <li><span class="hw26-dash-txt">선풍기는 밀폐된 공간이 아닌 환기와 함께해야 시원해요</span></li>
+        <li><span class="hw26-dash-txt">실내외 온도차가 너무 크지 않게 주의해요</span></li>
+      </ul>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">05</span>
+        <h3 class="hw26-h3">열대야 없는 밤을 위해</h3>
+      </div>
+      <ul class="hw26-dash">
+        <li><span class="hw26-dash-txt">자기 전 샤워는 미지근한 물로</span></li>
+        <li><span class="hw26-dash-txt">잠들기 전 카페인, 술 등으로 수면을 방해하지 않아요</span></li>
+        <li><span class="hw26-dash-txt">늦은 밤 무리한 운동은 피해요</span></li>
+      </ul>
+    </div>
+
+    <div class="hw26-card">
+      <div class="hw26-h3-row">
+        <span class="hw26-hno" aria-hidden="true">06</span>
+        <h3 class="hw26-h3">반려동물도 덥습니다</h3>
+      </div>
+      <ul class="hw26-dash">
+        <li><span class="hw26-dash-txt">반려동물은 지면과 더 가까워 더위를 많이 타요</span></li>
+        <li><span class="hw26-dash-txt">해가 떠 있는 동안은 산책하지 않아요</span></li>
+      </ul>
+    </div>
+
+    <a class="hw26-cta hw26-cta--gap"
+       href="https://blog.naver.com/jeonnam-gwangju-city/224369101678"
+       target="_blank" rel="noopener">
+      온열질환 이렇게 대응해요
+      <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </section>
+
+  <!-- ============ SEC 4 ============ -->
+  <section class="hw26-sec hw26-band--warm hw26-sec--round-top" id="hw26-sec4">
+    <div class="hw26-head">
+      <div class="hw26-head-txt">
+        <p class="hw26-kicker"><span class="hw26-kicker-no">04</span>장소별 대응</p>
+        <h2 class="hw26-h2">피하고, 중단하고, 확인하세요</h2>
+        <p class="hw26-p hw26-p--head">온열질환의 81.8%는 실외에서 발생합니다. <br class="hw26-brw">발생이 잦은 곳부터 대응 수칙을 확인하세요.</p>
+      </div>
+      <figure class="hw26-head-fig">
+        <img src="img/온도계2.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <ul class="hw26-spots">
+      <li>
+        <div class="hw26-spot">
+          <div class="hw26-spot-head">
+            <h3 class="hw26-spot-name">야외 작업장<span class="hw26-spot-emo" aria-hidden="true">👷‍♂️</span></h3>
+            <span class="hw26-spot-pct"><span class="hw26-spot-bar" aria-hidden="true"><span class="hw26-spot-bar-fill"></span></span><span class="hw26-spot-pct-lb">온열질환</span><b>26.2%</b></span>
+          </div>
+          <div class="hw26-spot-body">
+            <p class="hw26-spot-txt">체감온도가 높은 날은 <span class="hw26-strong">2시간 이내마다 20분 이상 휴식</span>을 제공해야 합니다.</p>
+            <p class="hw26-spot-sub">* 사업주의 보건조치 의무</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-spot">
+          <div class="hw26-spot-head">
+            <h3 class="hw26-spot-name">논밭과 축사<span class="hw26-spot-emo" aria-hidden="true">🐖</span></h3>
+            <span class="hw26-spot-pct"><span class="hw26-spot-bar" aria-hidden="true"><span class="hw26-spot-bar-fill"></span></span><span class="hw26-spot-pct-lb">온열질환</span><b>15.9%</b></span>
+          </div>
+          <div class="hw26-spot-body">
+            <p class="hw26-spot-txt"><span class="hw26-strong">오전 10시부터 오후 5시까지</span> 야외작업을 중단하세요.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-spot">
+          <div class="hw26-spot-head">
+            <h3 class="hw26-spot-name">길 위<span class="hw26-spot-emo" aria-hidden="true">☀️</span></h3>
+            <span class="hw26-spot-pct"><span class="hw26-spot-bar" aria-hidden="true"><span class="hw26-spot-bar-fill"></span></span><span class="hw26-spot-pct-lb">온열질환</span><b>12.4%</b></span>
+          </div>
+          <div class="hw26-spot-body">
+            <p class="hw26-spot-txt">교차로 <span class="hw26-strong">그늘막, 쿨링포그, 무더위쉼터</span>를 이용하세요.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-spot">
+          <div class="hw26-spot-head">
+            <h3 class="hw26-spot-name">차 안<span class="hw26-spot-emo" aria-hidden="true">🚗</span></h3>
+          </div>
+          <div class="hw26-spot-body">
+            <p class="hw26-spot-txt">한여름 <span class="hw26-strong">야외 주차된 차 안</span>이라면 더더욱 주의가 필요해요.</p>
+            <a class="hw26-cta"
+               href="https://blog.naver.com/jeonnam-gwangju-city/224368972199"
+               target="_blank" rel="noopener">
+              <span class="hw26-cta-tx">폭염 시 야외 주차 안전수칙</span>
+              <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-spot">
+          <div class="hw26-spot-head">
+            <h3 class="hw26-spot-name">집 안<span class="hw26-spot-emo" aria-hidden="true">🏠</span></h3>
+          </div>
+          <div class="hw26-spot-body">
+            <p class="hw26-spot-txt">낮 동안은 커튼 등으로 <span class="hw26-strong">햇볕을 막고</span>, 냉방이 여의찮으면 가까운 <span class="hw26-strong">무더위쉼터</span>를 이용하세요.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <a class="hw26-cta hw26-cta--gap"
+       href="https://www.safekorea.go.kr/safekorea-kor/acts/nacts/action-guide.do?&amp;category=heatWave&amp;actsHeaderTitle=%ED%8F%AD%EC%97%BC&amp;menuSn=4"
+       target="_blank" rel="noopener">
+      폭염 발생 시 행동요령 더 보기
+      <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </section>
+
+  <!-- ============ SEC 5 ============ -->
+  <section class="hw26-sec hw26-band--cool3 hw26-sec--round-top" id="hw26-sec5">
+    <div class="hw26-head">
+      <p class="hw26-kicker"><span class="hw26-kicker-no">05</span>광주특별시 폭염에 총력 대응 중</p>
+      <h2 class="hw26-h2">이번 여름, 우리 지역 <br class="hw26-brw">폭염 장난이 아닙니다<span class="hw26-h2-em" aria-hidden="true">☄️</span></h2>
+      <p class="hw26-p hw26-p--head">8월 3일 전남광주통합특별시가 지역재난안전대책본부를 <span class="hw26-strong">비상 2단계로 격상했어요.</span> 비상 1단계를 발동한 지 1주일 만인데요. 일부 지역의 <span class="hw26-strong">체감온도는 38도를 넘어서며</span> 폭염은 정부와 지자체가 앞서서 대응해야 할 재난이 되었어요.</p>
+    </div>
+
+    <div class="hw26-card hw26-onecard">
+
+      <div class="hw26-blk hw26-blk--split">
+        <div class="hw26-blk-col">
+          <h3 class="hw26-h3">무더위쉼터 이용하세요</h3>
+          <p class="hw26-p">광주특별시에는 <span class="hw26-strong">1만여 곳의 무더위쉼터가 있어요.</span> 나와 가까운 무더위쉼터도 쉽게 검색 가능합니다. <span class="hw26-strong">이동노동자를 위한 쉼터도 따로 마련되어 있어요.</span></p>
+          <a class="hw26-cta"
+             href="https://www.safekorea.go.kr/safekorea-kor/flsm/flsm/facilitiesSafteyMap.do?menuSn=234&amp;title=%EB%8C%80%ED%94%BC%EC%8B%9C%EC%84%A4"
+             target="_blank" rel="noopener">
+            <span class="hw26-cta-tx">내 주변 무더위 쉼터 찾기<span class="hw26-cta-path"> (안전지도<span class="hw26-cta-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>대피시설<span class="hw26-cta-sep" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>무더위쉼터)</span></span>
+            <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div class="hw26-blk-col">
+          <h3 class="hw26-h3">폭염정보를 한곳에서</h3>
+          <p class="hw26-p">지역 동네별 폭염 위험도를 상세하게 확인할 수 있는 <span class="hw26-strong">폭염정보 통합서비스를 시작했어요.</span> 상세 열분포, 행정동 단위 폭염 취약지도, 무더위쉼터, 그늘막 위치 정보를 제공해요. 폭염정보를 한눈에 보는 광주특별시의 폭염정보 포털이랍니다.</p>
+          <a class="hw26-cta" href="http://gjheatinfo.kr" target="_blank" rel="noopener">
+            <span class="hw26-cta-tx">폭염정보 통합서비스 바로가기</span>
+            <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hw26-blk">
+        <h3 class="hw26-h3">취약계층에 냉방비 지원</h3>
+        <p class="hw26-p">에너지바우처 사용방법이 변경되었어요. 이젠 <span class="hw26-strong">하절기·동절기 구분 없이 사용기간 내 자유롭게 사용 가능합니다.</span></p>
+        <ul class="hw26-box">
+          <li>
+            <span class="hw26-lb">지원대상</span>
+            <span class="hw26-box-txt">생계·의료·주거·교육급여 수급자 중 취약계층 구성원이 포함된 가구</span>
+          </li>
+          <li>
+            <span class="hw26-lb">신청기간</span>
+            <span class="hw26-box-txt">2026.12.31.까지</span>
+          </li>
+          <li>
+            <span class="hw26-lb">사용기간</span>
+            <span class="hw26-box-txt">2026.07.01.~2027.05.31.</span>
+          </li>
+          <li>
+            <span class="hw26-lb">신청방법</span>
+            <span class="hw26-box-txt">복지로 온라인 또는 행정복지센터</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hw26-blk hw26-blk--split">
+        <div class="hw26-blk-col">
+          <h3 class="hw26-h3">야외작업 기준을 마련</h3>
+          <p class="hw26-p">폭염중대경보가 발효되면 전남광주통합특별시 발주 151개 관급공사 현장은 긴급조치 외에 <span class="hw26-strong">모든 옥외 작업을 중지해야 합니다.</span> 민간 사업장에도 같은 조치를 권고했어요.</p>
+        </div>
+        <div class="hw26-blk-col">
+          <h3 class="hw26-h3">폐지수집 어르신 수당 지급</h3>
+          <p class="hw26-p">폐지수집 어르신들이 무더위에서 위험한 노동을 하지 않도록 <span class="hw26-strong">폐지수집 대신 대체 일자리를 제공해요.</span> 물론 수당도 지원합니다.</p>
+        </div>
+      </div>
+
+      <div class="hw26-blk">
+        <h3 class="hw26-h3">미리 확인하고 안부를 묻습니다</h3>
+        <ul class="hw26-dash">
+          <li><span class="hw26-dash-txt">생활지원사를 통한 안부 확인 2회로 확대</span></li>
+          <li><span class="hw26-dash-txt">쪽방 주민·노숙인에게 쉼터와 응급 잠자리 제공</span></li>
+          <li><span class="hw26-dash-txt">9/30까지 취약계층 2만 가구 냉방환경·전기 안전 점검</span></li>
+        </ul>
+      </div>
+
+      <div class="hw26-blk">
+        <h3 class="hw26-h3">농업, 축산, 수산 분야에 피해가 없게</h3>
+        <ul class="hw26-sub">
+          <li>
+            <p class="hw26-sub-name">농업</p>
+            <p class="hw26-sub-txt">현장활동반 영농작업장 예찰, 농업용수 가뭄대책 상황실 운영</p>
+          </li>
+          <li>
+            <p class="hw26-sub-name">축산</p>
+            <p class="hw26-sub-txt">폭염 취약 축산농가 공무원 1:1 담당제 운영, 7개 사업 218억 원 지원, 소방서·축협 협력 급수 지원</p>
+          </li>
+          <li>
+            <p class="hw26-sub-name">수산</p>
+            <p class="hw26-sub-txt">수온관측 시스템 120개소 운영, 이상수온 대응 국비 8억 700만원 추가 확보, 액화산소·면역증강제 보급</p>
+          </li>
+          <li>
+            <p class="hw26-sub-name">염전 노동자 보호</p>
+            <p class="hw26-sub-txt">고용노동부·해양수산부·경찰청과 노동권 보호 업무협약 체결</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <a class="hw26-cta hw26-cta--gap"
+       href="https://blog.naver.com/jeonnam-gwangju-city/224369113392"
+       target="_blank" rel="noopener">
+      전남광주통합특별시 폭염 대책 카드뉴스 보기
+      <span class="hw26-cta-arw" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M9 4.5L16.5 12L9 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="hw26-foot">
+    <p class="hw26-foot-title">더위는 이기는 게 아니라<br><em>피해야 해요</em></p>
+    <p class="hw26-foot-sub">중단하고, 이동하고, 확인하세요</p>
+    <ul class="hw26-tags">
+      <li class="hw26-tag">#폭염안전수칙</li>
+      <li class="hw26-tag">#온열질환예방</li>
+      <li class="hw26-tag">#폭염중대경보</li>
+      <li class="hw26-tag">#열대야주의보</li>
+      <li class="hw26-tag">#체감온도</li>
+      <li class="hw26-tag">#무더위쉼터</li>
+      <li class="hw26-tag">#냉방비지원</li>
+      <li class="hw26-tag">#야외작업안전</li>
+      <li class="hw26-tag">#여름철건강관리</li>
+      <li class="hw26-tag">#전남광주통합특별시</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(function(){
+  var root = document.querySelector('.contents_div');
+  if(!root) return;
+  var wrap = root.querySelector('.hw26-wrap');
+  if(!wrap) return;
+
+  /* ---- 앵커 스크롤 (URL 해시 변경 없음) ---- */
+  var btns = wrap.querySelectorAll('.hw26-nav-btn');
+  Array.prototype.forEach.call(btns, function(btn){
+    btn.addEventListener('click', function(){
+      var target = wrap.querySelector('#' + btn.getAttribute('data-go'));
+      if(!target) return;
+      var top = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - 12;
+      try{ window.scrollTo({ top: top, behavior: 'smooth' }); }
+      catch(e){ window.scrollTo(0, top); }
+    });
+  });
+
+  /* ---- 현재 위치 표시 ---- */
+  function markCurrent(){
+    var cur = null;
+    Array.prototype.forEach.call(btns, function(btn){
+      var sec = wrap.querySelector('#' + btn.getAttribute('data-go'));
+      if(sec && sec.getBoundingClientRect().top <= 140) cur = btn;
+      btn.classList.remove('is-current');
+    });
+    if(cur) cur.classList.add('is-current');
+  }
+  var st;
+  window.addEventListener('scroll', function(){
+    clearTimeout(st);
+    st = setTimeout(markCurrent, 80);
+  });
+  markCurrent();
+
+  /* ---- 게시 예정 CTA (data-href 비어 있으면 동작 없음) ---- */
+  var ctas = wrap.querySelectorAll('button.hw26-cta[data-href]');
+  Array.prototype.forEach.call(ctas, function(b){
+    b.addEventListener('click', function(){
+      var url = b.getAttribute('data-href');
+      if(url) window.open(url, '_blank', 'noopener');
+    });
+  });
+
+  /* ---- 차트 막대 + 숫자 카운트업 애니메이션 ---- */
+  (function(){
+    var chart = wrap.querySelector('.hw26-chart');
+    if(!chart) return;
+
+    var reduce = false;
+    try{ reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches; }catch(e){}
+
+    var items = [];
+    Array.prototype.forEach.call(chart.querySelectorAll('.hw26-chart-row'), function(row){
+      var bar = row.querySelector('.hw26-chart-bar');
+      var val = row.querySelector('.hw26-chart-val');
+      if(!bar || !val) return;
+      var raw = (val.textContent || '').replace(/^\s+|\s+$/g,'');
+      var num = parseFloat(raw.replace(/[^0-9.\-]/g,''));
+      var dec = /\.(\d+)/.test(raw) ? RegExp.$1.length : 0;
+      items.push({
+        bar: bar,
+        val: val,
+        width: bar.style.width || '0%',
+        num: isNaN(num) ? null : num,
+        dec: dec,
+        suffix: raw.replace(/[0-9.\-]/g,'')
+      });
+    });
+    if(!items.length) return;
+
+    if(reduce) return; /* 모션 최소화 설정이면 원본 그대로 */
+
+    /* 초기 상태 */
+    items.forEach(function(it){
+      it.bar.style.width = '0%';
+      if(it.num !== null) it.val.textContent = (0).toFixed(it.dec) + it.suffix;
+    });
+
+    var played = false;
+    function play(){
+      if(played) return;
+      played = true;
+      items.forEach(function(it, i){
+        var delay = i * 110;
+        setTimeout(function(){ it.bar.style.width = it.width; }, delay + 20);
+        if(it.num === null) return;
+        setTimeout(function(){
+          var dur = 1100, t0 = null;
+          function step(ts){
+            if(t0 === null) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            var e = 1 - Math.pow(1 - p, 3);
+            it.val.textContent = (it.num * e).toFixed(it.dec) + it.suffix;
+            if(p < 1) requestAnimationFrame(step);
+            else it.val.textContent = it.num.toFixed(it.dec) + it.suffix;
+          }
+          requestAnimationFrame(step);
+        }, delay);
+      });
+    }
+
+    if(window.IntersectionObserver){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ play(); io.disconnect(); }
+        });
+      }, { threshold: 0.25 });
+      io.observe(chart);
+    }else{
+      var checkIn = function(){
+        var r = chart.getBoundingClientRect();
+        if(r.top < (window.innerHeight || 0) * 0.85 && r.bottom > 0){
+          play();
+          window.removeEventListener('scroll', checkIn);
+        }
+      };
+      window.addEventListener('scroll', checkIn);
+      checkIn();
+    }
+  })();
+
+  /* ---- 발생 비중 막대 + 숫자 카운트업 애니메이션 ---- */
+  (function(){
+    var spots = wrap.querySelector('.hw26-spots');
+    if(!spots) return;
+
+    var reduce = false;
+    try{ reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches; }catch(e){}
+
+    var items = [], max = 0;
+    Array.prototype.forEach.call(spots.querySelectorAll('.hw26-spot-pct'), function(pct){
+      var val  = pct.querySelector('b');
+      var fill = pct.querySelector('.hw26-spot-bar-fill');
+      if(!val || !fill) return;
+      var raw = (val.textContent || '').replace(/^\s+|\s+$/g,'');
+      var num = parseFloat(raw.replace(/[^0-9.\-]/g,''));
+      if(isNaN(num)) return;
+      var dec = /\.(\d+)/.test(raw) ? RegExp.$1.length : 0;
+      if(num > max) max = num;
+      items.push({
+        val: val,
+        fill: fill,
+        num: num,
+        dec: dec,
+        suffix: raw.replace(/[0-9.\-]/g,'')
+      });
+    });
+    if(!items.length || !max) return;
+
+    /* 막대 길이 = 표시된 세 곳의 합(26.2+15.9+12.4 = 54.5)을 100으로 놓은 각자의 몫.
+       여기 노출한 세 곳은 발생이 가장 많은 상위 세 장소이므로, 트랙 전체를
+       '이 셋의 합'으로 정의하면 세 막대의 합이 정확히 트랙 하나가 된다.
+       임의의 배율(최댓값=100%, CAP 등)이 아니라 합에서 계산된 실제 몫이라
+       막대끼리 서로 곱셈 없이 그대로 비교된다. */
+    var total = 0;
+    items.forEach(function(it){ total += it.num; });
+    if(!total) return;
+    items.forEach(function(it){
+      it.share = it.num / total * 100;
+      it.width = it.share.toFixed(2) + '%';
+    });
+
+    if(reduce){
+      items.forEach(function(it){ it.fill.style.width = it.width; });
+      return;
+    }
+
+    /* 초기 상태 */
+    items.forEach(function(it){
+      it.fill.style.width = '0%';
+      it.val.textContent = (0).toFixed(it.dec) + it.suffix;
+    });
+
+    var played = false;
+    function play(){
+      if(played) return;
+      played = true;
+      items.forEach(function(it, i){
+        var delay = i * 110;
+        setTimeout(function(){ it.fill.style.width = it.width; }, delay + 20);
+        setTimeout(function(){
+          var dur = 1100, t0 = null;
+          function step(ts){
+            if(t0 === null) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            var e = 1 - Math.pow(1 - p, 3);
+            it.val.textContent = (it.num * e).toFixed(it.dec) + it.suffix;
+            if(p < 1) requestAnimationFrame(step);
+            else it.val.textContent = it.num.toFixed(it.dec) + it.suffix;
+          }
+          requestAnimationFrame(step);
+        }, delay);
+      });
+    }
+
+    if(window.IntersectionObserver){
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ play(); io2.disconnect(); }
+        });
+      }, { threshold: 0.25 });
+      io2.observe(spots);
+    }else{
+      var checkSpots = function(){
+        var r = spots.getBoundingClientRect();
+        if(r.top < (window.innerHeight || 0) * 0.85 && r.bottom > 0){
+          play();
+          window.removeEventListener('scroll', checkSpots);
+        }
+      };
+      window.addEventListener('scroll', checkSpots);
+      checkSpots();
+    }
+  })();
+
+  /* ---- 라벨 캡슐 균등 배분 ---- */
+  function readLS(el){
+    var v = window.getComputedStyle(el).letterSpacing;
+    return v === 'normal' ? 0 : (parseFloat(v) || 0);
+  }
+
+  function balanceLabels(){
+    var boxes = wrap.querySelectorAll('.hw26-box');
+    for(var b = 0; b < boxes.length; b++){
+      var lbs = boxes[b].querySelectorAll('.hw26-lb, .hw26-step-lb');
+      if(lbs.length < 2) continue;
+
+      var items = [], i, lb, sp, target = 0;
+
+      for(i = 0; i < lbs.length; i++){
+        lb = lbs[i];
+        sp = lb.firstElementChild;
+        if(!sp || !sp.hasAttribute('data-fit')){
+          sp = document.createElement('span');
+          sp.setAttribute('data-fit','');
+          sp.style.display = 'inline-block';
+          sp.textContent = (lb.textContent || '').replace(/^\s+|\s+$/g,'');
+          lb.textContent = '';
+          lb.appendChild(sp);
+        }
+        sp.style.letterSpacing = '';
+        sp.style.marginRight = '';
+        items.push({ sp: sp, len: sp.textContent.length, ls: readLS(lb) });
+      }
+
+      for(i = 0; i < items.length; i++){
+        items[i].run = items[i].sp.getBoundingClientRect().width - items[i].ls;
+        if(items[i].run > target) target = items[i].run;
+      }
+
+      for(i = 0; i < items.length; i++){
+        if(items[i].len < 2) continue;
+        var ls = items[i].ls + (target - items[i].run) / (items[i].len - 1);
+        items[i].sp.style.letterSpacing = ls.toFixed(3) + 'px';
+        items[i].sp.style.marginRight = (-ls).toFixed(3) + 'px';
+      }
+    }
+  }
+
+  balanceLabels();
+  window.addEventListener('load', balanceLabels);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(balanceLabels)['catch'](function(){});
+  }
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ balanceLabels(); markCurrent(); }, 150);
+  });
+})();
+</script>
+</div>
