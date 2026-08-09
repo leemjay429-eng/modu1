@@ -1,6 +1,3 @@
-<!-- 히어로 이미지 preload — href 는 아래 <img src> 와 완전히 같아야 한다 -->
-<link rel="preload" as="image" href="img/히어로배경.webp" fetchpriority="high">
-
 <script>
 (function(){
   try{
@@ -19,6 +16,10 @@
       document.documentElement.className += ' hw26-js';
     }
   }catch(e){}
+  /* 스크립트 생존 표시 — 상세페이지 편집기가 스크립트 태그를 걸러내면 이 클래스가 안 붙는다.
+     히어로 슬라이드의 '로딩 전 숨김'(.is-hold)은 이 클래스가 있을 때만 적용된다.
+     → 스크립트가 제거된 환경에서 슬라이드가 영영 안 보이는 사고를 막는 안전장치 */
+  try{ document.documentElement.className += ' hw26-boot'; }catch(e){}
 })();
 </script>
 
@@ -206,9 +207,11 @@
 @media (prefers-reduced-motion:reduce){
   .contents_div .hw26-hero-track{ animation:none; }
 }
-/* ▼ 마스크가 준비될 때까지 슬라이드를 숨긴다 (.is-hold 는 아래 스크립트가 제거) */
+/* ▼ 마스크가 준비될 때까지 슬라이드를 숨긴다 (.is-hold 는 아래 스크립트가 제거)
+   ▼ .hw26-boot 는 문서 맨 위 스크립트가 <html> 에 붙인다 — 스크립트가 제거된 환경이면
+     이 규칙 자체가 안 걸려 슬라이드가 처음부터 그냥 보인다 (숨긴 채 멈추는 사고 방지) */
 .contents_div .hw26-hero-track{ transition:opacity .3s ease; }
-.contents_div .hw26-hero-visual.is-hold .hw26-hero-track{
+.hw26-boot .contents_div .hw26-hero-visual.is-hold .hw26-hero-track{
   opacity:0; animation-play-state:paused;
 }
 /* ▼ 히어로 카피 — 위치·크기는 아래 변수 4개로 조절 */
@@ -1986,14 +1989,8 @@
     </div>
   </section>
 
-  <noscript>
-    <!-- 스크립트가 막힌 환경 — 숨김 장치를 풀어 슬라이드가 그냥 보이게 한다 -->
-    <style>
-      .contents_div .hw26-hero-visual.is-hold .hw26-hero-track{
-        opacity:1; animation-play-state:running;
-      }
-    </style>
-  </noscript>
+  <!-- 스크립트가 막힌 환경 대응은 이제 <html class="hw26-boot"> 조건이 담당한다.
+       (JS 비활성 / 편집기의 스크립트 태그 제거 — 두 경우 모두 커버되므로 noscript 불필요) -->
   <script>
   /* 히어로 첫 로딩 — 마스크와 슬라이드를 동시에 노출 (NEED 배열 / 5초 안전장치) */
   (function(){
