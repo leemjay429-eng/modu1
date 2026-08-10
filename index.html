@@ -43,7 +43,6 @@
 @font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
 @font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
 @font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
-@font-face{font-family:'GmarketSansBold';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:normal;font-style:normal;font-display:swap}
 
 /* ===== reset (scoped) ===== */
 .contents_div .hw26-wrap :where(h1,h2,h3,h4,p,ul,ol,li,figure,figcaption,dl,dt,dd,table){ margin:0; padding:0; }
@@ -297,7 +296,7 @@
 .contents_div .hw26-nav-btn{
   position:relative; display:flex; width:100%;
   align-items:center; justify-content:center;
-  min-height:44px; padding:0 10px; white-space:nowrap;
+  min-height:44px; padding:0 6px; white-space:nowrap;
   background:none; border:0; border-radius:0; box-shadow:none;
   font-size:var(--fs-nav); font-weight:400; line-height:1.35;
   letter-spacing:-0.03em; color:#fff;
@@ -546,7 +545,7 @@
 /* 카드 제목 — 기본형 (넘버 뱃지 + 좌측 정렬) */
 .contents_div .hw26-h3-row{ display:flex; align-items:center; gap:12px; }
 .contents_div .hw26-h3{
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Paperozi','Pretendard',sans-serif;
   font-size:var(--fs-h3); font-weight:800; line-height:1.45; color:var(--c-navy);
 }
 
@@ -683,11 +682,13 @@
   /* 제목이 두 줄로 접혀도 칩은 첫 줄 옆에 남아야 한다 (center 면 두 줄 가운데로 내려간다) */
   display:flex; align-items:flex-start; gap:11px;
   color:var(--c-navy);
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Paperozi','Pretendard',sans-serif;
   font-size:var(--fs-h3); font-weight:800;
   line-height:1.35; letter-spacing:-0.015em;
   word-break:keep-all;
   counter-increment:hw26-s5;
+  /* 웹에서 제목 글자만 4px 올린다. 칩은 ::before 에서 +4px 되돌려 제자리 유지 */
+  position:relative; top:-4px;
 }
 .contents_div #hw26-sec5 .hw26-card .hw26-h3::before{
   content:counter(hw26-s5); flex:0 0 auto;
@@ -697,13 +698,15 @@
   display:grid; place-items:center;
   background:#E8F1FE;
   color:#2F7BF0;
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Pretendard',sans-serif;
   font-size:15px; font-weight:800; line-height:1;
   letter-spacing:0; /* 제목의 -0.015em 이 한 글자 숫자를 왼쪽으로 밀지 않도록 해제 */
   padding-top:0.19em;
   border:1px solid #C9DEFB;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
   margin-top:-0.4em;
+  /* 제목이 -4px 올라간 만큼 칩만 되돌려 원래 자리에 둔다 */
+  position:relative; top:4px;
 }
 /* 본문은 카드 패딩선에 맞춘다 (오른쪽만 10px 인셋) */
 .contents_div #hw26-sec5 .hw26-card .hw26-p{ padding-left:0; padding-right:10px; }
@@ -728,7 +731,7 @@
   padding:6px 8px; border-radius:999px;
   background:var(--sheen), var(--c-blue); color:#fff;
   box-shadow:0 2px 5px rgba(47,123,240,.30);
-  /* 캡슐 글자만 Pretendard 700 (상위 GmarketSansBold 상속 차단) */
+  /* 캡슐 글자만 Pretendard 700 (상위 제목 폰트(Paperozi) 상속 차단) */
   font-family:'Pretendard',sans-serif; font-weight:700;
   font-size:calc(var(--fs-info) - 2px); line-height:1.5;
 }
@@ -782,7 +785,7 @@
   width:30px; height:30px; border-radius:11px;
   background:var(--sheen), var(--c-blue);
   color:#fff; box-shadow:0 4.2px 8.4px rgba(47,123,240,0.3);
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Pretendard',sans-serif; font-weight:800;
   font-size:var(--fs-num); line-height:1;
 }
 .contents_div .hw26-hno--cool{
@@ -825,7 +828,7 @@
 }
 .contents_div .hw26-chart-title{
   display:flex; align-items:center;
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Paperozi','Pretendard',sans-serif; font-weight:700;
   font-size:var(--fs-h3); line-height:1.45; color:var(--c-navy);
 }
 /* 제목 앞 위치 아이콘 */
@@ -847,7 +850,7 @@
 .contents_div .hw26-chart-name{ flex:0 0 auto; width:64px; font-weight:700; color:var(--c-navy); }
 .contents_div .hw26-chart-val{
   flex:0 0 auto; margin-left:auto;
-  font-family:'GmarketSansBold','Pretendard',sans-serif; color:var(--c-org2);
+  font-family:'Pretendard',sans-serif; font-weight:700; color:var(--c-org2);
 }
 .contents_div .hw26-chart-track{
   flex:1 1 auto; height:18px; border-radius:999px;
@@ -1169,7 +1172,7 @@
 .contents_div .hw26-spots > li:nth-child(-n+3) .hw26-spot-head{ padding-bottom:11px; }
 .contents_div .hw26-spot-name{
   position:relative; z-index:1;
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Paperozi','Pretendard',sans-serif;
   font-size:var(--fs-h3); font-weight:800; line-height:1.35; color:#fff;
 }
 .contents_div .hw26-spot-emo{
@@ -1258,7 +1261,7 @@
 .contents_div .hw26-sub li + li{ margin-top:16px; }
 .contents_div .hw26-sub-name{
   display:flex; align-items:center; gap:8px;
-  font-family:'GmarketSansBold','Pretendard',sans-serif;
+  font-family:'Pretendard',sans-serif; font-weight:700;
   font-size:var(--fs-info); line-height:1.5; color:var(--c-navy);
 }
 .contents_div .hw26-sub-name::before{
@@ -1339,14 +1342,14 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width:767.98px){
-  .contents_div .hw26-wrap{ --fs-h2:27px; --fs-foot:29px; --band:62px; --card-pd:28px 24px; --card-pt:28px; --card-px:24px; }
+  .contents_div .hw26-wrap{ --fs-h2:27px; --fs-foot:29px; --band:62px; --card-pd:28px 24px; --card-pt:28px; --card-px:24px; --fs-nav:clamp(12.5px, 1.75vw, 15px); }
   /* 좁아지면 내비 라벨을 축약형으로 (줄바꿈 대신) */
   .contents_div .hw26-nav-fu{ display:none; }
   .contents_div .hw26-nav-sh{ display:inline; }
   /* 인트로 제목도 같은 폭에서 축약형으로 — 전체 문구는 해 밑으로 들어간다 */
   .contents_div .hw26-h2.hw26-intro-h2 .hw26-intro-h2-fu{ display:none; }
   .contents_div .hw26-h2.hw26-intro-h2 .hw26-intro-h2-sh{ display:inline; }
-  .contents_div .hw26-nav-btn{ padding:0 8px; }
+  .contents_div .hw26-nav-btn{ padding:0 4px; }
   .contents_div .hw26-nav-list{ gap:0; }
   .contents_div .hw26-p .hw26-brw{ display:none; }
   .contents_div .hw26-sub-txt .hw26-brw{ display:none; }
@@ -1443,8 +1446,10 @@
   .contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-box,
   .contents_div #hw26-sec5 .hw26-card .hw26-h3 + .hw26-sub{ margin-top:17px; }
   .contents_div #hw26-sec5 .hw26-card .hw26-h3{ gap:9px; }
+  /* 2px 보정은 웹 전용 — 모바일은 원래 상태로 되돌린다 */
+  .contents_div #hw26-sec5 .hw26-card .hw26-h3{ top:0; }
   .contents_div #hw26-sec5 .hw26-card .hw26-h3::before{
-    --chip:25px; border-radius:8px; font-size:13px;
+    --chip:25px; border-radius:8px; font-size:13px; top:0;
   }
   .contents_div #hw26-sec5 .hw26-onecard{ margin-top:20px; }
   .contents_div #hw26-sec5 .hw26-blk{ padding-top:20px; padding-bottom:24px; }
@@ -1822,6 +1827,8 @@
 }
 
 @media (max-width:340px){
+  /* 6칸 내비 — 이 폭에서는 10px 까지 내려야 한 줄이 유지된다 (하한선) */
+  .contents_div .hw26-wrap{ --fs-nav:10px; }
   .contents_div .hw26-chart-head{ gap:6px; }
   .contents_div .hw26-chart-ic{ width:19px; height:19px; margin-right:5px; }
   .contents_div .hw26-chart-date{ font-size:9.5px; padding-inline:6px; }
@@ -1959,6 +1966,265 @@
 .hw26-js .contents_div .hw26-steps > li:nth-child(n+5),
 .hw26-js .contents_div .hw26-spots > li:nth-child(n+5){ transition-delay:280ms; }
 
+/* ================================================================
+   06 주요기관 연락처 및 디지털 서비스
+   ----------------------------------------------------------------
+   구성 : 긴급 3회선(119·131·110) → 분야별 기관 카드 8장 → 요약 판
+   ▼ 되돌리려면 이 블록과 <section id="hw26-sec6"> 를 통째로 지운다
+   ================================================================ */
+.contents_div #hw26-sec6{ border-top:1px solid #CBE0FA; }
+
+/* ── 긴급 3회선 ───────────────────────────────────────────────── */
+.contents_div .hw26-hot{
+  position:relative; z-index:1;
+  margin-top:4px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.contents_div .hw26-hot > li{ display:flex; }
+.contents_div .hw26-hotcard{
+  flex:1 1 auto; display:flex; flex-direction:column; align-items:center; text-align:center;
+  padding:20px 12px 21px; border-radius:var(--r-mid);
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFF8F1 100%);
+  border:1px solid #F6E4D0; box-shadow:var(--sh-2);
+}
+.contents_div .hw26-hot-em{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px; border-radius:50%;
+  background:linear-gradient(160deg,#FFFBF6 0%,var(--c-orgl) 100%);
+  border:1px solid #FFDDBE; font-size:19px; line-height:1;
+}
+.contents_div .hw26-hot-no{
+  display:block; margin-top:10px;
+  font-family:'Pretendard',sans-serif; font-weight:800;
+  font-size:38px; line-height:1; letter-spacing:-0.02em; color:#FF5E1E;
+  font-variant-numeric:tabular-nums;
+  transition:color .2s;
+}
+.contents_div .hw26-hot-no:hover,
+.contents_div .hw26-hot-no:focus-visible{ color:#E2450A; }
+.contents_div .hw26-hot-lb{
+  margin-top:11px; font-size:var(--fs-info); font-weight:700; line-height:1.4;
+  color:var(--c-navy); word-break:keep-all;
+}
+.contents_div .hw26-hot-sub{
+  margin-top:5px; font-size:var(--fs-cap); line-height:1.4; color:var(--c-sub);
+}
+
+/* ── 안내 한 줄 ───────────────────────────────────────────────── */
+.contents_div .hw26-cnote{
+  position:relative; z-index:1;
+  display:block; text-align:center;
+  margin-top:12px; padding:11px 16px; border-radius:999px;
+  background:#FFFFFF; border:1px dashed #FFCFA6;
+  font-size:var(--fs-cap); line-height:1.4; color:var(--c-sub);
+  text-align:center; word-break:keep-all;
+}
+.contents_div .hw26-cnote b{ color:#FF5E1E; font-weight:700; }
+
+/* ── 분야별 기관 카드 ─────────────────────────────────────────── */
+.contents_div .hw26-cont{
+  position:relative; z-index:1; overflow:hidden;
+  margin-top:12px;
+  background:linear-gradient(180deg,#FFFFFF 0%,#FFFCF8 100%);
+  border:1px solid #F6E4D0; border-radius:var(--r-card);
+  box-shadow:var(--sh-2);
+}
+.contents_div .hw26-cont-head{
+  position:relative; z-index:1;
+  display:flex; align-items:center; justify-content:space-between; gap:6px 16px;
+  padding:12px 20px 13px;
+  background:linear-gradient(225deg,#FFA33D 0%,#FF7A1F 45%,#FF5E1E 100%);
+}
+.contents_div .hw26-cont-head::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 100% at 50% -35%, rgba(255,255,255,.36), rgba(255,255,255,0) 62%);
+}
+.contents_div .hw26-cont-title{
+  position:relative; z-index:1; min-width:0;
+  display:flex; align-items:center; gap:8px;
+  font-family:'Paperozi','Pretendard',sans-serif;
+  font-size:var(--fs-h3); font-weight:800; line-height:1.35; color:#fff;
+}
+/* 제목 옆 이모지 — 04 섹션과 같은 흰 글로우 */
+.contents_div .hw26-cont-em{
+  flex:0 0 auto;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+  font-size:.92em; line-height:1;
+  text-shadow:0 0 2px rgba(255,255,255,.6), 0 0 6px rgba(255,255,255,.3);
+}
+.contents_div .hw26-cont-desc{
+  position:relative; z-index:1; flex:0 1 auto; text-align:right;
+  font-family:'Pretendard',sans-serif; font-weight:400;
+  font-size:calc(var(--fs-cap) + 1px); line-height:1.4;
+  color:rgba(255,255,255,.94); word-break:keep-all;
+}
+
+.contents_div .hw26-orgs{ padding:0 20px; }
+.contents_div .hw26-org{
+  display:grid; grid-template-columns:168px minmax(0,1fr);
+  column-gap:18px; align-items:start;
+  padding:17px 0 18px;
+}
+.contents_div .hw26-org + .hw26-org{ border-top:1px dotted rgba(255,138,43,.5); }
+.contents_div .hw26-org-name{
+  font-family:'Pretendard',sans-serif; font-weight:700;
+  font-size:calc(var(--fs-info) - 0.5px); line-height:1.4; color:var(--c-navy);
+}
+.contents_div .hw26-org-role{
+  margin-top:3px; font-size:var(--fs-cap); line-height:1.4; color:var(--c-sub);
+}
+.contents_div .hw26-tel{
+  display:inline-flex; align-items:center; gap:6px;
+  margin-top:9px; height:var(--cap-h); padding:0 var(--cap-pd);
+  border-radius:999px; background:var(--sheen), var(--c-org2); color:#fff;
+  font-family:'Pretendard',sans-serif; font-weight:700;
+  font-size:calc(var(--fs-info) - 2.5px); line-height:1; letter-spacing:0;
+  white-space:nowrap; font-variant-numeric:tabular-nums;
+  box-shadow:0 2px 5px rgba(255,94,30,.28);
+  transition:filter .2s, transform .2s;
+}
+.contents_div .hw26-tel:hover,
+.contents_div .hw26-tel:focus-visible{ filter:brightness(1.06); transform:translateY(-1px); }
+.contents_div .hw26-tel-ic{
+  flex:0 0 auto; display:inline-flex; width:11px; height:11px;
+}
+.contents_div .hw26-tel-ic svg{ display:block; width:100%; height:100%; }
+
+.contents_div .hw26-org-txt{
+  font-size:var(--fs-info); line-height:1.55; color:var(--c-sub);
+}
+.contents_div .hw26-org-sub{
+  display:block; margin-top:4px;
+  font-size:var(--fs-cap); line-height:1.45; color:var(--c-sub); opacity:.85;
+}
+.contents_div .hw26-links{
+  display:flex; flex-wrap:wrap; gap:7px; margin-top:11px;
+}
+.contents_div .hw26-link{
+  display:inline-flex; align-items:center; gap:6px;
+  min-height:var(--cap-h); padding:2px 11px 2px 5px; border-radius:999px;
+  background:#FFF4EA; border:1px solid #FFD9B8; color:#C9500A;
+  font-size:calc(var(--fs-cap) + 0.5px); font-weight:700; line-height:1.35;
+  letter-spacing:-0.01em; word-break:break-all;
+  transition:background .2s, color .2s;
+}
+.contents_div a.hw26-link:hover,
+.contents_div a.hw26-link:focus-visible{ background:#FFE8D4; color:#A83D04; }
+.contents_div .hw26-link--app{ background:#F1F5FB; border-color:#DAE5F4; color:#3E5C8C; }
+/* 앱 버튼은 링크가 되었으므로 주황 hover 대신 파랑 계열로 받는다 */
+.contents_div a.hw26-link--app:hover,
+.contents_div a.hw26-link--app:focus-visible{ background:#E1EAF7; color:#2E4A78; }
+.contents_div .hw26-link-tag{
+  flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center;
+  min-width:17px; height:17px; padding:0 4px; border-radius:6px;
+  background:#FF8A2B; color:#fff;
+  font-size:10px; font-weight:700; line-height:1; letter-spacing:0;
+}
+.contents_div .hw26-link--app .hw26-link-tag{ background:#5D7EB4; }
+/* 웹 링크는 글자 대신 링크 아이콘 — 정사각 캡슐 */
+.contents_div .hw26-link-tag--web,
+.contents_div .hw26-link-tag--app{ width:17px; min-width:17px; padding:0; }
+.contents_div .hw26-link-tag--web svg,
+.contents_div .hw26-link-tag--app svg{ display:block; width:11px; height:11px; }
+/* 앱 버튼이 붙는 줄 — 웹/앱을 한 줄에 유지하고, 자리가 모자라면 웹 주소만 말줄임 */
+.contents_div .hw26-links--tight{ flex-wrap:nowrap; }
+.contents_div .hw26-links--tight > li{ flex:0 0 auto; }
+.contents_div .hw26-links--tight > li:first-child{ flex:0 1 auto; min-width:0; }
+.contents_div .hw26-links--tight > li:first-child .hw26-link{ min-width:0; }
+.contents_div .hw26-link-txt{
+  min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+/* ── 요약 판 — 푸터로 넘어가기 전 남색 다리 ────────────────────── */
+.contents_div .hw26-quick{
+  position:relative; z-index:1;
+  margin-top:22px; padding:20px 22px; border-radius:var(--r-mid);
+  background:linear-gradient(160deg,#12336B 0%,#0E2A5A 55%,#0B2450 100%);
+  box-shadow:0 10px 24px rgba(9,38,84,.18);
+}
+/* 체크는 절대배치 — flex 로 두면 <b> 와 뒤 문장이 각각 다른 칸으로 갈라진다 */
+.contents_div .hw26-quick li{
+  position:relative; display:block; padding-left:24px;
+  font-size:var(--fs-info); line-height:1.55; color:rgba(255,255,255,.86);
+}
+.contents_div .hw26-quick li + li{ margin-top:9px; }
+.contents_div .hw26-quick li::before{
+  content:''; position:absolute; left:0; top:0; width:15px; height:15px;
+  margin-top:calc(0.82em - 7px);
+  background:var(--c-yel);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 8.6 6.4 11.6 12.6 4.8' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/></svg>") center / contain no-repeat;
+}
+.contents_div .hw26-quick b{ color:#fff; font-weight:700; }
+.contents_div .hw26-quick a{
+  color:var(--c-yel); font-weight:700;
+  text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px;
+  word-break:keep-all; overflow-wrap:anywhere; transition:color .2s;
+}
+.contents_div .hw26-quick a:hover,
+.contents_div .hw26-quick a:focus-visible{ color:#FFE894; }
+
+/* ── 태블릿 ──────────────────────────────────────────────────── */
+@media (max-width:767.98px){
+  .contents_div .hw26-org{ grid-template-columns:150px minmax(0,1fr); column-gap:14px; }
+  .contents_div .hw26-hot-no{ font-size:33px; }
+}
+
+/* ── 모바일 ──────────────────────────────────────────────────── */
+@media (max-width:600px){
+  .contents_div .hw26-hot{ gap:8px; margin-top:2px; }
+  .contents_div .hw26-hotcard{ padding:14px 8px 15px; }
+  .contents_div .hw26-hot-em{ width:30px; height:30px; font-size:15px; }
+  .contents_div .hw26-hot-no{ margin-top:7px; font-size:25px; }
+  .contents_div .hw26-hot-lb{ margin-top:7px; font-size:calc(var(--fs-info) - 1px); line-height:1.35; }
+  .contents_div .hw26-hot-sub{ margin-top:3px; }
+
+  .contents_div .hw26-cnote{ margin-top:8px; padding:9px 13px; border-radius:var(--r-sm); }
+
+  .contents_div .hw26-cont{ margin-top:10px; }
+  .contents_div .hw26-cont-head{
+    flex-direction:column; align-items:flex-start; gap:3px;
+    padding:11px 15px 12px;
+  }
+  .contents_div .hw26-cont-desc{ text-align:left; }
+
+  .contents_div .hw26-orgs{ padding:0 15px; }
+  .contents_div .hw26-org{
+    grid-template-columns:minmax(0,1fr); column-gap:0;
+    padding:14px 0 15px;
+  }
+  /* 기관명·역할·전화를 한 줄로 접어 올린다 (전화는 오른쪽 끝) */
+  .contents_div .hw26-org-id{
+    display:flex; align-items:center; flex-wrap:wrap; gap:5px 8px; margin-bottom:9px;
+  }
+  .contents_div .hw26-org-role{ margin-top:0; }
+  .contents_div .hw26-tel{ margin-top:0; margin-left:auto; }
+  .contents_div .hw26-links{ gap:6px; margin-top:9px; }
+  /* 좁은 폭에서는 한 줄 강제 대신 원래대로 접는다 */
+  .contents_div .hw26-links--tight{ flex-wrap:wrap; }
+  .contents_div .hw26-link-txt{ overflow:visible; white-space:normal; }
+  .contents_div .hw26-link{ padding:2px 9px 2px 4px; }
+
+  .contents_div .hw26-quick{ margin-top:18px; padding:16px 16px 17px; }
+  .contents_div .hw26-quick li{ font-size:var(--fs-body); line-height:1.62; padding-left:22px; }
+  .contents_div .hw26-quick li + li{ margin-top:7px; }
+}
+
+/* 380px 이하 — 긴급 3회선 숫자만 한 단 더 */
+@media (max-width:380px){
+  .contents_div .hw26-hot-no{ font-size:22px; }
+  .contents_div .hw26-hot-em{ width:27px; height:27px; font-size:14px; }
+}
+
+/* ── 스크롤 리빌 (위 SCROLL REVEAL 목록·스크립트 RV_SEL 과 짝) ─── */
+.hw26-js .contents_div .hw26-hot > li,
+.hw26-js .contents_div .hw26-cont,
+.hw26-js .contents_div .hw26-quick{
+  opacity:0; translate:0 18px;
+  transition:opacity .62s cubic-bezier(.16,1,.3,1), translate .62s cubic-bezier(.16,1,.3,1);
+}
+.hw26-js .contents_div .hw26-hot > li:nth-child(2){ transition-delay:70ms; }
+.hw26-js .contents_div .hw26-hot > li:nth-child(3){ transition-delay:140ms; }
+
 </style>
 
 <div class="hw26-wrap">
@@ -2072,7 +2338,8 @@
       <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec2"><span class="hw26-nav-fu">폭염특보 개편</span><span class="hw26-nav-sh">폭염특보</span></button></li>
       <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec3"><span class="hw26-nav-fu">여름 생활수칙</span><span class="hw26-nav-sh">생활수칙</span></button></li>
       <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec4"><span class="hw26-nav-fu">장소별 대응</span><span class="hw26-nav-sh">장소별</span></button></li>
-      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec5"><span class="hw26-nav-fu">광주특별시 대응</span><span class="hw26-nav-sh">특별시 대응</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec5"><span class="hw26-nav-fu">광주시 대응</span><span class="hw26-nav-sh">특별시 대응</span></button></li>
+      <li><button type="button" class="hw26-nav-btn" data-go="hw26-sec6"><span class="hw26-nav-fu">기관 연락처</span><span class="hw26-nav-sh">연락처</span></button></li>
     </ul>
   </nav>
 
@@ -2513,6 +2780,284 @@
     </a>
   </section>
 
+
+  <!-- ============ SEC 6 ============ -->
+  <section class="hw26-sec hw26-band--cool2 hw26-sec--round-top" id="hw26-sec6">
+    <div class="hw26-head">
+      <p class="hw26-kicker"><span class="hw26-kicker-no">06</span>주요기관 연락처</p>
+      <h2 class="hw26-h2">주요기관 연락처 및 <br class="hw26-brw">디지털 서비스<span class="hw26-h2-em" aria-hidden="true">☎️</span></h2>
+      <p class="hw26-p hw26-p--head">폭염중대경보·열대야주의보 상황에서 도움을 받을 수 있는 창구를 한곳에 모았어요.</p>
+    </div>
+
+    <ul class="hw26-hot">
+      <li>
+        <div class="hw26-hotcard">
+          <span class="hw26-hot-em" aria-hidden="true">🚑</span>
+          <a class="hw26-hot-no" href="tel:119">119</a>
+          <p class="hw26-hot-lb">온열질환 응급신고</p>
+          <p class="hw26-hot-sub">소방청 · 24시간</p>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-hotcard">
+          <span class="hw26-hot-em" aria-hidden="true">⛅</span>
+          <a class="hw26-hot-no" href="tel:131">131</a>
+          <p class="hw26-hot-lb">날씨상담</p>
+          <p class="hw26-hot-sub">기상청 · 24시간</p>
+        </div>
+      </li>
+      <li>
+        <div class="hw26-hotcard">
+          <span class="hw26-hot-em" aria-hidden="true">📞</span>
+          <a class="hw26-hot-no" href="tel:110">110</a>
+          <p class="hw26-hot-lb">정부 민원 통합상담</p>
+          <p class="hw26-hot-sub">국민권익위 · 24시간</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="hw26-cnote">연락처 변동·전화 연결 어려울 시 <b>110</b> · 최신정보는 각 기관 공식 홈페이지 참조</p>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🌦️</span>재난 정보 &amp; 날씨</h3>
+          <p class="hw26-cont-desc">폭염특보·무더위쉼터·행동요령</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">기상청</p>
+            <p class="hw26-org-role">종합기상정보</p>
+            <a class="hw26-tel" href="tel:131"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>131</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">폭염·열대야 등 특보 현황, 폭염 영향예보<br class="hw26-brm">(4단계 / 분야별)</p>
+            <ul class="hw26-links hw26-links--tight">
+              <li><a class="hw26-link" href="https://www.weather.go.kr" target="_blank" rel="noopener" title="weather.go.kr" aria-label="기상청 누리집 weather.go.kr"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="hw26-link-txt" aria-hidden="true">weath...</span></a></li>
+              <li><a class="hw26-link hw26-link--app" href="https://apps.apple.com/kr/app/%EA%B8%B0%EC%83%81%EC%B2%AD-%EB%82%A0%EC%94%A8%EC%95%8C%EB%A6%AC%EB%AF%B8/id1495603760" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--app" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M12 4v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.6 10.2 12 14.6l4.4-4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.2 18.6h13.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>기상청 날씨알리미 앱 (애플)</a></li>
+              <li><a class="hw26-link hw26-link--app" href="https://play.google.com/store/apps/details?id=kr.go.kma.weatherapp&amp;hl=ko" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--app" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M12 4v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.6 10.2 12 14.6l4.4-4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.2 18.6h13.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>기상청 날씨알리미 앱 (구글)</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">행정안전부</p>
+            <p class="hw26-org-role">국민재난안전포털</p>
+            
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">무더위쉼터 위치 검색, 국민행동요령, 임시주거실 안내</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.safekorea.go.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>safekorea.go.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🏥</span>건강 &amp; 복지 지원</h3>
+          <p class="hw26-cont-desc">취약계층 돌봄·긴급복지·온열질환</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">보건복지부</p>
+            <p class="hw26-org-role">독거노인종합지원센터</p>
+            <a class="hw26-tel" href="tel:16612129"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>1661-2129</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">노인맞춤돌봄서비스 연계</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.1661-2129.or.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>1661-2129.or.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">질병관리청</p>
+            <p class="hw26-org-role">건강위해 통합정보시스템</p>
+            
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">온열질환자 발생 예측정보 제공</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://health.kdca.go.kr/healthhazard/" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>health.kdca.go.kr/healthhazard/</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">⚡</span>에너지 지원</h3>
+          <p class="hw26-cont-desc">냉방비·에너지바우처(저소득·취약계층)</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">한국에너지공단</p>
+            <p class="hw26-org-role">에너지바우처</p>
+            <a class="hw26-tel" href="tel:16003190"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>1600-3190</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">저소득 취약계층 여름철 에너지 바우처 문의<span class="hw26-org-sub">신청: 읍·면·동 주민센터 또는 복지로 온라인</span></p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.energyv.or.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>energyv.or.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">👷</span>근로자 보호</h3>
+          <p class="hw26-cont-desc">야외근로자 폭염 휴식권·산재 상담</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">고용노동부</p>
+            <p class="hw26-org-role">고객상담센터</p>
+            <a class="hw26-tel" href="tel:1350"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>1350</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">작업중지권·휴식권 상담, 온열질환 산재 신청</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://portal.kosha.or.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>portal.kosha.or.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🎪</span>문화·체육 행사</h3>
+          <p class="hw26-cont-desc">야외 공연·스포츠 행사 폭염 안전기준</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">공연안전지원센터</p>
+            <p class="hw26-org-role">공연 안전 관련 상담</p>
+            
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">야외 공연 행사 폭염 예방·운영 가이드<span class="hw26-org-sub">행사 주최자·운영자 대상</span></p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.stagesafety.or.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>stagesafety.or.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">스포츠안전재단</p>
+            <p class="hw26-org-role">안전점검 사업</p>
+            
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">체육·스포츠 행사 폭염 예방·운영 가이드<span class="hw26-org-sub">행사 주최자·운영자 대상</span></p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.sportsafety.or.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>sportsafety.or.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🌾</span>농업인 지원</h3>
+          <p class="hw26-cont-desc">영농 안전·가축 피해·재해보험</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">농촌진흥청</p>
+            <p class="hw26-org-role">농업기술 상담</p>
+            <a class="hw26-tel" href="tel:15448572"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>1544-8572</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">폭염기 고온 피해 작물 기술 상담, 영농 안전수칙</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.rda.go.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>rda.go.kr</a></li>
+              <li><a class="hw26-link" href="https://www.nongsaro.go.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>nongsaro.go.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">농업정책보험금융원</p>
+            <p class="hw26-org-role">정책보험 안내</p>
+            <a class="hw26-tel" href="tel:15889171"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>1588-9171</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">농작물·가축재해보험 보상 청구, 보험금 지급 상담</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.apfs.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>apfs.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🐟</span>해양·수산업</h3>
+          <p class="hw26-cont-desc">고수온 대응·양식 피해·어업 지원</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">국립수산과학원</p>
+            <p class="hw26-org-role">고수온 속보</p>
+            <a class="hw26-tel" href="tel:0517202114"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>051-720-2114</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">해역별 고수온·적조 속보, 양식장 폭염 대응 기술 안내</p>
+            <ul class="hw26-links">
+              <li><a class="hw26-link" href="https://www.nifs.go.kr" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>nifs.go.kr</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+      <article class="hw26-cont">
+        <div class="hw26-cont-head">
+          <h3 class="hw26-h3 hw26-cont-title"><span class="hw26-cont-em" aria-hidden="true">🔍</span>통합 포털</h3>
+          <p class="hw26-cont-desc">내게 맞는 지원 서비스 한 번에 검색·신청</p>
+        </div>
+        <ul class="hw26-orgs">
+        <li class="hw26-org">
+          <div class="hw26-org-id">
+            <p class="hw26-org-name">복지로</p>
+            <p class="hw26-org-role">복지 종합안내</p>
+            <a class="hw26-tel" href="tel:129"><span class="hw26-tel-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M6.6 3.5h3.1l1.6 4-2 1.3a12.5 12.5 0 0 0 5.9 5.9l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="currentColor"/></svg></span>129</a>
+          </div>
+          <div class="hw26-org-body">
+            <p class="hw26-org-txt">에너지바우처·긴급복지 돌봄서비스 등 복지 종합안내</p>
+            <ul class="hw26-links hw26-links--tight">
+              <li><a class="hw26-link" href="https://www.bokjiro.go.kr" target="_blank" rel="noopener" title="bokjiro.go.kr" aria-label="복지로 누리집 bokjiro.go.kr"><span class="hw26-link-tag hw26-link-tag--web" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M10.3 13.7a3.7 3.7 0 0 0 5.3 0l2.6-2.6a3.75 3.75 0 0 0-5.3-5.3l-1.3 1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M13.7 10.3a3.7 3.7 0 0 0-5.3 0l-2.6 2.6a3.75 3.75 0 0 0 5.3 5.3l1.3-1.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span><span class="hw26-link-txt" aria-hidden="true">bokji...</span></a></li>
+              <li><a class="hw26-link hw26-link--app" href="https://apps.apple.com/kr/app/%EB%B3%B5%EC%A7%80%EB%A1%9C/id490534512" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--app" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M12 4v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.6 10.2 12 14.6l4.4-4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.2 18.6h13.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>복지로 앱 (애플)</a></li>
+              <li><a class="hw26-link hw26-link--app" href="https://play.google.com/store/apps/details?id=app.kr.go.bokjiro&amp;hl=ko" target="_blank" rel="noopener"><span class="hw26-link-tag hw26-link-tag--app" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" focusable="false"><path d="M12 4v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M7.6 10.2 12 14.6l4.4-4.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.2 18.6h13.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>복지로 앱 (구글)</a></li>
+            </ul>
+          </div>
+        </li>
+        </ul>
+      </article>
+
+    <ul class="hw26-quick">
+      <li>온열질환(두통·어지러움·의식저하) 즉시 <a href="tel:119">119</a></li>
+      <li><b>무더위쉼터 위치</b> <a href="https://www.safekorea.go.kr" target="_blank" rel="noopener">safekorea.go.kr</a></li>
+      <li><b>에너지바우처·긴급복지 신청</b> 읍·면·동 주민센터 방문 또는 <a href="https://www.bokjiro.go.kr" target="_blank" rel="noopener">bokjiro.go.kr</a></li>
+    </ul>
+  </section>
+
   <!-- ============ FOOTER ============ -->
   <div class="hw26-foot">
     <p class="hw26-foot-title">더위는 이기는 게 아니라<br><em>피해야 해요</em></p>
@@ -2762,6 +3307,9 @@
       '.hw26-onecard .hw26-blk',
       '.hw26-p--center',
       '.hw26-cta--gap',
+      '.hw26-hot > li',
+      '.hw26-cont',
+      '.hw26-quick',
       '.hw26-foot-title',
       '.hw26-foot-sub',
       '.hw26-tags'
