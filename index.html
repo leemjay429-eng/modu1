@@ -336,6 +336,12 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .mt2-cost-amt{ flex:0 0 auto; font-weight:700; color:var(--c-deeper); white-space:nowrap; }
 .contents_div .mt2-bar{ margin-top:8px; height:12px; border-radius:6px; background:var(--c-tint1); overflow:hidden; }
 .contents_div .mt2-bar span{ display:block; height:100%; border-radius:6px; background:var(--c-main); }
+/* 막대 차오름 (JS가 .is-anim을 붙였을 때만 — JS 없으면 그대로 노출) */
+.contents_div .mt2-cost.is-anim .mt2-bar span{ transform:scaleX(0); transform-origin:0 50%; transition:transform 1.2s cubic-bezier(.2,.8,.2,1); }
+.contents_div .mt2-cost.is-anim li:nth-child(1) .mt2-bar span{ transition-delay:.25s; }
+.contents_div .mt2-cost.is-anim li:nth-child(2) .mt2-bar span{ transition-delay:.4s; }
+.contents_div .mt2-cost.is-anim li:nth-child(3) .mt2-bar span{ transition-delay:.55s; }
+.contents_div .mt2-cost.is-anim.is-fill .mt2-bar span{ transform:none; }
 
 /* ===== Q6 대책 ===== */
 .contents_div .mt2-plan-h{ margin-top:24px; }
@@ -378,6 +384,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .mt2-rv.is-in{ opacity:1; transform:none; }
 @media (prefers-reduced-motion:reduce){
   .contents_div .mt2-rv{ opacity:1; transform:none; transition:none; }
+  .contents_div .mt2-cost.is-anim .mt2-bar span{ transform:none; transition:none; }
 }
 
 /* ===== hover ===== */
@@ -795,6 +802,18 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }
   }, { rootMargin:'0px 0px -12% 0px', threshold:0 });
   for(i=0;i<items.length;i++){ io.observe(items[i]); }
+
+  /* 사업비 막대: 목록이 화면에 30% 이상 들어오면 왼쪽에서 차오름 */
+  var costs = wrap.querySelectorAll('.mt2-cost');
+  var cio = new IntersectionObserver(function(entries){
+    for(var k=0;k<entries.length;k++){
+      if(entries[k].isIntersecting){
+        entries[k].target.classList.add('is-fill');
+        cio.unobserve(entries[k].target);
+      }
+    }
+  }, { threshold:.3 });
+  for(i=0;i<costs.length;i++){ costs[i].classList.add('is-anim'); cio.observe(costs[i]); }
 })();
 </script>
 
