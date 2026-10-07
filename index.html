@@ -144,7 +144,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* 4) 상단 머리글 (HTML 텍스트) */
 .contents_div .ml2h-head{position:absolute;left:6.5%;right:6.8%;top:4.1%;display:flex;justify-content:space-between;font-size:max(10px,2.27cqw);font-weight:300;line-height:1.2;letter-spacing:-.05em;color:#fff;white-space:nowrap}
-.contents_div .ml2h-head-line{position:absolute;left:6.46%;right:6.8%;top:10.3%;height:max(1px,.14cqw);background:rgba(255,255,255,.75)}
+.contents_div .ml2h-head-line{position:absolute;left:6.46%;right:6.8%;top:10.3%;height:1px;background:rgba(255,255,255,.75)}
 
 /* 5) 텍스트 레이어 — 원본 캔버스 크기 그대로, 줄별로 잘라 개별 모션 */
 .contents_div .ml2h-txt{--ml2h-src:url("img/히어로텍스트1.webp")}
@@ -185,8 +185,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* 모션 종료 후: 변형·필터를 걷어내 모바일(특히 iOS)에서 레이어가 원본 해상도로 다시 그려지도록 */
 .contents_div .ml2h-hero.is-done .ml2h-bg,
-.contents_div .ml2h-hero.is-done .ml2h-head,
-.contents_div .ml2h-hero.is-done .ml2h-head-line,
 .contents_div .ml2h-hero.is-done .ml2h-piece,
 .contents_div .ml2h-hero.is-done .ml2h-ico{animation:none;transform:none;filter:none;opacity:1}
 
@@ -479,9 +477,10 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 </style>
 
 <div class="mt2-wrap">
-<!-- TEST: 히어로 진입 테스트용 빈 프레임 (테스트 후 삭제) -->
-<div class="jngj-test-spacer" style="height:1200px;background:#fffdef;" aria-hidden="true"></div>
-<!-- /TEST 뷰포트 진입 애니메이션 확인용, 확인 후 삭제 -->
+
+  <!-- TEST: 히어로 진입 테스트용 빈 프레임 (테스트 후 삭제) -->
+  <div class="jngj-test-spacer" style="height:1200px;background:#fffdef;" aria-hidden="true"></div>
+  <!-- /TEST 뷰포트 진입 애니메이션 확인용, 확인 후 삭제 -->
 
   <!-- 히어로 -->
   <section class="ml2h-wrap">
