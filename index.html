@@ -161,7 +161,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 /* ===== 초기 상태 (스크롤 진입 전) ===== */
 .contents_div .ml2h-hero .ml2h-bg{transform:scale(1.19) translate3d(3%,1.5%,0);filter:blur(4px) brightness(1.08)}
 .contents_div .ml2h-hero .ml2h-head{opacity:0;transform:translate3d(0,-60%,0)}
-.contents_div .ml2h-hero .ml2h-head-line{transform:scaleX(0);transform-origin:0 50%}
+.contents_div .ml2h-hero .ml2h-head-line{opacity:0;transform:translate3d(0,-1.63cqw,0)}
 .contents_div .ml2h-hero .ml2h-cut--cap .ml2h-piece{opacity:0;transform:translate3d(-8%,0,0)}
 .contents_div .ml2h-hero .ml2h-ico{opacity:0;transform:translate3d(-120%,0,0)}
 .contents_div .ml2h-hero .ml2h-cut--l1 .ml2h-piece,
@@ -176,7 +176,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ml2h-hero.is-play .ml2h-streak--3{animation:ml2h-zip 1.2s cubic-bezier(.4,0,.2,1) 0s 1,ml2h-zip 1.5s cubic-bezier(.4,0,.2,1) 4.6s infinite}
 .contents_div .ml2h-hero.is-play .ml2h-streak--4{animation:ml2h-zip .9s cubic-bezier(.4,0,.2,1) .35s 1,ml2h-zip 1.3s cubic-bezier(.4,0,.2,1) 6s infinite}
 .contents_div .ml2h-hero.is-play .ml2h-head{animation:ml2h-fadeDown .8s cubic-bezier(.2,.8,.2,1) .3s forwards}
-.contents_div .ml2h-hero.is-play .ml2h-head-line{animation:ml2h-draw 1s cubic-bezier(.6,0,.2,1) .35s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-head-line{animation:ml2h-fadeDown .8s cubic-bezier(.2,.8,.2,1) .3s forwards}
 .contents_div .ml2h-hero.is-play .ml2h-cut--cap .ml2h-piece{animation:ml2h-slideIn .7s cubic-bezier(.2,.8,.2,1) .55s forwards}
 .contents_div .ml2h-hero.is-play .ml2h-ico{animation:ml2h-iconIn .9s cubic-bezier(.3,1.35,.5,1) .9s forwards}
 .contents_div .ml2h-hero.is-play .ml2h-cut--l1 .ml2h-piece{animation:ml2h-rise .8s cubic-bezier(.2,.8,.2,1) .8s forwards}
@@ -195,7 +195,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @keyframes ml2h-fadeDown{to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes ml2h-slideIn{to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes ml2h-iconIn{0%{opacity:0;transform:translate3d(-120%,0,0)}30%{opacity:1}100%{opacity:1;transform:translate3d(0,0,0)}}
-@keyframes ml2h-draw{to{transform:scaleX(1)}}
 @keyframes ml2h-iconRun{0%,100%{opacity:1;transform:translate3d(0,0,0)}50%{opacity:1;transform:translate3d(4%,-3%,0)}}
 @keyframes ml2h-rise{to{transform:translate3d(0,0,0)}}
 
