@@ -392,6 +392,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 
 /* ===== 반응형 ===== */
 @media (max-width:600px){
+  .contents_div .ml2h-head-line{ background:rgba(255,255,255,.65); }
   .contents_div .mt2-wrap{
     --fs-h2:22px;
     --fs-h3:17px; --fs-kicker:10px; --fs-num:10px;
@@ -484,10 +485,6 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 </style>
 
 <div class="mt2-wrap">
-
-  <!-- TEST: 히어로 진입 테스트용 빈 프레임 (테스트 후 삭제) -->
-  <div class="jngj-test-spacer" style="height:1200px;background:#fffdef;" aria-hidden="true"></div>
-  <!-- /TEST 뷰포트 진입 애니메이션 확인용, 확인 후 삭제 -->
 
   <!-- 히어로 -->
   <section class="ml2h-wrap">
@@ -778,7 +775,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   var wrap = root.querySelector('.mt2-wrap');
   if(!wrap || !('IntersectionObserver' in window)) return;
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var secs = wrap.querySelectorAll('.mt2-sec');
+  var secs = wrap.querySelectorAll('.mt2-sec:not(.mt2-foot)'); /* 푸터는 페이지 맨 끝이라 등장선에 닿지 못해 제외 */
   var items = [];
   for(var i=0;i<secs.length;i++){
     var kids = secs[i].children, n = 0;
