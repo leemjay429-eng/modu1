@@ -1,0 +1,833 @@
+<!-- 모바일 좌우 패딩 16 -->
+<script>
+if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
+  var s=document.createElement('style');
+  s.textContent='body{margin:0}@media(max-width:700px){.contents_div{padding:0 16px}}@media(max-width:576px){.contents_div br{display:inline!important}}';
+  document.head.appendChild(s);
+}
+</script>
+<script>
+(function(){
+  try{
+    if(!document.querySelector('meta[name="viewport"]')){
+      var m=document.createElement('meta');
+      m.setAttribute('name','viewport');
+      m.setAttribute('content','width=device-width, initial-scale=1');
+      (document.head||document.getElementsByTagName('head')[0]||document.documentElement).appendChild(m);
+    }
+  }catch(e){}
+})();
+</script>
+
+<div class="contents_div">
+<style>
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Pretendard';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');font-weight:100;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');font-weight:200;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');font-weight:300;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'Paperozi';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');font-weight:900;font-display:swap}
+
+/* ===== 토큰 ===== */
+.contents_div .mt2-wrap{
+  --fs-h2:28px;
+  --fs-h3:21px; --fs-kicker:15px; --fs-num:14px;
+  --fs-body:17px; --fs-lead:16px; --fs-nav:14px;
+  --fs-info:16px; --fs-cta:16px; --fs-label:13px;
+  --fs-tag:12.5px; --fs-cap:13.5px;
+  --kick:32px; --card-y:30px; --card-x:28px;
+
+  --c-deep:#0e4f86; --c-deeper:#0b3d6b; --c-main:#1877c9;
+  --c-soft:#ffd23f; --c-bg1:#f7fafd; --c-tint1:#e4eff8; --c-tint2:#d3e6f5;
+  --c-line:#b3d2ea; --c-ink:#13243a; --c-sub:#4a5d70; --c-card:#fff; --c-edge:#d9dfe6; --c-rail:#fff; --c-rail-a:#8fadcb; --c-sky:#54c8fe; --c-ring:#3aa0ff;
+
+  max-width:800px; margin:0 auto;
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:var(--fs-body); line-height:1.75; letter-spacing:-0.02em;
+  color:var(--c-ink); word-break:keep-all; text-align:left;
+}
+.contents_div .mt2-wrap, .contents_div .mt2-wrap *,
+.contents_div .mt2-wrap *::before, .contents_div .mt2-wrap *::after{ box-sizing:border-box; }
+.contents_div .mt2-wrap :where(h1,h2,h3,p,ul,ol,li,figure){ margin:0; padding:0; }
+.contents_div .mt2-wrap :where(ul,ol){ list-style:none; }
+.contents_div .mt2-wrap :where(img){ max-width:100%; display:block; border:0; }
+.contents_div .mt2-wrap :where(h1,h2,h3){
+  font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
+  word-break:keep-all; text-wrap:balance;
+}
+.contents_div .mt2-wrap :where(button){ font-family:inherit; letter-spacing:inherit; }
+
+/* ===== 공통 ===== */
+.contents_div .mt2-sec{ width:100%; padding:70px clamp(22px, 6.25%, 50px); }
+.contents_div .mt2-sec--t1{ background:var(--c-bg1); }
+.contents_div .mt2-sec--t2{ background:var(--c-tint2); }
+
+.contents_div .mt2-sec--bg{ position:relative; overflow:hidden; }
+.contents_div .mt2-sec--bg::before{
+  content:''; position:absolute; inset:0; pointer-events:none; opacity:.2;
+  background:url("img/연기이유배경.webp") center / cover no-repeat;
+}
+.contents_div .mt2-sec--bgplan::before{
+  top:auto; height:50%; opacity:.85;
+  background:url("img/향후대책배경.webp") center bottom / cover no-repeat;
+}
+.contents_div .mt2-sec--bg > *{ position:relative; z-index:1; }
+.contents_div .mt2-br::before{ content:'\A'; white-space:pre; }
+.contents_div .mt2-br--mo{ display:none; }
+
+.contents_div .mt2-kick{
+  display:inline-flex; align-items:center; gap:7px;
+  height:var(--kick); padding:0 14px 0 5px; border-radius:999px;
+  background:var(--c-deep); color:#fff;
+  font-size:var(--fs-kicker); font-weight:700; line-height:1.2; letter-spacing:.01em;
+  white-space:nowrap;
+}
+.contents_div .mt2-kick-n{
+  display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+  height:calc(var(--kick) - 10px); padding:0 8px; border-radius:999px;
+  background:var(--c-soft); color:var(--c-deeper); line-height:1;
+}
+.contents_div .mt2-h2{
+  margin-top:16px; font-size:var(--fs-h2); line-height:1.35; letter-spacing:-0.01em; color:var(--c-deeper);
+}
+.contents_div .mt2-q{ color:var(--c-main); margin-right:.2em; }
+.contents_div .mt2-p{ font-size:var(--fs-body); line-height:1.8; }
+.contents_div .mt2-h2 + .mt2-p{ margin-top:18px; }
+.contents_div .mt2-card{
+  margin-top:24px; padding:var(--card-y) var(--card-x);
+  background:var(--c-card); border-radius:14px;
+}
+.contents_div .mt2-h3{ font-size:var(--fs-h3); line-height:1.45; color:var(--c-deeper); }
+
+/* 이미지 */
+.contents_div .mt2-fig{ position:relative; width:100%; overflow:hidden; background:#eee; border-radius:14px; }
+.contents_div .mt2-fig::before{ content:''; display:block; padding-top:62.5%; }
+.contents_div .mt2-fig img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
+
+/* ===== 히어로 (모션) ===== */
+.contents_div .ml2h-wrap,.contents_div .ml2h-wrap *,.contents_div .ml2h-wrap *::before,.contents_div .ml2h-wrap *::after{box-sizing:border-box}
+.contents_div .ml2h-wrap :where(h1,p,figure){margin:0;padding:0}
+.contents_div .ml2h-wrap{max-width:800px;margin:0 auto;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.contents_div h1.ml2h-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* 히어로 무대: 원본 비율 1455:1050 그대로, 레이어는 전부 같은 캔버스 위 절대배치 */
+.contents_div .ml2h-hero{position:relative;width:100%;aspect-ratio:1455/1050;overflow:hidden;background:#cfe0f0;container-type:inline-size;isolation:isolate}
+.contents_div .ml2h-layer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* 1) 배경(열차) */
+.contents_div .ml2h-bg{transform-origin:72% 62%}
+.contents_div .ml2h-bg img{display:block;width:100%;height:100%;object-fit:cover;max-width:none}
+
+/* 2) 헤드라이트 글로우 (배경과 함께 움직임) */
+.contents_div .ml2h-lamp{position:absolute;width:20%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,250,230,.85) 0%,rgba(255,226,150,.6) 14%,rgba(255,190,90,.3) 32%,rgba(255,180,80,.08) 52%,rgba(255,180,80,0) 70%);mix-blend-mode:screen;opacity:0}
+.contents_div .ml2h-lamp--l{left:58.3%;top:69.2%}
+.contents_div .ml2h-lamp--r{left:76.8%;top:71.4%}
+
+/* 3) 스피드 라인 */
+.contents_div .ml2h-streak{position:absolute;left:-60%;height:.5%;width:55%;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.95) 70%,rgba(255,255,255,0));opacity:0;filter:blur(.6px)}
+.contents_div .ml2h-streak--1{top:30%}
+.contents_div .ml2h-streak--2{top:58%;width:40%;height:.35%}
+.contents_div .ml2h-streak--3{top:76%;width:65%}
+.contents_div .ml2h-streak--4{top:88%;width:35%;height:.3%}
+
+/* 4) 상단 머리글 (HTML 텍스트) */
+.contents_div .ml2h-head{position:absolute;left:6.5%;right:6.8%;top:4.1%;display:flex;justify-content:space-between;font-size:max(10px,2.27cqw);font-weight:300;line-height:1.2;letter-spacing:-.05em;color:#fff;white-space:nowrap}
+.contents_div .ml2h-head-line{position:absolute;left:6.46%;right:6.8%;top:10.3%;height:max(1px,.14cqw);background:rgba(255,255,255,.75)}
+
+/* 5) 텍스트 레이어 — 원본 캔버스 크기 그대로, 줄별로 잘라 개별 모션 */
+.contents_div .ml2h-txt{--ml2h-src:url("img/히어로텍스트1.webp")}
+.contents_div .ml2h-cut{position:absolute;inset:0;overflow:hidden}
+.contents_div .ml2h-piece{position:absolute;inset:0;background:var(--ml2h-src) 0 0/100% 100% no-repeat}
+.contents_div .ml2h-cut--cap,.contents_div .ml2h-cut--cap .ml2h-piece{clip-path:inset(22.5% 58.7% 69% 6%)}
+.contents_div .ml2h-cut--l1,.contents_div .ml2h-cut--l1 .ml2h-piece{clip-path:inset(35.8% 52.2% 55.2% 6%)}
+.contents_div .ml2h-cut--l2,.contents_div .ml2h-cut--l2 .ml2h-piece{clip-path:inset(46.9% 63.5% 44.1% 6%)}
+.contents_div .ml2h-cut--l3,.contents_div .ml2h-cut--l3 .ml2h-piece{clip-path:inset(57.8% 53.2% 32.8% 6%)}
+
+/* 6) 열차 아이콘 — 위치를 CSS로 지정 (원본 1455×1050 캔버스 기준 x541 y224, 148×125) */
+.contents_div .ml2h-ico{position:absolute;left:37.182%;top:21.333%;width:10.172%;height:auto;max-width:none;display:block}
+
+/* ===== 초기 상태 (스크롤 진입 전) ===== */
+.contents_div .ml2h-hero .ml2h-bg{transform:scale(1.14) translate3d(3%,1.5%,0);filter:blur(4px) brightness(1.08)}
+.contents_div .ml2h-hero .ml2h-head{opacity:0;transform:translate3d(0,-60%,0)}
+.contents_div .ml2h-hero .ml2h-head-line{transform:scaleX(0);transform-origin:0 50%}
+.contents_div .ml2h-hero .ml2h-cut--cap .ml2h-piece{opacity:0;transform:translate3d(-8%,0,0)}
+.contents_div .ml2h-hero .ml2h-ico{opacity:0;transform:translate3d(-120%,0,0)}
+.contents_div .ml2h-hero .ml2h-cut--l1 .ml2h-piece,
+.contents_div .ml2h-hero .ml2h-cut--l2 .ml2h-piece,
+.contents_div .ml2h-hero .ml2h-cut--l3 .ml2h-piece{transform:translate3d(0,11%,0)}
+
+/* ===== 재생 ===== */
+.contents_div .ml2h-hero.is-play .ml2h-bg{animation:ml2h-arrive 1.5s cubic-bezier(.16,.84,.3,1) forwards}
+.contents_div .ml2h-hero.is-play .ml2h-lamp{animation:ml2h-lampOn .5s ease-out .9s forwards,ml2h-lampPulse 3.6s ease-in-out 1.4s infinite}
+.contents_div .ml2h-hero.is-play .ml2h-streak--1{animation:ml2h-zip 1.1s cubic-bezier(.4,0,.2,1) .05s 1,ml2h-zip 1.4s cubic-bezier(.4,0,.2,1) 4s infinite}
+.contents_div .ml2h-hero.is-play .ml2h-streak--2{animation:ml2h-zip 1s cubic-bezier(.4,0,.2,1) .2s 1,ml2h-zip 1.6s cubic-bezier(.4,0,.2,1) 5.2s infinite}
+.contents_div .ml2h-hero.is-play .ml2h-streak--3{animation:ml2h-zip 1.2s cubic-bezier(.4,0,.2,1) 0s 1,ml2h-zip 1.5s cubic-bezier(.4,0,.2,1) 4.6s infinite}
+.contents_div .ml2h-hero.is-play .ml2h-streak--4{animation:ml2h-zip .9s cubic-bezier(.4,0,.2,1) .35s 1,ml2h-zip 1.3s cubic-bezier(.4,0,.2,1) 6s infinite}
+.contents_div .ml2h-hero.is-play .ml2h-head{animation:ml2h-fadeDown .8s cubic-bezier(.2,.8,.2,1) .3s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-head-line{animation:ml2h-draw 1s cubic-bezier(.6,0,.2,1) .35s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-cut--cap .ml2h-piece{animation:ml2h-slideIn .7s cubic-bezier(.2,.8,.2,1) .55s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-ico{animation:ml2h-iconIn .9s cubic-bezier(.3,1.35,.5,1) .9s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-cut--l1 .ml2h-piece{animation:ml2h-rise .8s cubic-bezier(.2,.8,.2,1) .8s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-cut--l2 .ml2h-piece{animation:ml2h-rise .8s cubic-bezier(.2,.8,.2,1) .95s forwards}
+.contents_div .ml2h-hero.is-play .ml2h-cut--l3 .ml2h-piece{animation:ml2h-rise .8s cubic-bezier(.2,.8,.2,1) 1.1s forwards}
+
+/* 모션 종료 후: 변형·필터를 걷어내 모바일(특히 iOS)에서 레이어가 원본 해상도로 다시 그려지도록 */
+.contents_div .ml2h-hero.is-done .ml2h-bg,
+.contents_div .ml2h-hero.is-done .ml2h-head,
+.contents_div .ml2h-hero.is-done .ml2h-head-line,
+.contents_div .ml2h-hero.is-done .ml2h-piece,
+.contents_div .ml2h-hero.is-done .ml2h-ico{animation:none;transform:none;filter:none;opacity:1}
+
+@keyframes ml2h-arrive{0%{transform:scale(1.14) translate3d(3%,1.5%,0);filter:blur(4px) brightness(1.08)}50%{filter:blur(0) brightness(1)}100%{transform:scale(1) translate3d(0,0,0);filter:blur(0) brightness(1)}}
+@keyframes ml2h-lampOn{0%{opacity:0}100%{opacity:1}}
+@keyframes ml2h-lampPulse{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes ml2h-zip{0%{opacity:0;transform:translate3d(0,0,0)}20%{opacity:.9}100%{opacity:0;transform:translate3d(260%,0,0)}}
+@keyframes ml2h-fadeDown{to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes ml2h-slideIn{to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes ml2h-iconIn{0%{opacity:0;transform:translate3d(-120%,0,0)}30%{opacity:1}100%{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes ml2h-draw{to{transform:scaleX(1)}}
+@keyframes ml2h-iconRun{0%,100%{opacity:1;transform:translate3d(0,0,0)}50%{opacity:1;transform:translate3d(4%,-3%,0)}}
+@keyframes ml2h-rise{to{transform:translate3d(0,0,0)}}
+
+/* 모션 줄이기 설정 시 최종 화면만 */
+@media (prefers-reduced-motion:reduce){
+  .contents_div .ml2h-hero .ml2h-bg,.contents_div .ml2h-hero .ml2h-head,.contents_div .ml2h-hero .ml2h-head-line,.contents_div .ml2h-hero .ml2h-ico,.contents_div .ml2h-hero .ml2h-piece{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+  .contents_div .ml2h-hero .ml2h-streak{display:none}
+  .contents_div .ml2h-hero .ml2h-lamp{animation:none!important;opacity:.7}
+}
+
+/* ===== 앵커 내비 : 노선도 ===== */
+.contents_div .mt2-nav{
+  width:100%; padding:33px clamp(22px, 6.25%, 50px) 22px;
+  background:linear-gradient(90deg, #1668b0 0%, var(--c-deep) 45%, var(--c-deeper) 100%);
+}
+.contents_div .mt2-nav-list{ position:relative; display:grid; grid-template-columns:repeat(6,1fr); --nav-h:48px; }
+.contents_div .mt2-nav-list::before, .contents_div .mt2-nav-list::after{
+  content:''; position:absolute; left:8.333%; right:8.333%; top:6px; height:4px; border-radius:2px;
+  background:linear-gradient(90deg, var(--c-rail), var(--c-rail-a), var(--c-rail));
+}
+.contents_div .mt2-nav-list::after{ display:none; }
+.contents_div .mt2-nav-btn{
+  position:relative; z-index:1; display:block; width:100%; min-height:var(--nav-h);
+  margin:0; padding:26px 2px 0; border:0; border-radius:0; background:none;
+  color:#fff; font-family:'Paperozi','Pretendard',sans-serif; font-size:var(--fs-nav); font-weight:600; line-height:1.4; letter-spacing:-0.03em;
+  text-align:center; cursor:pointer; -webkit-appearance:none; appearance:none;
+}
+.contents_div .mt2-nav-btn::after{
+  content:''; position:absolute; left:50%; top:0; width:16px; height:16px; margin-left:-8px;
+  border-radius:50%; background:var(--c-deeper); border:4px solid var(--c-soft);
+}
+.contents_div .mt2-nav-tx{ display:inline-block; transition:transform .25s ease; }
+.contents_div .mt2-nav-btn.is-on{ color:#fff; }
+.contents_div .mt2-nav-btn.is-on::after{ background:#fff; border-color:#fff; box-shadow:0 0 0 3px var(--c-ring); }
+.contents_div .mt2-nav-btn:active{ color:#fff; }
+.contents_div .mt2-nav-btn:focus-visible{ outline:2px solid var(--c-soft); outline-offset:2px; }
+
+/* ===== 인트로 ===== */
+.contents_div .mt2-intro{ container-type:inline-size; padding-left:clamp(22px, 11.25%, 90px); padding-right:clamp(22px, 11.25%, 90px); }
+.contents_div .mt2-intro{ text-align:center; }
+.contents_div .mt2-intro .mt2-h2{ margin-top:0; white-space:nowrap; font-size:3.92cqw; }
+.contents_div .mt2-em{ color:var(--c-main); }
+.contents_div .mt2-lead{ margin-top:20px; font-size:var(--fs-lead); line-height:1.7; color:var(--c-ink); }
+.contents_div .mt2-gap-mo{ display:none; }
+
+/* ===== Q1 단계 카드 ===== */
+.contents_div .mt2-steps{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.contents_div .mt2-step{
+  padding:var(--card-y) var(--card-x); background:var(--c-card); border-radius:14px;
+  border:1px solid var(--c-line);
+}
+.contents_div .mt2-tag{
+  display:inline-flex; align-items:center; height:24px; padding:0 11px; border-radius:999px;
+  background:var(--c-tint2); color:var(--c-deeper);
+  font-size:var(--fs-cap); font-weight:700; line-height:1.25; white-space:nowrap;
+}
+.contents_div .mt2-old{ display:block; margin-top:12px; font-size:var(--fs-info); line-height:1.5; color:var(--c-sub); }
+.contents_div .mt2-new{
+  display:flex; align-items:center; gap:8px; margin-top:2px;
+  font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
+  font-size:var(--fs-h3); line-height:1.45; color:var(--c-deeper);
+}
+.contents_div .mt2-new::before{ content:'→'; flex:0 0 auto; color:var(--c-main); line-height:1; }
+
+/* ===== Q3 정보박스 ===== */
+.contents_div .mt2-duo{ display:grid; grid-template-columns:1fr; gap:16px; margin-top:24px; align-items:stretch; }
+.contents_div .mt2-tabbox{ border:1px solid var(--c-edge); border-radius:14px; overflow:hidden; }
+.contents_div .mt2-tabs{ display:grid; grid-template-columns:repeat(5,1fr); background:var(--c-card); border-radius:14px 14px 0 0; overflow:hidden; }
+.contents_div .mt2-tab{
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  min-height:48px; margin:0; padding:0 4px; border:0; border-left:1px solid var(--c-tint1); border-radius:0;
+  background:none; color:var(--c-sub); font-size:var(--fs-info); font-weight:600; line-height:1.3; white-space:nowrap;
+  cursor:pointer; -webkit-appearance:none; appearance:none;
+}
+.contents_div .mt2-tab:first-child{ border-left:0; }
+.contents_div .mt2-tab[style]::before{ content:''; flex:0 0 auto; width:8px; height:8px; border-radius:50%; background:var(--lg); }
+.contents_div .mt2-tab.is-on{ background:var(--c-deep); color:#fff; font-weight:700; }
+.contents_div .mt2-tab:active{ background:var(--c-tint1); }
+.contents_div .mt2-tab.is-on:active{ background:var(--c-deeper); }
+.contents_div .mt2-tab:focus-visible{ outline:2px solid var(--c-main); outline-offset:-2px; }
+.contents_div .mt2-tabfig{ border-radius:0 0 14px 14px; min-height:170px; }
+.contents_div .mt2-tabfig::before{ display:none; }
+.contents_div .mt2-tabfig .mt2-tabimg{ display:none; position:static; width:100%; height:auto; }
+.contents_div .mt2-tabfig .mt2-tabimg.is-on{ display:block; }
+.contents_div .mt2-tabfig:not([data-on="0"]) .mt2-legend{ display:none; }
+.contents_div .mt2-src{ position:absolute; right:10px; bottom:10px; z-index:1; padding:4px 8px; border-radius:4px; background:rgba(0,0,0,.45); font-size:11px; line-height:1.35; color:#fff; }
+.contents_div .mt2-src a{ color:inherit; text-decoration:none; }
+.contents_div .mt2-legend{
+  position:absolute; top:14px; right:14px; z-index:1;
+  padding:10px 12px 12px; background:rgba(255,255,255,.92); border-radius:10px;
+  font-size:12px; line-height:1;
+}
+.contents_div .mt2-legend-t{ font-weight:700; text-align:center; letter-spacing:.5em; text-indent:.5em; color:var(--c-ink); }
+.contents_div .mt2-legend li{ display:flex; align-items:center; gap:8px; margin-top:7px; }
+.contents_div .mt2-legend-c{
+  display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+  width:54px; height:20px; padding:0; border-radius:999px; background:var(--lg); color:#fff; font-weight:700; white-space:nowrap;
+}
+.contents_div .mt2-legend i{ flex:0 0 auto; width:40px; height:3px; border-radius:2px; background:var(--lg); }
+.contents_div .mt2-box{
+  display:grid; grid-template-columns:1fr 1fr;
+  padding:4px var(--card-x); background:var(--c-card); border:1px solid var(--c-edge); border-radius:14px;
+}
+.contents_div .mt2-box li{
+  display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:17px 0;
+  font-size:var(--fs-info); line-height:1.5; border-bottom:1px solid var(--c-tint1);
+}
+.contents_div .mt2-box li:first-child, .contents_div .mt2-box li:last-child{ grid-column:1 / -1; }
+.contents_div .mt2-box li:last-child{ border-bottom:0; }
+.contents_div .mt2-box li:nth-child(3){ padding-left:var(--card-x); border-left:1px solid var(--c-tint1); }
+.contents_div .mt2-lb{ color:var(--c-main); font-size:var(--fs-label); font-weight:700; line-height:1.3; white-space:nowrap; }
+.contents_div .mt2-val{ min-width:0; font-weight:600; }
+.contents_div .mt2-box li:first-child .mt2-val{ white-space:nowrap; }
+.contents_div .mt2-sm{ margin-left:3px; font-size:12.5px; font-weight:500; letter-spacing:-0.03em; }
+.contents_div .mt2-note{
+  margin-top:16px; padding:18px var(--card-x);
+  background:var(--c-tint1); border-radius:14px;
+  font-size:var(--fs-lead); line-height:1.7; color:var(--c-sub);
+}
+
+/* ===== Q4 현황 ===== */
+.contents_div .mt2-stat{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+.contents_div .mt2-stat li{
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  padding:var(--card-y) var(--card-x); background:var(--c-card); border-radius:14px;
+}
+.contents_div .mt2-stat strong{
+  font-family:'Paperozi','Pretendard',sans-serif; font-weight:800;
+  font-size:var(--fs-h3); line-height:1.45; color:var(--c-deeper);
+}
+
+/* ===== Q5 사업비 ===== */
+.contents_div .mt2-cost li{ margin-top:20px; }
+.contents_div .mt2-cost-row{
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+  font-size:var(--fs-info); line-height:1.5;
+}
+.contents_div .mt2-cost-name{ font-weight:600; }
+.contents_div .mt2-cost-amt{ flex:0 0 auto; font-weight:700; color:var(--c-deeper); white-space:nowrap; }
+.contents_div .mt2-bar{ margin-top:8px; height:12px; border-radius:6px; background:var(--c-tint1); overflow:hidden; }
+.contents_div .mt2-bar span{ display:block; height:100%; border-radius:6px; background:var(--c-main); }
+
+/* ===== Q6 대책 ===== */
+.contents_div .mt2-plan-h{ margin-top:24px; }
+.contents_div .mt2-plan{ margin-top:16px; }
+.contents_div .mt2-plan li{
+  display:flex; align-items:center; gap:15px;
+  padding:var(--card-y) var(--card-x); background:var(--c-card); border-radius:14px;
+}
+.contents_div .mt2-plan li + li{ margin-top:12px; }
+.contents_div .mt2-plan .mt2-p{ padding:0 12px; }
+.contents_div .mt2-num{
+  display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+  width:var(--kick); height:var(--kick); border-radius:50%;
+  background:var(--c-main); color:#fff; font-size:var(--fs-num); font-weight:700; line-height:1;
+}
+
+/* CTA */
+.contents_div .mt2-cta-wrap{ margin-top:28px; text-align:center; }
+.contents_div .mt2-cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-width:420px; min-height:54px; padding:10px 30px; border-radius:10px;
+  background:var(--c-deep); color:#fff; text-decoration:none;
+  font-size:var(--fs-cta); font-weight:700; line-height:1.45;
+}
+.contents_div .mt2-cta::after{ content:'→'; font-size:1.06em; line-height:1; }
+.contents_div .mt2-cta:active{ background:var(--c-deeper); }
+
+/* ===== 푸터 ===== */
+.contents_div .mt2-foot{ background:var(--c-deep); color:#fff; text-align:center; }
+.contents_div .mt2-sec.mt2-foot{ padding-top:55px; padding-bottom:55px; }
+.contents_div .mt2-tags{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+.contents_div .mt2-tags li{
+  display:inline-flex; align-items:center; height:28px; padding:0 12px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.35); color:#dbe9f6;
+  font-size:var(--fs-tag); line-height:1.35; white-space:nowrap;
+}
+
+/* ===== hover ===== */
+@media (hover:hover) and (pointer:fine){
+  .contents_div .mt2-nav-btn:hover{ color:#fff; }
+  .contents_div .mt2-nav-btn:hover::after{ background:#fff; border-color:#fff; box-shadow:0 0 0 3px var(--c-ring); }
+  .contents_div .mt2-nav-btn:hover .mt2-nav-tx{ transform:translateY(2px); }
+  .contents_div .mt2-cta:hover{ background:var(--c-main); }
+  .contents_div .mt2-tab:not(.is-on):hover{ background:var(--c-tint1); color:var(--c-deeper); }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width:600px){
+  .contents_div .mt2-wrap{
+    --fs-h2:22px;
+    --fs-h3:17px; --fs-kicker:10px; --fs-num:10px;
+    --fs-body:14px; --fs-lead:13.5px; --fs-nav:11px;
+    --fs-info:14px; --fs-cta:14px; --fs-label:11px;
+    --fs-tag:11px; --fs-cap:12px;
+    --kick:22px; --card-y:22px; --card-x:17px;
+    line-height:1.7;
+  }
+  .contents_div .mt2-sec{ padding-left:22px; padding-right:22px; }
+  .contents_div .mt2-nav{ padding:18px 22px; }
+  .contents_div .mt2-nav-list::before{ top:5px; height:3px; }
+  .contents_div .mt2-nav-btn{ padding:24px 0 0; font-weight:500; line-height:1.3; letter-spacing:-0.05em; }
+  .contents_div .mt2-nav-btn::after{ width:13px; height:13px; margin-left:-6.5px; border-width:3px; }
+  .contents_div .mt2-nav-btn.is-on::after{ box-shadow:0 0 0 3px var(--c-ring); }
+  .contents_div .mt2-br--mo{ display:inline; }
+  .contents_div .mt2-kick{ gap:5px; padding:0 9px 0 4px; line-height:1; }
+  .contents_div .mt2-kick-n{ height:14px; padding:0 5px; }
+  .contents_div .mt2-h2{ margin-top:12px; line-height:1.4; }
+  .contents_div .mt2-p{ line-height:1.75; }
+  .contents_div .mt2-h2 + .mt2-p{ margin-top:14px; }
+  .contents_div .mt2-h3{ line-height:1.5; }
+  .contents_div .mt2-card{ margin-top:18px; border-radius:12px; }
+  .contents_div .mt2-fig{ border-radius:12px; }
+  .contents_div .mt2-fig::before{ padding-top:75%; }
+  .contents_div .mt2-intro{ text-align:left; }
+  .contents_div .mt2-intro .mt2-h2{ white-space:normal; font-size:var(--fs-h2); }
+  .contents_div .mt2-lead{ margin-top:14px; }
+  .contents_div .mt2-gap-mo{ display:block; height:10px; }
+  .contents_div .mt2-steps{ grid-template-columns:1fr; gap:10px; margin-top:18px; }
+  .contents_div .mt2-step{ padding-top:calc(var(--card-y) - 3px); padding-bottom:calc(var(--card-y) - 3px); border-radius:12px; }
+  .contents_div .mt2-tag{ height:21px; padding:0 9px; line-height:1; }
+  .contents_div .mt2-old{ margin-top:9px; }
+  .contents_div .mt2-new{ line-height:1.5; }
+  .contents_div .mt2-duo{ grid-template-columns:1fr; gap:10px; margin-top:18px; }
+  .contents_div .mt2-tabbox{ border-radius:12px; }
+  .contents_div .mt2-tabs{ border-radius:12px 12px 0 0; }
+  .contents_div .mt2-tab{ min-height:44px; gap:4px; padding:0 2px; font-size:12.5px; letter-spacing:-0.03em; }
+  .contents_div .mt2-tab[style]::before{ width:6px; height:6px; }
+  .contents_div .mt2-tabfig{ border-radius:0 0 12px 12px; min-height:125px; }
+  .contents_div .mt2-tabfig::before{ display:none; }
+  .contents_div .mt2-src{ right:6px; bottom:6px; padding:3px 6px; font-size:10px; }
+  .contents_div .mt2-legend{ top:8px; right:8px; padding:7px 8px 8px; border-radius:8px; font-size:10px; }
+  .contents_div .mt2-legend li{ gap:6px; margin-top:5px; }
+  .contents_div .mt2-legend-c{ width:42px; height:16px; }
+  .contents_div .mt2-legend i{ width:24px; height:2px; }
+  .contents_div .mt2-box{ padding:0 var(--card-x); border-radius:12px; }
+  .contents_div .mt2-box li{ gap:4px; padding:11px 0; }
+  .contents_div .mt2-box li:nth-child(3){ padding-left:14px; }
+  .contents_div .mt2-sm{ margin-left:2px; font-size:10px; }
+  .contents_div .mt2-note{ margin-top:10px; padding:14px var(--card-x); border-radius:12px; }
+  .contents_div .mt2-stat{ grid-template-columns:1fr; gap:10px; margin-top:18px; }
+  .contents_div .mt2-stat li{ gap:8px; padding-top:calc(var(--card-y) - 4px); padding-bottom:calc(var(--card-y) - 4px); border-radius:12px; }
+  .contents_div .mt2-stat strong{ line-height:1.5; }
+  .contents_div .mt2-cost li{ margin-top:16px; }
+  .contents_div .mt2-cost-row{ gap:10px; }
+  .contents_div .mt2-bar{ margin-top:6px; height:9px; }
+  .contents_div .mt2-plan-h{ margin-top:18px; }
+  .contents_div .mt2-plan{ margin-top:12px; }
+  .contents_div .mt2-plan li{ gap:14px; border-radius:12px; }
+  .contents_div .mt2-plan li + li{ margin-top:10px; }
+  .contents_div .mt2-plan .mt2-p{ padding:0; }
+  .contents_div .mt2-cta-wrap{ margin-top:22px; }
+  .contents_div .mt2-cta{ min-width:0; min-height:48px; padding:8px 22px; gap:8px; }
+  .contents_div .mt2-tags{ gap:6px; }
+  .contents_div .mt2-tags li{ height:24px; padding:0 10px; }
+}
+@media (max-width:500px){
+  .contents_div .mt2-sec{ padding-top:40px; padding-bottom:40px; }
+  .contents_div .mt2-sec.mt2-foot{ padding-top:25px; padding-bottom:25px; }
+}
+@media (max-width:480px){
+  .contents_div .mt2-wrap{ --fs-nav:11px; }
+  .contents_div .mt2-sec{ padding-left:15px; padding-right:15px; }
+  .contents_div .mt2-nav{ padding-left:15px; padding-right:15px; }
+  .contents_div .mt2-nav-list{ --nav-h:44px; }
+}
+@media (max-width:420px){
+  .contents_div .mt2-wrap{ --fs-nav:10.5px; }
+  .contents_div .mt2-nav-x420{ display:none; }
+}
+@media (max-width:380px){
+  .contents_div .mt2-wrap{
+    --fs-h2:21.5px; --fs-h3:16px;
+    --fs-body:13.5px; --fs-lead:13px; --fs-nav:10px;
+    --fs-info:13.5px; --fs-cta:13.5px; --fs-tag:10.5px;
+    --card-y:19px; --card-x:14px;
+  }
+}
+</style>
+
+<div class="mt2-wrap">
+<!-- TEST: 히어로 진입 테스트용 빈 프레임 (테스트 후 삭제) -->
+<div class="jngj-test-spacer" style="height:1200px;background:#fffdef;" aria-hidden="true"></div>
+<!-- /TEST 뷰포트 진입 애니메이션 확인용, 확인 후 삭제 -->
+
+  <!-- 히어로 -->
+  <section class="ml2h-wrap">
+    <h1 class="ml2h-sr">도시철도 2호선 부분개통 Q&amp;A — 기다림은 줄이고 시민 편의는 앞당기겠습니다</h1>
+    <div class="ml2h-hero">
+      <div class="ml2h-layer ml2h-bg">
+        <img
+          src="img/히어로배경.webp"
+          alt="광주 도시철도 2호선 열차가 승강장에 들어서는 모습" width="1455" height="1050" fetchpriority="high" loading="eager" decoding="async">
+        <span class="ml2h-lamp ml2h-lamp--l"></span>
+        <span class="ml2h-lamp ml2h-lamp--r"></span>
+      </div>
+      <div class="ml2h-layer" aria-hidden="true">
+        <span class="ml2h-streak ml2h-streak--1"></span>
+        <span class="ml2h-streak ml2h-streak--2"></span>
+        <span class="ml2h-streak ml2h-streak--3"></span>
+        <span class="ml2h-streak ml2h-streak--4"></span>
+      </div>
+      <div class="ml2h-head">
+        <p>전남광주통합특별시</p>
+        <p>모두의전남광주</p>
+      </div>
+      <span class="ml2h-head-line" aria-hidden="true"></span>
+      <div class="ml2h-layer ml2h-txt" aria-hidden="true">
+        <div class="ml2h-cut ml2h-cut--cap"><div class="ml2h-piece"></div></div>
+        <div class="ml2h-cut ml2h-cut--l1"><div class="ml2h-piece"></div></div>
+        <div class="ml2h-cut ml2h-cut--l2"><div class="ml2h-piece"></div></div>
+        <div class="ml2h-cut ml2h-cut--l3"><div class="ml2h-piece"></div></div>
+      </div>
+      <img class="ml2h-ico"
+        src="img/히어로텍스트2.webp"
+        alt="" width="148" height="125" fetchpriority="high" loading="eager" decoding="async">
+    </div>
+  </section>
+
+  <!-- 앵커 내비 -->
+  <nav class="mt2-nav" aria-label="질문 바로가기">
+    <ul class="mt2-nav-list">
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q1"><span class="mt2-nav-tx">개통 시기</span></button></li>
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q2"><span class="mt2-nav-tx">연기 이유</span></button></li>
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q3"><span class="mt2-nav-tx">부분개통<span class="mt2-nav-x420"> 구간</span></span></button></li>
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q4"><span class="mt2-nav-tx">도로 정상화</span></button></li>
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q5"><span class="mt2-nav-tx">사업비</span></button></li>
+      <li class="mt2-nav-item"><button type="button" class="mt2-nav-btn" data-go="mt2-q6"><span class="mt2-nav-tx">향후 대책</span></button></li>
+    </ul>
+  </nav>
+
+  <!-- 인트로 -->
+  <section class="mt2-sec mt2-sec--t2 mt2-intro">
+    <h2 class="mt2-h2">“도시철도 2호선 개통,<span class="mt2-br mt2-br--mo"></span> <span class="mt2-em">현실에 맞는 재조정</span>이 필요했습니다”</h2>
+    <p class="mt2-lead">광주 도시철도 2호선 개통 늦어져서 속상하시죠? 시민 여러분의 오랜 관심사인 광주 도시철도 2호선이 부분개통을 발표했습니다.<span class="mt2-gap-mo"></span> 현재 건설 공정에 대한 철저한 조사를 통해 개통 시기를 최대한 앞당기는 한편 가능한 곳은 먼저 개통해 시민의 불편을 최소화할 계획인데요. 도시철도 2호선 개통, 무엇이 어떻게 달라지는지 Q&amp;A로 정리해 봤어요.</p>
+  </section>
+
+  <!-- Q1 -->
+  <section class="mt2-sec mt2-sec--t1" id="mt2-q1" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q1</span>개통 시기</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>달라진 개통 시기가 언제인가요?</h2>
+    <p class="mt2-p">도시철도건설본부는 감리단과 전문가 등이 참여한 진단전담팀(TF)을 통해 도시철도 2호선 공정을 면밀히 검증했어요. 그 결과 개통 연기가 불가피해졌습니다.</p>
+    <ul class="mt2-steps">
+      <li class="mt2-step">
+        <span class="mt2-tag">1단계</span>
+        <span class="mt2-old">당초 2027년 12월</span>
+        <strong class="mt2-new">변경 2028년 12월</strong>
+      </li>
+      <li class="mt2-step">
+        <span class="mt2-tag">2단계</span>
+        <span class="mt2-old">당초 2030년 12월</span>
+        <strong class="mt2-new">변경 2035년 12월</strong>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Q2 -->
+  <section class="mt2-sec mt2-sec--t2 mt2-sec--bg" id="mt2-q2" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q2</span>연기 이유</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>연기된 이유는 무엇인가요?</h2>
+    <div class="mt2-card">
+      <p class="mt2-p">그동안 도시철도 2호선 토목공사는 암반·지장물 등 현장여건으로 인해 지연되고 있었어요. 이에 따라 건축·기계·전기 등 후속 공정도 영향을 받아왔습니다. 토목 이후 시험운행까지 연결한 공정관리가 충분하지 못했던 것으로 확인되어 개통에 영향을 미쳤습니다.</p>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="mt2-sec mt2-sec--t1" id="mt2-q3" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q3</span>부분개통 구간</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>부분개통을 한다는데,<span class="mt2-br mt2-br--mo"></span> 어느 구간인가요?</h2>
+    <p class="mt2-p">2단계 전 구간 개통은 2035년 12월로 예상되지만 시민들이 도시철도를 보다 빨리 이용할 수 있도록 부분개통을 결정했어요.</p>
+    <div class="mt2-duo">
+      <div class="mt2-tabbox">
+      <div class="mt2-tabs" role="tablist">
+        <button type="button" class="mt2-tab is-on" role="tab" aria-selected="true" data-tab="0">전체</button>
+        <button type="button" class="mt2-tab" role="tab" aria-selected="false" data-tab="1" style="--lg:#6f308f">11공구</button>
+        <button type="button" class="mt2-tab" role="tab" aria-selected="false" data-tab="2" style="--lg:#00a6ad">12공구</button>
+        <button type="button" class="mt2-tab" role="tab" aria-selected="false" data-tab="3" style="--lg:#eb600c">13공구</button>
+        <button type="button" class="mt2-tab" role="tab" aria-selected="false" data-tab="4" style="--lg:#007937">14공구</button>
+      </div>
+      <div class="mt2-fig mt2-tabfig" data-on="0">
+        <img class="mt2-tabimg is-on" src="img/부분개통.webp" alt="도시철도 2호선 2단계 부분개통 구간(11~14공구) 전체 노선도" loading="lazy" decoding="async">
+        <img class="mt2-tabimg" src="img/11공구.webp" alt="도시철도 2호선 2단계 11공구 노선도" loading="lazy" decoding="async">
+        <img class="mt2-tabimg" src="img/12공구.webp" alt="도시철도 2호선 2단계 12공구 노선도" loading="lazy" decoding="async">
+        <img class="mt2-tabimg" src="img/13공구.webp" alt="도시철도 2호선 2단계 13공구 노선도" loading="lazy" decoding="async">
+        <img class="mt2-tabimg" src="img/14공구.webp" alt="도시철도 2호선 2단계 14공구 노선도" loading="lazy" decoding="async">
+        <div class="mt2-legend">
+          <p class="mt2-legend-t">범례</p>
+          <ul>
+            <li style="--lg:#6f308f"><span class="mt2-legend-c">11공구</span><i></i></li>
+            <li style="--lg:#00a6ad"><span class="mt2-legend-c">12공구</span><i></i></li>
+            <li style="--lg:#eb600c"><span class="mt2-legend-c">13공구</span><i></i></li>
+            <li style="--lg:#007937"><span class="mt2-legend-c">14공구</span><i></i></li>
+          </ul>
+        </div>
+        <p class="mt2-src">출처: <a href="https://www.gwangju.go.kr/build/contentsView.do?pageId=build184" target="_blank" rel="noopener">전남광주통합특별시 누리집</a></p>
+      </div>
+      </div>
+      <ul class="mt2-box">
+        <li><span class="mt2-lb">구간</span><span class="mt2-val">양산동~첨단·수완·신가<span class="mt2-sm">(11공구~14공구)</span></span></li>
+        <li><span class="mt2-lb">규모</span><span class="mt2-val">11.9km, 정거장 9개소</span></li>
+        <li><span class="mt2-lb">부분개통 예상</span><span class="mt2-val">2034년 4월</span></li>
+        <li><span class="mt2-lb">단축효과</span><span class="mt2-val">전 구간 동시 개통 대비 1년 8개월</span></li>
+      </ul>
+    </div>
+    <p class="mt2-note">다만 부분개통은 운행계획 변경과 총사업비 증가가 수반되는 기본계획 변경사항으로 향후 중앙부처와의 협의 등을 거쳐 추진 여부를 확정할 계획이에요.</p>
+  </section>
+
+  <!-- Q4 -->
+  <section class="mt2-sec mt2-sec--t2" id="mt2-q4" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q4</span>도로 정상화</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>지하철공사로 불편을 겪는 도로는 언제쯤 정상화되나요?</h2>
+    <p class="mt2-p">시민불편사항이었던 도로 개방의 경우 1단계는 전 구간 개방이 완료된 상황입니다. 2단계 우선 개통 구간은 2030년 상반기까지 개방을 마무리할 예정이니 시민 여러분의 너른 양해를 부탁드려요.</p>
+    <ul class="mt2-stat">
+      <li><span class="mt2-tag">1단계</span><strong>전 구간 개방 완료</strong></li>
+      <li><span class="mt2-tag">2단계 우선 개통 구간</span><strong>2030년 상반기까지 개방</strong></li>
+    </ul>
+  </section>
+
+  <!-- Q5 -->
+  <section class="mt2-sec mt2-sec--t1" id="mt2-q5" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q5</span>사업비</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>사업비 증가도 필수라던데</h2>
+    <p class="mt2-p">총사업비는 약 1조 5,036억원이 증가할 것으로 예상되는데요. 가장 큰 이유는 물가 상승이에요. 최초 총사업비 조사 후 현재까지 16년간 물가 상승률에 따라 공사비가 증가하는 부분이 가장 컸어요.</p>
+    <div class="mt2-card">
+      <h3 class="mt2-h3">총사업비 증가 사유<span class="mt2-br mt2-br--mo"></span>(총 1조 5,036억원 증)</h3>
+      <ul class="mt2-cost">
+        <li>
+          <div class="mt2-cost-row"><span class="mt2-cost-name">물가 상승</span><span class="mt2-cost-amt">증 10,021억원(66.6%)</span></div>
+          <div class="mt2-bar"><span style="width:66.6%"></span></div>
+        </li>
+        <li>
+          <div class="mt2-cost-row"><span class="mt2-cost-name">건설방식 변경</span><span class="mt2-cost-amt">증 3,547억원(23.6%)</span></div>
+          <div class="mt2-bar"><span style="width:23.6%"></span></div>
+        </li>
+        <li>
+          <div class="mt2-cost-row"><span class="mt2-cost-name">실시설계 결과 반영 및 현장여건 상이</span><span class="mt2-cost-amt">증 1,468억원(9.8%)</span></div>
+          <div class="mt2-bar"><span style="width:9.8%"></span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Q6 -->
+  <section class="mt2-sec mt2-sec--t2 mt2-sec--bg mt2-sec--bgplan" id="mt2-q6" data-sec>
+    <div class="mt2-kick"><span class="mt2-kick-n">Q6</span>향후 대책</div>
+    <h2 class="mt2-h2"><span class="mt2-q">Q.</span>이러다 또 차질이 생길까 걱정이에요</h2>
+    <h3 class="mt2-h3 mt2-plan-h">시민의 걱정을 알기에,<span class="mt2-br mt2-br--mo"></span> 그래서 더 단단하게, 꼼꼼하게 대비합니다</h3>
+    <ol class="mt2-plan">
+      <li><span class="mt2-num">1</span><p class="mt2-p">통합특별시는 앞으로 공사기간 연장과 물가 상승 등을 반영해 전 구간 개통에 필요한 사업비를 단계적으로 재검토하고, 실제 공정에 맞춰 연차별 투자계획을 합리적으로 재조정할 방침이에요.</p></li>
+      <li><span class="mt2-num">2</span><p class="mt2-p">이와 함께 실제 남은 공정을 기준으로 개통 시점까지의 전체 과정을 통합 관리하고, 개통 일정에 직접적인 영향을 미치는 핵심 공정을 집중관리해 공정 지연을 최소화할 것입니다.</p></li>
+      <li><span class="mt2-num">3</span><p class="mt2-p">또 매월 공정 진행 상황을 발표하고, 개통 준비 과정도 단계별로 상세히 안내하는 등 사업 추진 현황도 시민에게 투명하게 공개할 예정이니 지켜봐 주세요.</p></li>
+    </ol>
+    <div class="mt2-cta-wrap">
+      <a class="mt2-cta" href="https://www.gwangju.go.kr/build/contentsView.do?pageId=build184" target="_blank" rel="noopener">2단계 공사 진행현황 확인하기</a>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="mt2-sec mt2-foot">
+    <ul class="mt2-tags">
+      <li>#광주도시철도2호선</li>
+      <li>#도시철도2호선</li>
+      <li>#부분개통</li>
+      <li>#2호선개통시기</li>
+      <li>#광주지하철</li>
+      <li>#첨단수완신가</li>
+      <li>#도로개방</li>
+      <li>#총사업비</li>
+      <li>#공정관리</li>
+      <li>#전남광주통합특별시</li>
+    </ul>
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "달라진 개통 시기가 언제인가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "도시철도건설본부는 감리단과 전문가 등이 참여한 진단전담팀(TF)을 통해 도시철도 2호선 공정을 면밀히 검증했어요. 그 결과 개통 연기가 불가피해졌습니다. 1단계는 당초 2027년 12월에서 2028년 12월로, 2단계는 당초 2030년 12월에서 2035년 12월로 변경됐습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "연기된 이유는 무엇인가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "그동안 도시철도 2호선 토목공사는 암반·지장물 등 현장여건으로 인해 지연되고 있었어요. 이에 따라 건축·기계·전기 등 후속 공정도 영향을 받아왔습니다. 토목 이후 시험운행까지 연결한 공정관리가 충분하지 못했던 것으로 확인되어 개통에 영향을 미쳤습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "부분개통을 한다는데, 어느 구간인가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "2단계 전 구간 개통은 2035년 12월로 예상되지만 시민들이 도시철도를 보다 빨리 이용할 수 있도록 부분개통을 결정했어요. 구간은 양산동~첨단·수완·신가(11공구~14공구), 규모는 11.9km, 정거장 9개소이며 부분개통 예상 시기는 2034년 4월입니다. 단축효과는 전 구간 동시 개통 대비 1년 8개월입니다. 다만 부분개통은 운행계획 변경과 총사업비 증가가 수반되는 기본계획 변경사항으로 향후 중앙부처와의 협의 등을 거쳐 추진 여부를 확정할 계획이에요."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "지하철공사로 불편을 겪는 도로는 언제쯤 정상화되나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "시민불편사항이었던 도로 개방의 경우 1단계는 전 구간 개방이 완료된 상황입니다. 2단계 우선 개통 구간은 2030년 상반기까지 개방을 마무리할 예정이니 시민 여러분의 너른 양해를 부탁드려요."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "사업비 증가도 필수라던데",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "총사업비는 약 1조 5,036억원이 증가할 것으로 예상되는데요. 가장 큰 이유는 물가 상승이에요. 최초 총사업비 조사 후 현재까지 16년간 물가 상승률에 따라 공사비가 증가하는 부분이 가장 컸어요. 총사업비 증가 사유는 물가 상승 10,021억원(66.6%), 건설방식 변경 3,547억원(23.6%), 실시설계 결과 반영 및 현장여건 상이 1,468억원(9.8%)입니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "이러다 또 차질이 생길까 걱정이에요",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "통합특별시는 앞으로 공사기간 연장과 물가 상승 등을 반영해 전 구간 개통에 필요한 사업비를 단계적으로 재검토하고, 실제 공정에 맞춰 연차별 투자계획을 합리적으로 재조정할 방침이에요. 이와 함께 실제 남은 공정을 기준으로 개통 시점까지의 전체 과정을 통합 관리하고, 개통 일정에 직접적인 영향을 미치는 핵심 공정을 집중관리해 공정 지연을 최소화할 것입니다. 또 매월 공정 진행 상황을 발표하고, 개통 준비 과정도 단계별로 상세히 안내하는 등 사업 추진 현황도 시민에게 투명하게 공개할 예정이니 지켜봐 주세요."
+   }
+  }
+ ]
+}
+</script>
+
+<script>
+/* 히어로 모션 재생 — 히어로가 뷰포트에 30% 이상 들어왔을 때 1회 재생 (임베드 환경 대응) */
+(function(){
+  var root = document.currentScript && document.currentScript.parentNode
+    ? document.currentScript.parentNode
+    : document.querySelector('.contents_div');
+  if(!root) return;
+  var heroes = root.querySelectorAll('.ml2h-hero');
+  if(!heroes.length) return;
+  var i;
+  function play(el){
+    if(el.classList.contains('is-play')) return;
+    el.classList.add('is-play');
+    /* 가장 긴 모션(1.9s)이 끝나면 정리 */
+    setTimeout(function(){ el.classList.add('is-done'); }, 2100);
+  }
+  if(!('IntersectionObserver' in window)){ for(i=0;i<heroes.length;i++){ play(heroes[i]); } return; }
+  var io = new IntersectionObserver(function(entries){
+    for(var k=0;k<entries.length;k++){
+      var en = entries[k];
+      if(!en.isIntersecting) continue;
+      var vh = en.rootBounds ? en.rootBounds.height : (window.innerHeight || 0);
+      /* 히어로 면적 30% 이상, 또는 (히어로가 화면보다 큰 경우) 화면 높이의 30% 이상 노출 */
+      if(en.intersectionRatio >= .3 || (vh && en.intersectionRect.height >= vh * .3)){
+        play(en.target); io.unobserve(en.target);
+      }
+    }
+  }, { threshold:[0, .1, .2, .3, .4, .5] });
+  for(i=0;i<heroes.length;i++){ io.observe(heroes[i]); }
+})();
+</script>
+
+<script>
+/* 앵커 내비 */
+(function(){
+  var root = document.currentScript && document.currentScript.parentNode
+    ? document.currentScript.parentNode
+    : document.querySelector('.contents_div');
+  if(!root) return;
+  var wrap = root.querySelector('.mt2-wrap');
+  if(!wrap) return;
+  var btns = wrap.querySelectorAll('.mt2-nav-btn');
+  var i;
+
+  function setOn(id){
+    for(var k=0;k<btns.length;k++){
+      var on = btns[k].getAttribute('data-go')===id;
+      btns[k].classList.toggle('is-on', on);
+      if(on){ btns[k].setAttribute('aria-current','true'); }
+      else{ btns[k].removeAttribute('aria-current'); }
+    }
+  }
+  function bind(btn){
+    btn.addEventListener('click', function(){
+      var t = wrap.querySelector('#'+btn.getAttribute('data-go'));
+      if(!t) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'start' });
+    });
+  }
+  for(i=0;i<btns.length;i++){ bind(btns[i]); }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      for(var e=0;e<entries.length;e++){
+        if(entries[e].isIntersecting){ setOn(entries[e].target.id); }
+      }
+    }, { rootMargin:'-40% 0px -55% 0px', threshold:0 });
+    var secs = wrap.querySelectorAll('[data-sec]');
+    for(i=0;i<secs.length;i++){ io.observe(secs[i]); }
+  }
+})();
+</script>
+
+<script>
+/* 공구별 이미지 탭 */
+(function(){
+  var root = document.currentScript && document.currentScript.parentNode
+    ? document.currentScript.parentNode
+    : document.querySelector('.contents_div');
+  if(!root) return;
+  var box = root.querySelector('.mt2-tabbox');
+  if(!box) return;
+  var tabs = box.querySelectorAll('.mt2-tab');
+  var imgs = box.querySelectorAll('.mt2-tabimg');
+  var fig = box.querySelector('.mt2-tabfig');
+  function show(n){
+    for(var i=0;i<tabs.length;i++){
+      var on = i===n;
+      tabs[i].classList.toggle('is-on', on);
+      tabs[i].setAttribute('aria-selected', on ? 'true' : 'false');
+      if(imgs[i]) imgs[i].classList.toggle('is-on', on);
+    }
+    fig.setAttribute('data-on', String(n));
+  }
+  function bind(btn, n){ btn.addEventListener('click', function(){ show(n); }); }
+  for(var k=0;k<tabs.length;k++){ bind(tabs[k], k); }
+})();
+</script>
+
+</div>
