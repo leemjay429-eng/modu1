@@ -131,16 +131,16 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 .contents_div .ml2h-bg img{display:block;width:100%;height:100%;object-fit:cover;max-width:none}
 
 /* 2) 헤드라이트 글로우 (배경과 함께 움직임) */
-.contents_div .ml2h-lamp{position:absolute;width:20%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,250,230,.85) 0%,rgba(255,226,150,.6) 14%,rgba(255,190,90,.3) 32%,rgba(255,180,80,.08) 52%,rgba(255,180,80,0) 70%);mix-blend-mode:screen;opacity:0}
+.contents_div .ml2h-lamp{position:absolute;width:20%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,250,232,.95) 0%,rgba(255,226,150,.7) 14%,rgba(255,190,90,.38) 32%,rgba(255,180,80,.12) 52%,rgba(255,180,80,0) 70%);mix-blend-mode:screen;opacity:0}
 .contents_div .ml2h-lamp--l{left:58.3%;top:69.2%}
 .contents_div .ml2h-lamp--r{left:76.8%;top:71.4%}
 
 /* 3) 스피드 라인 */
-.contents_div .ml2h-streak{position:absolute;left:-60%;height:.5%;width:55%;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.95) 70%,rgba(255,255,255,0));opacity:0;filter:blur(.6px)}
+.contents_div .ml2h-streak{position:absolute;left:-60%;height:.6%;width:55%;border-radius:99px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,1) 70%,rgba(255,255,255,0));opacity:0;filter:blur(.4px)}
 .contents_div .ml2h-streak--1{top:30%}
-.contents_div .ml2h-streak--2{top:58%;width:40%;height:.35%}
+.contents_div .ml2h-streak--2{top:58%;width:40%;height:.45%}
 .contents_div .ml2h-streak--3{top:76%;width:65%}
-.contents_div .ml2h-streak--4{top:88%;width:35%;height:.3%}
+.contents_div .ml2h-streak--4{top:88%;width:35%;height:.4%}
 
 /* 4) 상단 머리글 (HTML 텍스트) */
 .contents_div .ml2h-head{position:absolute;left:6.5%;right:6.8%;top:4.1%;display:flex;justify-content:space-between;font-size:max(10px,2.27cqw);font-weight:300;line-height:1.2;letter-spacing:-.05em;color:#fff;white-space:nowrap}
@@ -191,7 +191,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @keyframes ml2h-arrive{0%{transform:scale(1.19) translate3d(3%,1.5%,0);filter:blur(4px) brightness(1.08)}60%{filter:blur(0) brightness(1)}100%{transform:scale(1) translate3d(0,0,0);filter:blur(0) brightness(1)}}
 @keyframes ml2h-lampOn{0%{opacity:0}100%{opacity:1}}
 @keyframes ml2h-lampPulse{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes ml2h-zip{0%{opacity:0;transform:translate3d(0,0,0)}20%{opacity:.9}100%{opacity:0;transform:translate3d(260%,0,0)}}
+@keyframes ml2h-zip{0%{opacity:0;transform:translate3d(0,0,0)}20%{opacity:1}100%{opacity:0;transform:translate3d(260%,0,0)}}
 @keyframes ml2h-fadeDown{to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes ml2h-slideIn{to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes ml2h-iconIn{0%{opacity:0;transform:translate3d(-120%,0,0)}30%{opacity:1}100%{opacity:1;transform:translate3d(0,0,0)}}
@@ -372,6 +372,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   display:inline-flex; align-items:center; height:28px; padding:0 12px; border-radius:999px;
   border:1px solid rgba(255,255,255,.35); color:#dbe9f6;
   font-size:var(--fs-tag); line-height:1.35; white-space:nowrap;
+}
+
+/* ===== 스크롤 등장 (JS가 .mt2-rv를 붙인 요소만 적용 — JS 없으면 그대로 노출) ===== */
+.contents_div .mt2-rv{ opacity:0; transform:translate3d(0,28px,0); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); transition-delay:var(--rv-d,0s); }
+.contents_div .mt2-rv.is-in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .contents_div .mt2-rv{ opacity:1; transform:none; transition:none; }
 }
 
 /* ===== hover ===== */
@@ -758,6 +765,40 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     }
   }, { threshold:[0, .1, .2, .3, .4, .5] });
   for(i=0;i<heroes.length;i++){ io.observe(heroes[i]); }
+})();
+</script>
+
+<script>
+/* 스크롤 등장 — 각 섹션 콘텐츠가 뷰포트에 들어올 때 순차로 떠오름 (임베드 환경 대응) */
+(function(){
+  var root = document.currentScript && document.currentScript.parentNode
+    ? document.currentScript.parentNode
+    : document.querySelector('.contents_div');
+  if(!root) return;
+  var wrap = root.querySelector('.mt2-wrap');
+  if(!wrap || !('IntersectionObserver' in window)) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var secs = wrap.querySelectorAll('.mt2-sec');
+  var items = [];
+  for(var i=0;i<secs.length;i++){
+    var kids = secs[i].children, n = 0;
+    for(var j=0;j<kids.length;j++){
+      var el = kids[j];
+      if(el.getAttribute('aria-hidden')==='true') continue;
+      el.classList.add('mt2-rv');
+      el.style.setProperty('--rv-d', Math.min(n, 4) * 0.08 + 's');
+      items.push(el); n++;
+    }
+  }
+  var io = new IntersectionObserver(function(entries){
+    for(var k=0;k<entries.length;k++){
+      if(entries[k].isIntersecting){
+        entries[k].target.classList.add('is-in');
+        io.unobserve(entries[k].target);
+      }
+    }
+  }, { rootMargin:'0px 0px -12% 0px', threshold:0 });
+  for(i=0;i<items.length;i++){ io.observe(items[i]); }
 })();
 </script>
 
