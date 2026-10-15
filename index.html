@@ -1186,6 +1186,13 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .kmc-market .kmc-fig::before{ padding-top:75%; }   /* 모바일과 같은 4:3 */
 }
 @media (max-width:600px){ .contents_div .kmc-traffic .kmc-info li:last-child{ padding-bottom:8px; } }
+
+/* ===== 스크롤 등장(공통): JS가 켜졌을 때만 숨김 → 뷰포트에 들어오면 아래에서 떠오름 ===== */
+.contents_div .kmc-rv{ opacity:0; transform:translateY(28px); transition:opacity .7s ease-out, transform .7s cubic-bezier(.22,1,.36,1); }
+.contents_div .kmc-rv.is-in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce){
+  .contents_div .kmc-rv{ opacity:1; transform:none; transition:none; }
+}
 </style>
 
 <div class="kmc-wrap">
@@ -2069,6 +2076,44 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
       ov.querySelector('.kmc-mapbox-close').focus();
     }
     box.addEventListener('click', function(){ if(!mq || mq.matches) open(); });
+  })();
+
+
+  /* 스크롤 등장: 섹션 제목·카드·사진 블록이 화면에 들어오면 한 번 재생(형제는 0.1초씩 차례로) */
+  (function(){
+    if(!('IntersectionObserver' in window)) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var sel = [
+      '.kmc-sec > .kmc-head', '.kmc-intro .kmc-when',
+      '.kmc-why > .kmc-card', '.kmc-sec > .kmc-block', '.kmc-days > .kmc-day', '.kmc-party .kmc-gift',
+      '.kmc-market > *', '.kmc-pops > .kmc-pop', '.kmc-sec > .kmc-slider', '.kmc-prog > li',
+      '.kmc-sec > .kmc-fig', '.kmc-contest > *', '.kmc-online > *', '.kmc-traffic',
+      '.kmc-foot > *'
+    ].join(',');
+    var list = Array.prototype.slice.call(root.querySelectorAll(sel));
+    var set = list.filter(function(el, i){   /* 다른 대상 안에 들어 있는 요소는 제외(중복 재생 방지) */
+      for(var j = 0; j < list.length; j++){ if(j !== i && list[j].contains(el)) return false; }
+      return true;
+    });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('is-in'); io.unobserve(el);
+        el.addEventListener('transitionend', function te(ev){   /* 끝나면 클래스 제거 → 원래 스타일(쌓임 순서 등) 그대로 */
+          if(ev.target !== el || ev.propertyName !== 'transform') return;
+          el.removeEventListener('transitionend', te);
+          el.classList.remove('kmc-rv', 'is-in'); el.style.transitionDelay = '';
+        });
+      });
+    }, { rootMargin:'0px 0px -12% 0px', threshold:0 });
+    set.forEach(function(el){
+      var sib = 0, p = el.previousElementSibling;
+      while(p){ if(set.indexOf(p) > -1) sib++; p = p.previousElementSibling; }
+      el.style.transitionDelay = Math.min(sib, 3) * 0.1 + 's';
+      el.classList.add('kmc-rv');
+      io.observe(el);
+    });
   })();
 
   /* 라벨 캡슐 균등 배분 (타이포그래피-기준 8장 A안) */
