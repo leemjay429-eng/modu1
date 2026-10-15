@@ -1077,6 +1077,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .kmc-legend-detour{ width:14px; margin-right:3px; }
 }
 @media (max-width:420px){   /* 420 이하: 인트로 별 85% 크기 + 10px 아래로 */
+  /* 광주김치 카드 사진: 원 → 세로 직사각형(4:5), 글은 사각형 옆·아래로 흐름 */
+  .contents_div .kmc-why .kmc-card .kmc-why-img{ aspect-ratio:4 / 5; height:auto; border-radius:10px; shape-outside:none; margin-bottom:12px; }
   /* 교통 안내문: 느낌표 작게(18px) + 상단 가운데 */
   .contents_div .kmc-traffic-note::before{ width:18px; height:16.5px; margin:0 auto 5px; }
   /* 천인의 밥상 업체리스트: 420→350 사이 단계적 축소(업체명 15→14.5, 메뉴 13→12, 최소 12px) */
