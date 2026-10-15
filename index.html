@@ -848,7 +848,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .kmc-why .kmc-card::after{ content:''; display:table; clear:both; }
   .contents_div .kmc-why .kmc-card .kmc-why-img{
     float:right; width:calc((100% + 2 * var(--pad-x)) * .3); height:auto; aspect-ratio:1;   /* 카드 가로의 30% 유지 */ margin:calc(var(--fs-h3) * 1.5 - 4px) 0 12px max(14px, calc((100% + 2 * var(--pad-x)) * .07));   /* 텍스트-이미지 간격: 카드 폭의 7%(최소 14px) */   /* p 태그 탑보다 10px 위 */
-    shape-outside:circle(50%) border-box; shape-margin:max(12px, calc((100% + 2 * var(--pad-x)) * .03));   /* 원 둘레 여백(아래 글과 간격 확보) */   /* 원 모양 따라 글이 감싸 흐름(위 여백 구간은 제목이 전체 폭 사용) */
+    shape-outside:circle(50%) border-box; shape-margin:14px;   /* 원 둘레 여백 — iOS 사파리가 max()/calc()를 못 읽어 0이 되던 문제로 고정값 사용 */   /* 원 모양 따라 글이 감싸 흐름(위 여백 구간은 제목이 전체 폭 사용) */
   }
   .contents_div .kmc-why .kmc-card .kmc-why-num,
   .contents_div .kmc-why .kmc-card:not(.kmc-why-wide) .kmc-why-num{ justify-content:flex-start; transform:none; }
